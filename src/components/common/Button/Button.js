@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
-
 const Button = ({ children, variant, noHover, className: propClassName, ...props }) => {
   const classes = [];
 
