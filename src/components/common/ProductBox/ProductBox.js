@@ -56,11 +56,22 @@ const ProductBox = ({ name, price, promo, stars, id }) => (
           </FontAwesomeIcon>
         </Button>
       </div>
-      <div className={styles.price}>
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
-      </div>
+      {parseInt(id.slice(20)) % 2 === 0 ? (
+        <div className={styles.price}>
+          <Button noHover variant='small' className={styles.firstPrice}>
+            $ {1.4 * price}
+          </Button>
+          <Button noHover variant='small' className={styles.promoPrice}>
+            $ {price}
+          </Button>
+        </div>
+      ) : (
+        <div className={styles.price}>
+          <Button noHover variant='small' className={styles.promoPrice}>
+            $ {price}
+          </Button>
+        </div>
+      )}
     </div>
   </div>
 );
