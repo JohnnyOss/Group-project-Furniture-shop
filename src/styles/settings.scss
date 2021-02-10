@@ -1,31 +1,35 @@
+// VARIABLES FOR COLORS
+
 $base-padding: 24px;
+
+$black-color: #010202;
 
 $creme-main: #d58e32;
 
 $dark-color-1: #363636;
 $dark-color-2: #2a2a2a;
 $dark-color-3: #292929;
+$dark-color-4: #2a2a2a;
 
-$grey-color: #434343;
+$light-color-1: #d8d8d8;
+$light-color-2: #b6b6b6;
+$light-color-3: #f4f5f7;
+$light-color-4: #e2e2e2;
+$light-color-5: #e1e1e1; 
+$light-color-6: #e0e3ed;
 
-$light-grey-color: #b6b6b6;
-$light-silver-color: #f4f5f7;
-$light-silver-color-2: #e2e2e2;
-
-$silver-color: #e1e1e1;
+$silver-color: #a9a9a9;
 
 $transparent: transparent;
 
 $white-color: #ffffff;
 
 
+// *****COLORS IN COMPONENTS*****
 
+//***COMPONENTS***
 
-
-$primary: $creme-main;
-
-
-//Button colours
+//Button
 $btn-main-font-color: $white-color;
 $btn-main-background-color: $dark-color-2;
 $btn-main-font-color-hover: $white-color;
@@ -36,63 +40,75 @@ $btn-outline-background-color-hover: $dark-color-2;
 $btn-outline-font-color-hover: $white-color;
 
 
-//Feature colours
-$featureBox-border: $light-grey-color;
+//FeatureBox
+$featureBox-border: $light-color-2;
 $featureBox-icon: $dark-color-2;
 $featureBox-background-before: $white-color;
 $featureBox-text-active: $white-color;
 $featureBox-background-active: $creme-main;
 $featureBox-border-active: $creme-main;
 $featureBox-content-active: $creme-main;
+$featureBox-content-font: $dark-color-4;
 
-//ProductBox colours
+//ProductBox
 $productBox-background: $white-color;
-$productBox-border: $silver-color;
-$productBox-photo-background: $light-silver-color;
+$productBox-border: $light-color-5;
+$productBox-photo-background: $light-color-3;
 $productBox-sale-background: $dark-color-3;
 $productBox-sale-font-color: $white-color;
 $productBox-content-font-color: $creme-main;
 $productBox-border-bottom: $dark-color-2;
 $productBox-border-bottom-before: $creme-main;
+$productBox-star-links: $dark-color-4;
 
-//NewFurniture colours
-$newFurniture-panel-bottom: $light-silver-color;
+
+//***FEATURES***
+
+//NewFurniture
+$newFurniture-panel-bottom: $light-color-4;
 $newFurniture-panel-text: $creme-main;
 $newFurniture-panel-bottom-before: $creme-main;
 $newFurniture-menu-link-hover-before: $creme-main;
 $newFurniture-dots-background: $white-color;
-$newFurniture-dots-link-background: $silver-color;
+$newFurniture-dots-link-background: $light-color-5;
 $newFurniture-dots-link-background-hover: $creme-main;
+$newFurniture-menu-links: $dark-color-4;
 
-//ProductSearch colours
+//ProductSearch
 $form-border-color: $dark-color-3;
 $form-icon-color: $creme-main;
 $form-select-background: $transparent;
 $text-color: $dark-color-2;
 
-//CompanyClaim colours
+//***LAYOUT***
+
+//CompanyClaim
 $header-bg: $dark-color-1;
 $companyClaim-phone-icon: $creme-main;
 $companyClaim-cartBox: $white-color;
 $companyClaim-cartIcon-bg: $creme-main;
 $companyClaim-cart-bg-hover: $creme-main;
+$companyClaim-phone-text: $light-color-1;
+$companyClaim-cartCounter: $light-color-6;
 
-//Footer colours
+//Footer
 $footer-bg: $dark-color-1;
 $footer-claim-bg: $dark-color-2;
 $footerMenu-font: $white-color;
 $footerMenu-link-hover: $white-color;
 $footer-social-link-hover: $creme-main;
+$footer-text: $silver-color;
 
-//MenuBar colours
+//MenuBar
 $menuBar-bg: $white-color;
 $menuBar-links-font: $dark-color-1;
 $menuBar-links-border-top: $white-color;
 $menuBar-links-active-bg: $creme-main;
 $menuBar-links-active-font: $white-color;
 $menuBar-links-acive-border: $creme-main;
+$menuBar-shadow: $black-color;
 
-//TopBar colours
+//TopBar
 $header-topbar-bg: $grey-color;
 $topBar-links: $white-color;
 $topBar-links-hover: $creme-main;

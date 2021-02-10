@@ -13,7 +13,7 @@
       position: relative;
 
       h3 {
-        color: $primary;
+        color: $newFurniture-panel-text;
         text-transform: uppercase;
         font-size: 20px;
         line-height: 38px;
@@ -43,7 +43,7 @@
           font-weight: 600;
 
           a {
-            color: rgb(42, 42, 42);
+            color: $newFurniture-menu-links;
             position: relative;
             text-decoration: none;
             font-size: 18px;
