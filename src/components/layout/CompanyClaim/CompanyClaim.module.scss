@@ -17,7 +17,7 @@
 
       .icon {
         font-size: 32px;
-        color: $primary;
+        color: $companyClaim-phone-icon;
         vertical-align: middle;
         margin-top: -3px;
         margin-right: 0.8rem;
@@ -29,10 +29,10 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $companyClaim-cartBox;
 
       .cartIcon {
-        background-color: $primary;
+        background-color: $companyClaim-cartIcon-bg;
         width: 65px;
         height: 55px;
         border-radius: 3px;
@@ -65,7 +65,7 @@
 
       &:hover {
         .cartIcon {
-          background-color: lighten($primary, 10%);
+          background-color: lighten($companyClaim-cart-bg-hover, 10%);
         }
       }
     }

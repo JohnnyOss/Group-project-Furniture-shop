@@ -1,22 +1,29 @@
 $base-padding: 24px;
-$white-color: #ffffff;
-$grey-color: #434343;
-$header-topbar-bg: $grey-color;
-$dark-color-1: #363636;
-$header-bg: $dark-color-1;
-$dark-color-2: #2a2a2a;
-$footer-claim-bg: $dark-color-2;
-$footer-bg: $dark-color-1;
 
 $creme-main: #d58e32;
-$primary: $creme-main;
 
+$dark-color-1: #363636;
+$dark-color-2: #2a2a2a;
 $dark-color-3: #292929;
+
+$grey-color: #434343;
+
 $light-grey-color: #b6b6b6;
-$silver-color: #e1e1e1;
 $light-silver-color: #f4f5f7;
 $light-silver-color-2: #e2e2e2;
+
+$silver-color: #e1e1e1;
+
 $transparent: transparent;
+
+$white-color: #ffffff;
+
+
+$header-topbar-bg: $grey-color;
+
+
+$primary: $creme-main;
+
 
 //Button colours
 $btn-main-font-color: $white-color;
@@ -62,3 +69,112 @@ $form-border-color: $dark-color-3;
 $form-icon-color: $creme-main;
 $form-select-background: $transparent;
 $text-color: $dark-color-2;
+
+//CompanyClaim colours
+$header-bg: $dark-color-1;
+$companyClaim-phone-icon: $creme-main;
+$companyClaim-cartBox: $white-color;
+$companyClaim-cartIcon-bg: $creme-main;
+$companyClaim-cart-bg-hover: $creme-main;
+
+//Footer colours
+$footer-bg: $dark-color-1;
+$footer-claim-bg: $dark-color-2;
+$footerMenu-font: $white-color;
+$footerMenu-link-hover: $white-color;
+$footer-social-link-hover: $creme-main;
+
+//MenuBar colours
+
+/*.root {
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  background-color: #ffffff;
+
+  :global(.container) > :global(.row) {
+    height: 84px;
+  }
+
+  .menu {
+    display: flex;
+    align-self: stretch;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+      }
+    }
+
+    a {
+      color: $text-color;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      border-top: 4px solid #ffffff;
+      font-weight: 500;
+      letter-spacing: 1px;
+
+      &:hover,
+      &.active {
+        background-color: $primary;
+        color: #ffffff;
+        border-color: $primary;
+      }
+
+      &.active {
+        border-color: $text-color;
+      }
+    }
+  }
+}*/
+
+//TopBar colours
+
+/*.root {
+  background-color: $header-topbar-bg;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      line-height: 55px;
+
+      a {
+        color: #ffffff;
+        font-size: 13px;
+
+        &:hover {
+          color: $primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .topOptions ul li {
+    margin-right: 1.5rem;
+
+    .icon {
+      margin-left: 5px;
+    }
+  }
+
+  .topMenu ul li {
+    margin-left: 1.5rem;
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
+}*/
