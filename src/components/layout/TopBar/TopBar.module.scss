@@ -13,11 +13,11 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $topBar-links;
         font-size: 13px;
 
         &:hover {
-          color: $primary;
+          color: $topBar-links-hover;
           text-decoration: none;
         }
       }
