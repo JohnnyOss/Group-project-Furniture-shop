@@ -9,16 +9,14 @@ $footer-claim-bg: $dark-color-2;
 $footer-bg: $dark-color-1;
 
 $creme-main: #d58e32;
-$primary: $creme-color;
+$primary: $creme-main;
 
-$text-color: $dark-color-2;
-
-$form-border-color: $dark-color-3;
 $dark-color-3: #292929;
 $light-grey-color: #b6b6b6;
 $silver-color: #e1e1e1;
 $light-silver-color: #f4f5f7;
 $light-silver-color-2: #e2e2e2;
+$transparent: transparent;
 
 //Button colours
 $btn-main-font-color: $white-color;
@@ -60,61 +58,7 @@ $newFurniture-dots-link-background: $silver-color;
 $newFurniture-dots-link-background-hover: $creme-main;
 
 //ProductSearch colours
-/*.root {
-  border: 1px solid $form-border-color;
-  display: inline-flex;
-  height: 45px;
-  color: $text-color;
-
-  .category {
-    border-right: 1px solid $form-border-color;
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    .icon:first-child {
-      color: $primary;
-      position: absolute;
-      left: 10px;
-      z-index: 0;
-    }
-
-    .icon:last-child {
-      position: absolute;
-      right: 10px;
-      z-index: 0;
-    }
-
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
-      position: relative;
-      z-index: 1;
-    }
-  }
-
-  .searchField {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    input {
-      border: 0;
-      padding-left: 10px;
-      font-size: 14px;
-      outline: none;
-
-      &::placeholder {
-        color: $text-color;
-      }
-    }
-
-    button {
-      border: 0;
-      background-color: transparent;
-      outline: none;
-    }
-  }
-}*/
+$form-border-color: $dark-color-3;
+$form-icon-color: $creme-main;
+$form-select-background: $transparent;
+$text-color: $dark-color-2;
