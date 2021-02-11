@@ -7,7 +7,7 @@
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
+    //padding: 0 10px 0 10px;
     background: {
       color: #f4f5f7;
       size: contain;
@@ -16,6 +16,12 @@
     }
     overflow: hidden;
     align-items: flex-end;
+    object-fit: cover;
+    .img {
+      width: 210px;
+      height: 200px;
+      object-fit: cover;
+    }
 
     .sale {
       position: absolute;
