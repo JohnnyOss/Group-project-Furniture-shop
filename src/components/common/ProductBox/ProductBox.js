@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 const ProductBox = ({ name, price, promo, stars, image, id }) => (
   <div className={styles.root}>
@@ -24,7 +25,9 @@ const ProductBox = ({ name, price, promo, stars, image, id }) => (
       </div>
     </div>
     <div className={styles.content}>
-      <h5>{name}</h5>
+      <Link id={id} to={`/product/${id}`}>
+        <h5>{name}</h5>
+      </Link>
       <div className={styles.stars}>
         {[1, 2, 3, 4, 5].map(i => (
           <a key={i} href='#'>
@@ -40,39 +43,18 @@ const ProductBox = ({ name, price, promo, stars, image, id }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button
-          variant='outline'
-          className={parseInt(id.slice(20)) % 2 === 0 ? styles.checked : ''}
-        >
-          <FontAwesomeIcon icon={faHeart} className={styles.icon}>
-            Favorite
-          </FontAwesomeIcon>
+        <Button variant='outline'>
+          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button
-          variant='outline'
-          className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
-        >
-          <FontAwesomeIcon icon={faExchangeAlt} className={styles.icon}>
-            Add to compare
-          </FontAwesomeIcon>
+        <Button variant='outline'>
+          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
-      {parseInt(id.slice(20)) % 2 === 0 ? (
-        <div className={styles.price}>
-          <Button noHover variant='small' className={styles.firstPrice}>
-            $ {1.4 * price}
-          </Button>
-          <Button noHover variant='small' className={styles.promoPrice}>
-            $ {price}
-          </Button>
-        </div>
-      ) : (
-        <div className={styles.price}>
-          <Button noHover variant='small' className={styles.promoPrice}>
-            $ {price}
-          </Button>
-        </div>
-      )}
+      <div className={styles.price}>
+        <Button noHover variant='small'>
+          $ {price}
+        </Button>
+      </div>
     </div>
   </div>
 );
