@@ -14,3 +14,9 @@ $text-color-light: #ffffff;
 $form-border-color: #292929;
 
 $background-light: #ffffff;
+
+$transition: all 0.25s;
+
+%hover-effect {
+  transition: $transition;
+}

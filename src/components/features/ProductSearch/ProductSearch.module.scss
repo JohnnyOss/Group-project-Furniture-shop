@@ -44,6 +44,7 @@
     }
 
     .listCategory {
+      @extend %hover-effect;
       position: relative;
       display: none;
       left: -12%;
@@ -60,11 +61,13 @@
     }
 
     .listCategoryItems {
+      @extend %hover-effect;
       display: none;
       position: absolute;
       left: 78%;
 
       li {
+        @extend %hover-effect;
         display: block;
         padding: 5px 10px;
         width: 150px;
