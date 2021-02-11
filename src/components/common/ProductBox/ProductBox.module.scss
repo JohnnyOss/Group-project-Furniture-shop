@@ -74,5 +74,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .checked {
+      background-color: $primary;
+
+      .icon {
+        color: #ffffff;
+      }
+    }
+
   }
 }
