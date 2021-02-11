@@ -31,6 +31,7 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      opacity: 0;
     }
   }
 
@@ -115,6 +116,17 @@
       }
     }
   }
+  .price {
+    background-color: black;
+  }
+}
+
+.root:hover .buttons {
+  opacity: 1;
+}
+
+.root:hover .price {
+  background-color: $primary;
 }
 
 
