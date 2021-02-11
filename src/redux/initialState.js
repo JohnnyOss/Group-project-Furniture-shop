@@ -15,6 +15,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://s3.amazonaws.com/furniture.retailcatalog.us/products/425521018/small/jerary-queen-upholstered-bed-0.jpg',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -24,6 +26,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.happybeds.co.uk/media/catalog/product/cache/2760f187cb7d1bcdeca5818f247800d3/f/e/fenton_grey_ottoman_2.jpg',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -33,6 +37,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://i.postimg.cc/7LN4f1XG/Aurora-Bed-Pink-Value-Flooring-and-Furniture.jpg',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -42,6 +48,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmVkfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -51,6 +59,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images-na.ssl-images-amazon.com/images/I/811Ah5JX4rL._AC_SL1500_.jpg',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -60,6 +70,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images-na.ssl-images-amazon.com/images/I/81S7gVpRgML._AC_SL1500_.jpg',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -69,6 +81,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images-na.ssl-images-amazon.com/images/I/815GfbJE%2BXL._AC_SX679_.jpg',
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -78,6 +92,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://content.valuecityfurniture.com/images/product/lydia_gray_twin-daybed-with-trundle_2748355_795887.jpg?akimg=product-img-950x950&ak-trim=false',
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -87,6 +103,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images-na.ssl-images-amazon.com/images/I/612cA5lJqML._AC_SL1000_.jpg',
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -96,6 +114,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.fortywinks.com.au/getmedia/d12b30d7-70af-4e56-8b5c-0601b754402d/jackson_bed_frame_contour-angle.jpg?width=1200',
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -105,6 +125,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.bedknobsherts.co.uk/wp-content/uploads/2019/12/image-emperor-low-footend-wooden-bed-frame.jpg',
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -114,6 +136,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.shopify.com/s/files/1/2660/5202/products/zkfd0a3bsj7hrfqllsyk_1400x.jpg?v=1598896473',
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -123,6 +147,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://cdn.shopify.com/s/files/1/2513/8850/products/SNZXXXX_Palace_QS_3-Drawer_Bedframe_NA_Lifestyle_Angle-1_1024x@2x.progressive.jpg?v=1599800007',
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -132,6 +158,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.noaandnani.co.uk/images/single-bed-dorset-in-white-p81-6200_image.jpg',
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -141,6 +169,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.ikea.com/th/en/images/products/slattum-upholstered-bed-frame-knisa-light-grey__0726695_PE735410_S5.JPG?f=s',
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -150,6 +180,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.ikea.com/de/de/images/products/lauvik-boxbett-hafslo-mittelfest-beige__0419408_PE576296_S5.JPG?f=g',
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -159,6 +191,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.ikea.com/de/de/images/products/kongsfjord-boxspringbett-hyllestad-mittelfest-tustna-djuparp-dunkelgrau__0891309_PE782265_S5.JPG?f=s',
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -168,6 +202,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.ikea.com/de/de/images/products/dunvik-boxspringbett-hyllestad-fest-tustna-gunnared-blau__0794070_PE765495_S5.JPG?f=g',
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -177,6 +213,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://res.cloudinary.com/sleepnumber/image/upload/f_auto,q_auto:good/v1612973895/workarea/catalog/product_images/ile-360/postcard_desktop',
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -186,6 +224,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.barkerandstonehouse.co.uk/images/uploaded/zoom/ODEON-HIGHBED_1_Zoom.jpg',
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -195,6 +235,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.brunobett.de/img/boxspring/buyslide-schraeg-2019/hg/klassik_hg_mt.jpg?d=1?v=2',
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -204,6 +246,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.moebel-eins.de/out/pictures/master/product/1/paletti-180-fichte-milieu.jpg',
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -213,6 +257,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image: 'https://www.betten.de/img/schubkasten-bett-pasja-wildeiche-geoelt.jpg',
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -222,6 +267,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://www.boxspring-welt.de/media/catalog/product/cache/1/image/fa765be5305a3720671b9e506079707b/p/a/paula_pale_1.jpg',
     },
   ],
   cart: {
