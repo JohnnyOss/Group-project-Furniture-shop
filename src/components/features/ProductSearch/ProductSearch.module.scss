@@ -8,9 +8,11 @@
 
   .category {
     border-right: 1px solid $form-border-color;
-    display: flex;
+    display: none;
     align-items: center;
     position: relative;
+    width: 220px;
+    cursor: default;
 
     .icon:first-child {
       color: $primary;
@@ -25,19 +27,68 @@
       z-index: 0;
     }
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
-      position: relative;
+    .list {
+      margin: 0;
       z-index: 1;
-      font-size: 12px;
-      outline: none;
+      height: 100%;
+      width: 100%;
+      padding-top: 10px;
       list-style-type: none;
+      background-color: transparent;
+      text-align: left;
 
-      &:hover {
-        color: $primary;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    .listCategory {
+      @extend %hover-effect;
+      position: relative;
+      display: none;
+      left: -12%;
+      top: 20%;
+      padding: 10px;
+      border: 1px solid $form-border-color;
+      background-color: $background-light;
+    }
+
+    .list:hover {
+      .listCategory {
+        display: block;
+      }
+    }
+
+    .listCategoryItems {
+      @extend %hover-effect;
+      display: none;
+      position: absolute;
+      left: 78%;
+
+      li {
+        @extend %hover-effect;
+        display: block;
+        padding: 5px 10px;
+        width: 150px;
+        border: 1px solid $form-border-color;
+        background-color: $background-light;
+        color: $text-color;
+
+        &:hover {
+          background-color: $primary;
+          color: $text-color-light;
+        }
+      }
+    }
+
+    .listCategory:hover {
+      background-color: $primary;
+      color: $text-color-light;
+
+      .listCategoryItems {
+        color: inherit;
+        display: inline-block;
       }
     }
   }
@@ -62,6 +113,14 @@
       border: 0;
       background-color: transparent;
       outline: none;
+    }
+  }
+}
+
+@media (min-width: 577px) {
+  .root {
+    .category {
+      display: flex;
     }
   }
 }

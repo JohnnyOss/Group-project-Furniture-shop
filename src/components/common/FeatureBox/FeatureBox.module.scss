@@ -5,7 +5,12 @@
   text-align: center;
   margin-top: 40px;
 
+  @media(max-width: 486px) {
+    min-height: 142px;
+  }
+
   .iconWrapper {
+    @extend %hover-effect;
     height: 60px;
     transform: translateY(-50%);
     color: $text-color;
@@ -46,6 +51,7 @@
   }
 
   .content {
+    @extend %hover-effect;
     text-transform: uppercase;
     color: rgb(42, 42, 42);
     margin-top: -0.5rem;
@@ -73,3 +79,6 @@
     }
   }
 }
+
+
+
