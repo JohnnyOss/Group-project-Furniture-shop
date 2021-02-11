@@ -11,7 +11,7 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, image }) => (
+const ProductBox = ({ name, price, promo, stars, image, id }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img className={styles.img} src={image} alt={name} />
@@ -40,18 +40,39 @@ const ProductBox = ({ name, price, promo, stars, image }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+        <Button
+          variant='outline'
+          className={parseInt(id.slice(20)) % 2 === 0 ? styles.checked : ''}
+        >
+          <FontAwesomeIcon icon={faHeart} className={styles.icon}>
+            Favorite
+          </FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+        <Button
+          variant='outline'
+          className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
+        >
+          <FontAwesomeIcon icon={faExchangeAlt} className={styles.icon}>
+            Add to compare
+          </FontAwesomeIcon>
         </Button>
       </div>
-      <div className={styles.price}>
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
-      </div>
+      {parseInt(id.slice(20)) % 2 === 0 ? (
+        <div className={styles.price}>
+          <Button noHover variant='small' className={styles.firstPrice}>
+            $ {1.4 * price}
+          </Button>
+          <Button noHover variant='small' className={styles.promoPrice}>
+            $ {price}
+          </Button>
+        </div>
+      ) : (
+        <div className={styles.price}>
+          <Button noHover variant='small' className={styles.promoPrice}>
+            $ {price}
+          </Button>
+        </div>
+      )}
     </div>
   </div>
 );
@@ -63,6 +84,7 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   image: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default ProductBox;

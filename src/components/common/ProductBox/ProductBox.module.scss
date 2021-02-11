@@ -37,6 +37,7 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      opacity: 0;
     }
   }
 
@@ -80,5 +81,58 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .checked {
+      background-color: $primary;
+
+      .icon {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .price {
+    display: flex;
+
+    @media(max-width: 992px) {
+      display: block;
+    }
+
+    .firstPrice {
+      color: $text-color;
+      background-color: #ffffff;
+      border: 1px solid $form-border-color;
+      text-decoration: line-through;
+      font-weight: 400;
+      text-align: center;
+
+      @media(max-width: 992px) {
+        font-size: 11px;
+        line-height: 1.4;
+      }
+    }
+
+    .promoPrice {
+      font-weight: 700;
+      text-align: center;
+
+      @media(max-width: 992px) {
+        font-size: 11px;
+        line-height: 1.4;
+      }
+    }
+  }
+  .price {
+    background-color: black;
   }
 }
+
+.root:hover .buttons {
+  opacity: 1;
+}
+
+.root:hover .price {
+  background-color: $primary;
+}
+
+

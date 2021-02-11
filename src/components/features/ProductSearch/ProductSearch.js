@@ -10,9 +10,59 @@ const ProductSearch = () => (
   <form action='' className={styles.root}>
     <div className={styles.category}>
       <FontAwesomeIcon className={styles.icon} icon={faListUl} />
-      <select name='' id=''>
-        <option value=''>Select a category</option>
-      </select>
+      <ul className={styles.list}>
+        Select a category
+        <li className={styles.listCategory}>
+          Bedroom
+          <ul className={styles.listCategoryItems}>
+            <li>
+              <a href='#'>Beds</a>
+            </li>
+            <li>
+              <a href='#'>Mattresses</a>
+            </li>
+            <li>
+              <a href='#'>Wardrobes</a>
+            </li>
+          </ul>
+        </li>
+        <li className={styles.listCategory}>
+          Dining
+          <ul className={styles.listCategoryItems}>
+            <li>
+              <a href='#'>Dining chairs</a>
+            </li>
+            <li>
+              <a href='#'>Dining tables</a>
+            </li>
+            <li>
+              <a href='#'>Sofas</a>
+            </li>
+          </ul>
+        </li>
+        <li className={styles.listCategory}>
+          Kitchen
+          <ul className={styles.listCategoryItems}>
+            <li>
+              <a href='#'>Kitchen chairs</a>
+            </li>
+            <li>
+              <a href='#'>Kitchen tables</a>
+            </li>
+          </ul>
+        </li>
+        <li className={styles.listCategory}>
+          Office
+          <ul className={styles.listCategoryItems}>
+            <li>
+              <a href='#'>Desks</a>
+            </li>
+            <li>
+              <a href='#'>Office chairs</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
       <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
     </div>
     <div className={styles.searchField}>

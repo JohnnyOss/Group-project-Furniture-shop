@@ -5,6 +5,10 @@
   text-align: center;
   margin-top: 40px;
 
+  @media(max-width: 486px) {
+    min-height: 142px;
+  }
+
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
@@ -56,12 +60,9 @@
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
   }
 
-  &.active {
+  &:hover {
     .iconWrapper {
       color: #ffffff;
 
@@ -76,3 +77,6 @@
     }
   }
 }
+
+
+
