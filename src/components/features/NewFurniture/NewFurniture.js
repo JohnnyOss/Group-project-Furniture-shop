@@ -8,19 +8,35 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    fadeTrue: true,
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+  makeFadeOut(event, newArgument) {
+    event.preventDefault();
+    this.setState({ fadeTrue: false });
+    if (newArgument >= 0) {
+      setTimeout(() => {
+        this.makeFadeIn(newArgument);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        this.makeFadeIn(newArgument);
+      }, 1000);
+    }
   }
 
-  handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+  makeFadeIn(newArgument) {
+    this.setState({ fadeTrue: true });
+    if (newArgument >= 0) {
+      this.setState({ activePage: newArgument });
+    } else {
+      this.setState({ activeCategory: newArgument });
+    }
   }
 
   render() {
     const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, fadeTrue } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -30,7 +46,7 @@ class NewFurniture extends React.Component {
       dots.push(
         <li>
           <a
-            onClick={() => this.handlePageChange(i)}
+            onClick={event => this.makeFadeOut(event, i)}
             className={i === activePage && styles.active}
           >
             page {i}
@@ -53,7 +69,7 @@ class NewFurniture extends React.Component {
                     <li key={item.id}>
                       <a
                         className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
+                        onClick={event => this.makeFadeOut(event, item.id)}
                       >
                         {item.name}
                       </a>
@@ -68,7 +84,10 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
+              <div
+                key={item.id}
+                className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
+              >
                 <ProductBox {...item} />
               </div>
             ))}
