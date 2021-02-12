@@ -1,0 +1,56 @@
+@import "../../../styles/settings.scss";
+.container {
+  border: 1px solid $form-border-color;
+  $base-padding: 24px;
+  margin: auto;
+  color: $text-color;
+  width: 75%;
+}
+.nav {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    li {
+      text-align: center;
+      display: inline-block;
+      button {
+        line-height: 2.5rem;
+        font-weight: bold;
+        border: none;
+        border-right: 1px solid $form-border-color;
+        border-bottom: 1px solid$form-border-color;
+        background: $background-light;
+      }
+      .active {
+        border-bottom: none;
+        color: $primary;
+      }
+    }
+  }
+}
+.stars {
+  display: flex;
+  flex-direction: row;
+  opacity: 0.5;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  p {
+    opacity: 0.5;
+  }
+}
+.reviewText {
+  display: flex;
+  flex-direction: column;
+}
+.continue {
+  width: 100%;
+  background-color: $text-color;
+  border: none;
+  line-height: 2.5rem;
+  color: $text-color-light;
+}

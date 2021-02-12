@@ -1,8 +1,5 @@
 @import "../../../styles/settings.scss";
 
-// .root {
-// }
-
 .main {
   background-color: $btn-main-background-color;
   color: $btn-main-font-color;
@@ -25,8 +22,12 @@
   padding: 5px 10px;
   font-weight: 400;
 }
+.noHover{
+  background: none !important;
+}
 
 .outline {
+  @extend %hover-effect;
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $btn-outline-border-color;

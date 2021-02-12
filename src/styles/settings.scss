@@ -63,6 +63,9 @@ $productBox-border-bottom: $dark-color-2;
 $productBox-border-bottom-before: $creme-main;
 $productBox-star-links: $dark-color-4;
 
+//ProductMore
+$text-color-light: $white-color;
+background-light: $white-color;
 
 //***FEATURES***
 
@@ -114,3 +117,10 @@ $menuBar-shadow: $black-color;
 $header-topbar-bg: $grey-color;
 $topBar-links: $white-color;
 $topBar-links-hover: $creme-main;
+
+
+$transition: all 0.25s;
+
+%hover-effect {
+  transition: $transition;
+}
