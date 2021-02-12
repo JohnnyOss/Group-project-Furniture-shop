@@ -1,0 +1,11 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 3rem 0;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 350px;
+  }
+}
