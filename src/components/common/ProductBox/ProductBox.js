@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
+import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
-const ProductBox = ({ name, price, promo, stars, image, id }) => (
+const ProductBox = ({ name, price, promo, stars, image, id, starRating }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img className={styles.img} src={image} alt={name} />
@@ -28,16 +25,8 @@ const ProductBox = ({ name, price, promo, stars, image, id }) => (
       <Link id={id} to={`/product/${id}`}>
         <h5>{name}</h5>
       </Link>
-      <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='/#'>
-            {i <= stars ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
+      <div>
+        <ProductRating id={id} starRating={starRating} stars={stars} />
       </div>
     </div>
     <div className={styles.line}></div>
@@ -67,6 +56,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   image: PropTypes.string,
   id: PropTypes.string,
+  starRating: PropTypes.bool,
 };
 
 export default ProductBox;
