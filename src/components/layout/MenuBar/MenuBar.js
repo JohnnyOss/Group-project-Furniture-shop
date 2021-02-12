@@ -53,37 +53,37 @@ class MenuBar extends Component {
               </Button>
               <ul>
                 <li>
-                  <a href='#' onClick={this.toggleMenu} className={styles.active}>
+                  <a href='/#' onClick={this.toggleMenu} className={styles.active}>
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href='#' onClick={this.toggleMenu}>
+                  <a href='/#' onClick={this.toggleMenu}>
                     Furniture
                   </a>
                 </li>
                 <li>
-                  <a href='#' onClick={this.toggleMenu}>
+                  <a href='/#' onClick={this.toggleMenu}>
                     Chair
                   </a>
                 </li>
                 <li>
-                  <a href='#' onClick={this.toggleMenu}>
+                  <a href='/#' onClick={this.toggleMenu}>
                     Table
                   </a>
                 </li>
                 <li>
-                  <a href='#' onClick={this.toggleMenu}>
+                  <a href='/#' onClick={this.toggleMenu}>
                     Sofa
                   </a>
                 </li>
                 <li>
-                  <a href='#' onClick={this.toggleMenu}>
+                  <a href='/#' onClick={this.toggleMenu}>
                     Bedroom
                   </a>
                 </li>
                 <li>
-                  <a href='#' onClick={this.toggleMenu}>
+                  <a href='/#' onClick={this.toggleMenu}>
                     Blog
                   </a>
                 </li>

@@ -16,13 +16,13 @@ const ProductSearch = () => (
           Bedroom
           <ul className={styles.listCategoryItems}>
             <li>
-              <a href='#'>Beds</a>
+              <a href='/#'>Beds</a>
             </li>
             <li>
-              <a href='#'>Mattresses</a>
+              <a href='/#'>Mattresses</a>
             </li>
             <li>
-              <a href='#'>Wardrobes</a>
+              <a href='/#'>Wardrobes</a>
             </li>
           </ul>
         </li>
@@ -30,13 +30,13 @@ const ProductSearch = () => (
           Dining
           <ul className={styles.listCategoryItems}>
             <li>
-              <a href='#'>Dining chairs</a>
+              <a href='/#'>Dining chairs</a>
             </li>
             <li>
-              <a href='#'>Dining tables</a>
+              <a href='/#'>Dining tables</a>
             </li>
             <li>
-              <a href='#'>Sofas</a>
+              <a href='/#'>Sofas</a>
             </li>
           </ul>
         </li>
@@ -44,10 +44,10 @@ const ProductSearch = () => (
           Kitchen
           <ul className={styles.listCategoryItems}>
             <li>
-              <a href='#'>Kitchen chairs</a>
+              <a href='/#'>Kitchen chairs</a>
             </li>
             <li>
-              <a href='#'>Kitchen tables</a>
+              <a href='/#'>Kitchen tables</a>
             </li>
           </ul>
         </li>
@@ -55,10 +55,10 @@ const ProductSearch = () => (
           Office
           <ul className={styles.listCategoryItems}>
             <li>
-              <a href='#'>Desks</a>
+              <a href='/#'>Desks</a>
             </li>
             <li>
-              <a href='#'>Office chairs</a>
+              <a href='/#'>Office chairs</a>
             </li>
           </ul>
         </li>

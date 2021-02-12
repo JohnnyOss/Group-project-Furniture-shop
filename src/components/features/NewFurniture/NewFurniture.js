@@ -46,8 +46,9 @@ class NewFurniture extends React.Component {
       dots.push(
         <li key={i}>
           <a
+            href='/#'
             onClick={event => this.makeFadeOut(event, i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : undefined}
           >
             page {i}
           </a>
@@ -68,7 +69,10 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        href='/#'
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
                         onClick={event => this.makeFadeOut(event, item.id)}
                       >
                         {item.name}
