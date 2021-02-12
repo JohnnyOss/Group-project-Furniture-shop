@@ -79,13 +79,8 @@
     .checked {
       background-color: $creme-main;
 
-      .favourite {
-        background-color: $favourite-background;
-        color: $favourite-font ;
-
-        .icon {
-          color: #ffffff;
-        }
+      .icon {
+        color: #ffffff;
       }
     }
   }
