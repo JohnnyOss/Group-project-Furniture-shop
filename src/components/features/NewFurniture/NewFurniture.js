@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Compare from '../Compare/Compare';
 
 class NewFurniture extends React.Component {
   state = {
@@ -35,7 +36,7 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, comparedItem, changeItemCompare } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -88,15 +89,20 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div
-                key={item.id}
+              <div 
+                key={item.id} 
                 className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
               >
-                <ProductBox {...item} />
+                <ProductBox
+                  comparedItem={comparedItem}
+                  changeItemCompare={changeItemCompare}
+                  {...item}
+                />
               </div>
             ))}
           </div>
         </div>
+        <Compare comparedItem={comparedItem} changeItemCompare={changeItemCompare} />
       </div>
     );
   }
@@ -104,6 +110,8 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  comparedItem: PropTypes.array,
+  changeItemCompare: PropTypes.func,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

@@ -9,7 +9,16 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
-const ProductBox = ({ name, price, promo, stars, image, id, starRating }) => (
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  id,
+  comparedItem,
+  changeComparedItem,
+  starRating,
+}) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img className={styles.img} src={image} alt={name} />
@@ -35,7 +44,18 @@ const ProductBox = ({ name, price, promo, stars, image, id, starRating }) => (
         <Button variant='outline'>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button 
+          variant='outline'
+          onClick={() => {
+            if (comparedItem.find(item => item.id === id)) {
+              changeComparedItem(id);
+            } else if (comparedItem.length <= 4) {
+              changeComparedItem(id);
+            }
+          }}
+          //variant={compare ? 'active' : 'disactive'}
+          //className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
+          >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -57,6 +77,8 @@ ProductBox.propTypes = {
   image: PropTypes.string,
   id: PropTypes.string,
   starRating: PropTypes.bool,
+  comparedItem: PropTypes.array,
+  changeComparedItem: PropTypes.func,
 };
 
 export default ProductBox;
