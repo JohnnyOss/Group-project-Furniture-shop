@@ -3,12 +3,14 @@ import React from 'react';
 import styles from './GallerySlider.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faStar,
+  faEye,
   faExchangeAlt,
+  faShoppingBasket,
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import Button from '../../common/Button/Button';
 
 class GallerySlider extends React.Component {
   render() {
@@ -38,6 +40,20 @@ class GallerySlider extends React.Component {
             src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
             alt=''
           ></img>
+          <div className={styles.toolsWrapper}>
+            <Button variant='outline' className={styles.toolsItem}>
+              <FontAwesomeIcon icon={faHeart} className={styles.toolsIcon} />
+            </Button>
+            <Button variant='outline' className={styles.toolsItem}>
+              <FontAwesomeIcon icon={faExchangeAlt} className={styles.toolsIcon} />
+            </Button>
+            <Button variant='outline' className={styles.toolsItem}>
+              <FontAwesomeIcon icon={faEye} className={styles.toolsIcon} />
+            </Button>
+            <Button variant='outline' className={styles.toolsItem}>
+              <FontAwesomeIcon icon={faShoppingBasket} className={styles.toolsIcon} />
+            </Button>
+          </div>
         </div>
         <div className={styles.slider}>
           <div className={styles.arrow}>
