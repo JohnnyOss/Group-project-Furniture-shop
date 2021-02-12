@@ -44,7 +44,7 @@ class NewFurniture extends React.Component {
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={event => this.makeFadeOut(event, i)}
             className={i === activePage && styles.active}
