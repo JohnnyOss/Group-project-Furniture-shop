@@ -89,14 +89,22 @@
     flex-direction: row;
     flex-wrap: nowrap;
 
+    &>div {
+      margin: 5px;
+      cursor: pointer;
+    }
+
     .arrow {
+      flex: 0.4;
+      // margin: 5px;
       background-color: black;
       text-align: center;
       padding: 20px 10px;
+      line-height: 2.5rem;
+      // cursor: pointer;
 
       .chevron {
         color: #ffffff;
-
       }
     }
 
@@ -105,6 +113,16 @@
       min-height: 75px;
 
 
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+
+        &.active {
+          opacity: 1;
+        }
+      }
     }
   }
 }

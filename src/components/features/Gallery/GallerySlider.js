@@ -40,16 +40,47 @@ class GallerySlider extends React.Component {
           ></img>
         </div>
         <div className={styles.slider}>
-          <div className={styles.arrow + ' ' + styles.thumbnail}>
+          <div className={styles.arrow}>
             <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron} />
           </div>
-          <div className={styles.thumbnail}></div>
-          <div className={styles.thumbnail}></div>
-          <div className={styles.thumbnail}></div>
-          <div className={styles.thumbnail}></div>
-          <div className={styles.thumbnail}></div>
-          <div className={styles.thumbnail}></div>
-          <div className={styles.arrow + ' ' + styles.thumbnail}>
+          <div className={styles.thumbnail}>
+            <img
+              className={styles.active}
+              src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
+              alt=''
+            ></img>
+          </div>
+          <div className={styles.thumbnail}>
+            <img
+              src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
+              alt=''
+            ></img>
+          </div>
+          <div className={styles.thumbnail}>
+            <img
+              src='https://cdn.pixabay.com/photo/2015/06/19/21/33/beach-815303_960_720.jpg'
+              alt=''
+            ></img>
+          </div>
+          <div className={styles.thumbnail}>
+            <img
+              src='https://cdn.pixabay.com/photo/2015/12/19/17/55/armchair-1100052_960_720.jpg'
+              alt=''
+            ></img>
+          </div>
+          <div className={styles.thumbnail}>
+            <img
+              src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
+              alt=''
+            ></img>
+          </div>
+          <div className={styles.thumbnail}>
+            <img
+              src='https://cdn.pixabay.com/photo/2015/06/19/21/33/beach-815303_960_720.jpg'
+              alt=''
+            ></img>
+          </div>
+          <div className={styles.arrow}>
             <FontAwesomeIcon icon={faChevronRight} className={styles.chevron} />
           </div>
         </div>
