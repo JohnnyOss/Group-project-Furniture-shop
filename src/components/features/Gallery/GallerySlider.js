@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './GallerySlider.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,12 +8,22 @@ import {
   faShoppingBasket,
   faChevronLeft,
   faChevronRight,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
 class GallerySlider extends React.Component {
+  state = {
+    promoProductName: 'Aeneon Ru Bristique',
+    priceNew: '$120.00',
+    priceOld: '$160.00',
+  };
+
   render() {
+    const { stars } = this.props;
+    const { promoProductName, priceNew, priceOld } = this.state;
+
     return (
       <div className={styles.root}>
         <div className={styles.heading}>
@@ -41,18 +51,50 @@ class GallerySlider extends React.Component {
             alt=''
           ></img>
           <div className={styles.toolsWrapper}>
-            <Button variant='outline' className={styles.toolsItem}>
-              <FontAwesomeIcon icon={faHeart} className={styles.toolsIcon} />
-            </Button>
-            <Button variant='outline' className={styles.toolsItem}>
-              <FontAwesomeIcon icon={faExchangeAlt} className={styles.toolsIcon} />
-            </Button>
-            <Button variant='outline' className={styles.toolsItem}>
-              <FontAwesomeIcon icon={faEye} className={styles.toolsIcon} />
-            </Button>
-            <Button variant='outline' className={styles.toolsItem}>
-              <FontAwesomeIcon icon={faShoppingBasket} className={styles.toolsIcon} />
-            </Button>
+            <div className={styles.toolsbox}>
+              <Button variant='gallery' className={styles.toolsItem}>
+                <FontAwesomeIcon icon={faHeart} />
+              </Button>
+              <span>Like it</span>
+            </div>
+            <div className={styles.toolsbox}>
+              <Button variant='gallery' className={styles.toolsItem}>
+                <FontAwesomeIcon icon={faExchangeAlt} />
+              </Button>
+              <span>Compare it</span>
+            </div>
+            <div className={styles.toolsbox}>
+              <Button variant='gallery' className={styles.toolsItem}>
+                <FontAwesomeIcon icon={faEye} />
+              </Button>
+              <span>Show more</span>
+            </div>
+            <div className={styles.toolsbox}>
+              <Button variant='gallery' className={styles.toolsItem}>
+                <FontAwesomeIcon icon={faShoppingBasket} />
+              </Button>
+              <span>Add to cart</span>
+            </div>
+          </div>
+          <div className={styles.nameWrapper}>
+            <div className={styles.namePrice}>
+              <div className={styles.priceNew}>{priceNew}</div>
+              <div className={styles.priceOld}>{priceOld}</div>
+            </div>
+            <div className={styles.nameRange}>
+              <h6>{promoProductName}</h6>
+              <div className={styles.nameStars}>
+                {[1, 2, 3, 4, 5].map(i => (
+                  <a key={i} href='#'>
+                    {i <= stars ? (
+                      <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                    ) : (
+                      <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                    )}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.slider}>
@@ -104,5 +146,10 @@ class GallerySlider extends React.Component {
     );
   }
 }
+
+GallerySlider.propTypes = {
+  name: PropTypes.string,
+  stars: PropTypes.number,
+};
 
 export default GallerySlider;

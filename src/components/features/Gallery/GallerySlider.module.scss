@@ -90,21 +90,115 @@
       top: 25%;
       left: 10px;
 
-      .toolsItem {
-        // border: 1px solid black;
-        padding: 5px 10px;
-        margin: 5px 0;
+      .toolsbox {
+        display: flex;
+        align-items: center;
 
-        &:hover {
-          background-color: initial;
-          border-color: $primary;
+        .toolsItem {
+          margin: 8px;
         }
 
-        .toolsIcon {
-          color: black;
+        span {
+          display: none;
+          font-size: 0.7rem;
+          color: #ffffff;
+          background-color: #000000;
+          padding: 2px 6px 2px 8px;
+          position: relative;
 
-          &:hover {
-            color: $primary;
+          &::before {
+            position: absolute;
+            content: '';
+            background-color: #000000;
+            border: 1px solid #000000;
+            height: 8px;
+            width: 8px;
+            transform: rotate(45deg);
+            left: -3px;
+            top: 6px
+          }
+        }
+
+        &:hover span {
+          display: block;
+        }
+      }
+    }
+
+    .nameWrapper {
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+
+      .namePrice {
+      position: absolute;
+      bottom: 70%;
+      right: 80px;
+      transform: translateX(50%);
+      background-color: rgba(128, 128, 128, 0.6);
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+
+        .priceNew {
+          color: #ffffff;
+          font-weight: 600;
+        }
+
+        .priceOld {
+          color: #ffffff;
+          font-size: 0.8rem;
+          text-decoration: line-through;
+        }
+      }
+
+      .nameRange {
+        position: relative;
+        top: 10px;
+        left: 10%;
+        text-align: center;
+        background-color: white;
+        padding: 15px 25px;
+        overflow: hidden;
+        box-shadow: -1px 2px 4px rgb(128, 128, 128);
+        max-width: 210px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          height: 30px;
+          width: 30px;
+          background-color: black;
+          z-index: 1;
+        }
+
+        &::before {
+          top: 0;
+          left: -15px;
+          transform: translateY(-50%) rotate(45deg);
+        }
+
+        &::after {
+          bottom: 0;
+          right: -15px;
+          transform: translateY(50%) rotate(45deg);
+        }
+
+        h6 {
+          font-weight: 700;
+        }
+
+        .nameStars {
+
+          a {
+            text-decoration: none;
+            color: rgb(42, 42, 42);
           }
         }
       }
@@ -124,15 +218,13 @@
 
     .arrow {
       flex: 0.4;
-      // margin: 5px;
       background-color: black;
       text-align: center;
       padding: 20px 10px;
       line-height: 2.5rem;
-      // cursor: pointer;
 
       .chevron {
-        color: #ffffff;
+        color: $background-light;
       }
     }
 

@@ -40,3 +40,17 @@
     color: $btn-outline-font-color-hover;
   }
 }
+
+.gallery {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $footer-claim-bg;
+  color: $footer-claim-bg;
+  font-size: 13px;
+  line-height: 22px;
+
+  &:not(.noHover):hover {
+    color: $primary;
+    border-color: $primary;
+  }
+}
