@@ -658,6 +658,44 @@ const initialState = {
       newFurniture: true,
     },
   ],
+  brands: [
+    {
+      id: 'Brand1',
+      name: 'Brand1',
+      image:
+        'https://images.pexels.com/photos/1337386/pexels-photo-1337386.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    },
+    {
+      id: 'Brand2',
+      name: 'Brand2',
+      image:
+        'https://images.pexels.com/photos/944743/pexels-photo-944743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand3',
+      name: 'Brand3',
+      image:
+        'https://images.pexels.com/photos/1580625/pexels-photo-1580625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand4',
+      name: 'Brand4',
+      image:
+        'https://images.pexels.com/photos/351263/pexels-photo-351263.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand5',
+      name: 'Brand5',
+      image:
+        'https://images.pexels.com/photos/176837/pexels-photo-176837.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    },
+    {
+      id: 'Brand6',
+      name: 'Brand6',
+      image:
+        'https://images.pexels.com/photos/5849569/pexels-photo-5849569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+  ],
   cart: {
     products: [],
   },

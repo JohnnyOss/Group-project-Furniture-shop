@@ -13,7 +13,7 @@
       position: relative;
 
       h3 {
-        color: $primary;
+        color: $creme-main;
         text-transform: uppercase;
         font-size: 20px;
         line-height: 38px;
@@ -27,7 +27,7 @@
         bottom: -4px;
         left: 0;
         width: 45px;
-        border-bottom: 4px solid $primary;
+        border-bottom: 4px solid $creme-main;
       }
     }
   }
@@ -36,7 +36,7 @@
 .dot {
   height: 15px;
   width: 15px;
-  background-color: $primary;
+  background-color: $creme-main;
   border-radius: 50%;
   position: absolute;
 }
