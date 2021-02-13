@@ -14,6 +14,19 @@
     text-decoration: none;
   }
 }
+.main-light{
+  @extend .main;
+  background-color: $background-light;
+  color: $text-color;
+}
+.main-carousel{
+  @extend .main;
+  width: 100%;
+  align-items: center;
+  height: 45px;
+  justify-content: center;
+  display: flex;
+}
 
 .small {
   @extend .main;

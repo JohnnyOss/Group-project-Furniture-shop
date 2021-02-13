@@ -729,6 +729,25 @@ const initialState = {
         'https://images.pexels.com/photos/5324927/pexels-photo-5324927.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
   ],
+  hotdeals: [
+    {
+      id: 'chair-empire-classic-13',
+      name: 'Chair Empire Classic 13',
+      category: 'chair',
+      price: 42,
+      stars: 2,
+      image:
+        'https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+  ],
+  hotdeals_slider: [
+    {
+      id: 'sofa-empire-classic-16',
+      name: 'Sofa Empire Classic 16',
+      image:
+        'https:images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+  ],
 };
 
 export default initialState;

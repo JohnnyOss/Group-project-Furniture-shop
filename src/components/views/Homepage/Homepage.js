@@ -7,16 +7,16 @@ import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
+import HotDeals from '../../features/HotDeals/HotDealsContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
+    <HotDeals />
     <FeatureBoxes />
     <NewFurniture />
     <Feedback />
     <Brands />
   </div>
 );
-
-// Homepage.propTypes = {};
 
 export default Homepage;
