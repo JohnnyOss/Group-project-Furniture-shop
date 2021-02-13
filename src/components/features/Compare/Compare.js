@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Compare.module.scss';
 import Button from '../../common/Button/Button';
 
-const Compare = ({ comparedItem, changeItemCompare }) => {
-  const isActive = comparedItem.length;
+const Compare = ({ getCompared, changeCompare, closeProp }) => {
+  const isActive = getCompared.length;
 
   if (isActive) {
     return (
       <div className={styles.component}>
-        {comparedItem.map(item => (
+        {getCompared.map(item => (
           <div
             key={item.id}
             className={styles.box}
-            onClick={() => (changeItemCompare = item.id)}
+            onClick={() => (changeCompare = item.id)}
           >
             <img alt={'product'} src={item.image} className={styles.image}></img>
-            <div className={styles.close}>x</div>
+            <div className={styles.close}>
+              <button onClick={closeProp.onClose}>x</button>
+            </div>
           </div>
         ))}
-        <Button className={styles.button}>Add to compare</Button>
+        <Button className={styles.button}>COMPARE</Button>
       </div>
     );
   } else {
@@ -28,8 +30,9 @@ const Compare = ({ comparedItem, changeItemCompare }) => {
 };
 
 Compare.propTypes = {
-  itemCompare: PropTypes.array,
-  changeItemCompare: PropTypes.func,
+  getCompared: PropTypes.array,
+  changeCompare: PropTypes.func,
+  closeProp: PropTypes.func,
 };
 
 export default Compare;

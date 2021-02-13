@@ -35,9 +35,15 @@ class NewFurniture extends React.Component {
     }
   }
 
+  closeChild = () => {
+    this.setState({
+      showChild: false,
+    });
+  };
+
   render() {
-    const { categories, products, comparedItem, changeItemCompare } = this.props;
-    const { activeCategory, activePage, fadeTrue } = this.state;
+    const { categories, products, getCompared, changeCompare } = this.props;
+    const { activeCategory, activePage, fadeTrue, closeChild } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -94,15 +100,19 @@ class NewFurniture extends React.Component {
                 className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
               >
                 <ProductBox
-                  comparedItem={comparedItem}
-                  changeItemCompare={changeItemCompare}
+                  getCompared={getCompared}
+                  changeCompare={changeCompare}
                   {...item}
                 />
               </div>
             ))}
           </div>
         </div>
-        <Compare comparedItem={comparedItem} changeItemCompare={changeItemCompare} />
+        <Compare
+          getCompared={getCompared}
+          changeCompare={changeCompare}
+          onClose={this.closeChild}
+        />
       </div>
     );
   }
@@ -110,8 +120,8 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
-  comparedItem: PropTypes.array,
-  changeItemCompare: PropTypes.func,
+  getCompared: PropTypes.array,
+  changeCompare: PropTypes.func,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

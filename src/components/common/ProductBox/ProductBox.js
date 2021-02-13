@@ -15,9 +15,9 @@ const ProductBox = ({
   promo,
   stars,
   id,
-  comparedItem,
-  changeComparedItem,
   starRating,
+  getCompared,
+  changeCompare,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -44,16 +44,17 @@ const ProductBox = ({
         <Button variant='outline'>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button 
-          variant='outline'
+        <Button
           onClick={() => {
-            if (comparedItem.find(item => item.id === id)) {
-              changeComparedItem(id);
-            } else if (comparedItem.length <= 4) {
-              changeComparedItem(id);
+            if (getCompared.find(item => item.id === id)) {
+              changeCompare(id);
+            } else if (getCompared.length <= 3) {
+              changeCompare(id);
             }
           }}
           //variant={compare ? 'active' : 'disactive'}
+          variant='outline'
+          //className={styles.outlines}
           //className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
           >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -77,8 +78,8 @@ ProductBox.propTypes = {
   image: PropTypes.string,
   id: PropTypes.string,
   starRating: PropTypes.bool,
-  comparedItem: PropTypes.array,
-  changeComparedItem: PropTypes.func,
+  getCompared: PropTypes.array,
+  changeCompare: PropTypes.func,
 };
 
 export default ProductBox;
