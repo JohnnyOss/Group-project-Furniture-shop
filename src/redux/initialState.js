@@ -661,6 +661,35 @@ const initialState = {
   cart: {
     products: [],
   },
+  feedbacks: [
+    {
+      id: 'Leo Caprio',
+      name: 'Leo Caprio',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan consectetur massa in mattis. Proin vel nunc varius, fringilla odio eget, pretium lectus. Aliquam tincidunt turpis vel imperdiet consectetur. Curabitur sodales tortor a nulla eleifend fringilla. Cras et ligula nibh. Aenean viverra congue urna. Morbi interdum est nisi, et rhoncus arcu vestibulum a.',
+      position: 'Sales manager',
+      image:
+        'https://images.pexels.com/photos/1138903/pexels-photo-1138903.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+    {
+      id: 'Neli Rose',
+      name: 'Neli Rose',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan consectetur massa in mattis. Proin vel nunc varius, fringilla odio eget, pretium lectus. Aliquam tincidunt turpis vel imperdiet consectetur. Curabitur sodales tortor a nulla eleifend fringilla. Cras et ligula nibh. Aenean viverra congue urna. Morbi interdum est nisi, et rhoncus arcu vestibulum a.',
+      position: 'Product designer',
+      image:
+        'https://images.pexels.com/photos/5999928/pexels-photo-5999928.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+    {
+      id: 'Caro Moreno',
+      name: 'Caro Morendo',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan consectetur massa in mattis. Proin vel nunc varius, fringilla odio eget, pretium lectus. Aliquam tincidunt turpis vel imperdiet consectetur. Curabitur sodales tortor a nulla eleifend fringilla. Cras et ligula nibh. Aenean viverra congue urna. Morbi interdum est nisi, et rhoncus arcu vestibulum a.',
+      position: 'Strategic client',
+      image:
+        'https://images.pexels.com/photos/5324927/pexels-photo-5324927.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+  ],
 };
 
 export default initialState;

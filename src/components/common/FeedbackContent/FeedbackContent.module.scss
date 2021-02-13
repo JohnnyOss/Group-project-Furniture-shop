@@ -1,0 +1,40 @@
+@import "../../../styles/settings.scss";
+.root {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 15px;
+  }
+  .text {
+    text-align: center;
+    padding: 15px;
+    font-style: italic;
+  }
+  .person {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .image {
+      img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        padding: 10px;
+      }
+    }
+    .data {
+      .name {
+        font-weight: bold;
+        padding-top: 15px;
+      }
+    }
+  }
+}
