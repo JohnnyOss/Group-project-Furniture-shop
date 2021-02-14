@@ -1,8 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
-  border: 1px solid #e1e1e1;
+  background-color: $productBox-background;
+  border: 1px solid $productBox-border;
   margin-bottom: 2rem;
 
   .photo {
@@ -80,7 +80,7 @@
     padding: 20px;
 
     h5 {
-      //color: $primary;
+      color: $creme-main;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -105,7 +105,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-    //  border-bottom: 4px solid $primary;
+      border-bottom: 4px solid $creme-main;
       transform: translateX(-50%);
     }
   }
@@ -117,7 +117,7 @@
     align-items: center;
 
     .checked {
-      //background-color: $primary;
+      background-color: $creme-main;
 
       .icon {
         color: #ffffff;
@@ -169,5 +169,5 @@
 }
 
 .root:hover .price {
-//  background-color: $primary;
+  background-color: $creme-main;
 }

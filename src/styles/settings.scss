@@ -26,6 +26,8 @@ $transparent: transparent;
 
 $white-color: #ffffff;
 
+$slider-overlay: rgba(54, 54, 54, 0.5);
+
 
 // *****COLORS IN COMPONENTS*****
 
@@ -53,8 +55,8 @@ $featureBox-content-active: $creme-main;
 $featureBox-content-font: $dark-color-4;
 
 //HotDeals
-$background-light: #ffffff;
-$slider-background: rgba(54, 54, 54, 0.5);
+$background-light: $white-color:;
+$slider-background: $slider-overlay;
 
 //ProductBox
 $productBox-background: $white-color;
