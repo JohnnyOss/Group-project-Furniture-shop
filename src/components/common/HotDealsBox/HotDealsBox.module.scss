@@ -80,7 +80,7 @@
     padding: 20px;
 
     h5 {
-      color: $primary;
+      //color: $primary;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -105,7 +105,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $primary;
+    //  border-bottom: 4px solid $primary;
       transform: translateX(-50%);
     }
   }
@@ -117,7 +117,7 @@
     align-items: center;
 
     .checked {
-      background-color: $primary;
+      //background-color: $primary;
 
       .icon {
         color: #ffffff;
@@ -169,5 +169,5 @@
 }
 
 .root:hover .price {
-  background-color: $primary;
+//  background-color: $primary;
 }
