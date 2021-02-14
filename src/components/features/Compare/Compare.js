@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './Compare.module.scss';
 import Button from '../../common/Button/Button';
 
-const Compare = ({ getCompared, changeCompare, closeProp }) => {
-  const isActive = getCompared.length;
+const Compare = ({ getCompared, changeCompare }) => {
+  let isActive = getCompared.length;
 
   if (isActive) {
     return (
@@ -13,12 +13,10 @@ const Compare = ({ getCompared, changeCompare, closeProp }) => {
           <div
             key={item.id}
             className={styles.box}
-            onClick={() => (changeCompare = item.id)}
+            onClick={() => changeCompare(item.id)}
           >
             <img alt={'product'} src={item.image} className={styles.image}></img>
-            <div className={styles.close}>
-              <button onClick={closeProp.onClose}>x</button>
-            </div>
+            <div className={styles.close}>x</div>
           </div>
         ))}
         <Button className={styles.button}>COMPARE</Button>

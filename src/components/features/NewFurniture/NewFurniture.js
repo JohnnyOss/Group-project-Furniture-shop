@@ -42,8 +42,8 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, getCompared, changeCompare } = this.props;
-    const { activeCategory, activePage, fadeTrue, closeChild } = this.state;
+    const { categories, products, getCompared, changeCompare, closeChild } = this.props;
+    const { activeCategory, activePage, fadeTrue } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
@@ -108,11 +108,7 @@ class NewFurniture extends React.Component {
             ))}
           </div>
         </div>
-        <Compare
-          getCompared={getCompared}
-          changeCompare={changeCompare}
-          onClose={this.closeChild}
-        />
+        <Compare getCompared={getCompared} changeCompare={changeCompare} />
       </div>
     );
   }
@@ -122,6 +118,7 @@ NewFurniture.propTypes = {
   children: PropTypes.node,
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
+  closeChild: PropTypes.func,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
