@@ -17,13 +17,13 @@ class HotDeals extends React.Component {
                 <div className={styles.dots}>
                   <ul>
                     <li>
-                      <a href='/#' />
+                      <a href='/#'>{null}</a>
                     </li>
                     <li>
-                      <a href='/#' />
+                      <a href='/#'>{null}</a>
                     </li>
                     <li>
-                      <a href='/#' />
+                      <a href='/#'>{null}</a>
                     </li>
                   </ul>
                 </div>
