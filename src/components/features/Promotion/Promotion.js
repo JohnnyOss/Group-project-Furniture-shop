@@ -9,7 +9,7 @@ class Promotion extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-xs-12 col-md-6'>
+            <div className={styles.boxLeft + 'col-xs-12 col-md-6'}>
               <div className={styles.image}>
                 <img src={promotion[0].image} alt={promotion[1].id} />
                 <div className={styles.text}>
@@ -19,7 +19,24 @@ class Promotion extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='col-xs-12 col-md-6'></div>
+            <div className={styles.boxRight + 'col-xs-12 col-md-6'}>
+              <div className={styles.image}>
+                <img src={promotion[0].image} alt={promotion[1].id} />
+                <div className={styles.text}>
+                  <p>{promotion[0].text1}</p>
+                  <p>{promotion[0].text2}</p>
+                  <p>{promotion[0].text3}</p>
+                </div>
+              </div>
+              <div className={styles.image}>
+                <img src={promotion[0].image} alt={promotion[1].id} />
+                <div className={styles.text}>
+                  <p>{promotion[0].text1}</p>
+                  <p>{promotion[0].text2}</p>
+                  <p>{promotion[0].text3}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
