@@ -14,6 +14,7 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  image,
   id,
   starRating,
   getCompared,
@@ -56,7 +57,7 @@ const ProductBox = ({
           variant='outline'
           //className={styles.outlines}
           //className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
-          >
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
