@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './GallerySlider.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,43 +13,82 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
-class GallerySlider extends React.Component {
-  state = {
-    promoProductName: 'Aeneon Ru Bristique',
-    priceNew: '$120.00',
-    priceOld: '$160.00',
+const GallerySlider = props => {
+  const { stars, gallery, products } = props;
+
+  const defaultCategory = gallery.find(category => category.name === 'Top seller').id;
+  const [activeCategory, setActiveCategory] = useState(defaultCategory);
+  const [slideNumber, setSlideNumber] = useState(0);
+  const [pictureNumber, setPictureNumber] = useState(0);
+  const defaultProduct = products.find(
+    product => product.id === 'aenean-ru-bristique-3'
+  ).id;
+  const [activeProduct, setActiveProduct] = useState(defaultProduct);
+
+  const handleSlideLeft = event => {
+    event.preventDefault();
+    let newSlideNumber = slideNumber - 6;
+    if (newSlideNumber >= 0) {
+      setSlideNumber(newSlideNumber);
+    } else {
+      setSlideNumber(slideNumber);
+    }
   };
 
-  render() {
-    const { stars } = this.props;
-    const { promoProductName, priceNew, priceOld } = this.state;
+  const handleSlideRight = event => {
+    event.preventDefault();
+    let newSlideNumber = slideNumber + 6;
+    setSlideNumber(newSlideNumber);
+  };
 
-    return (
-      <div className={styles.root}>
-        <div className={styles.heading}>
-          <h3>Furniture Gallery</h3>
-        </div>
-        <div className={styles.panelBar}>
-          <ul>
-            <li>
-              <a>Featured</a>
+  const handleCategoryChange = newCategory => {
+    setActiveCategory(newCategory);
+  };
+
+  const handleProductChange = productId => {
+    let productNo = 0;
+    products.forEach(function(element, index) {
+      if (element.id === productId) {
+        productNo = index;
+      }
+    });
+    setPictureNumber(productNo);
+    setActiveProduct(productId);
+  };
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.heading}>
+        <h3>Furniture Gallery</h3>
+      </div>
+      <div className={styles.panelBar}>
+        <ul>
+          {gallery.map(item => (
+            <li key={item.id}>
+              <a
+                href='/#'
+                className={item.id === activeCategory ? styles.active : ''}
+                onClick={() => handleCategoryChange(item.id)}
+              >
+                {item.name}
+              </a>
             </li>
-            <li>
-              <a className={styles.active}>Top seller</a>
-            </li>
-            <li>
-              <a>Sale off</a>
-            </li>
-            <li>
-              <a>Top rated</a>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.imageBig}>
-          <img
-            src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
-            alt=''
-          ></img>
+          ))}
+        </ul>
+      </div>
+
+      {products.slice(pictureNumber, pictureNumber + 1).map(product => (
+        <div key={product.id} className={styles.imageBig}>
+          <div>
+            <img
+              src={
+                product.image !== undefined
+                  ? product.image
+                  : 'https://cdn.pixabay.com/photo/2018/01/20/09/42/sofa-3094153_960_720.jpg'
+              }
+              alt={product.name}
+            ></img>
+          </div>
           <div className={styles.toolsWrapper}>
             <div className={styles.toolsbox}>
               <Button variant='gallery' className={styles.toolsItem}>
@@ -78,14 +117,14 @@ class GallerySlider extends React.Component {
           </div>
           <div className={styles.nameWrapper}>
             <div className={styles.namePrice}>
-              <div className={styles.priceNew}>{priceNew}</div>
-              <div className={styles.priceOld}>{priceOld}</div>
+              <div className={styles.priceNew}>${product.price}</div>
+              <div className={styles.priceOld}>$160.00</div>
             </div>
             <div className={styles.nameRange}>
-              <h6>{promoProductName}</h6>
+              <h6>{product.name}</h6>
               <div className={styles.nameStars}>
                 {[1, 2, 3, 4, 5].map(i => (
-                  <a key={i} href='#'>
+                  <a key={i} href='/#'>
                     {i <= stars ? (
                       <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                     ) : (
@@ -97,59 +136,42 @@ class GallerySlider extends React.Component {
             </div>
           </div>
         </div>
-        <div className={styles.slider}>
-          <div className={styles.arrow}>
-            <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron} />
-          </div>
-          <div className={styles.thumbnail}>
+      ))}
+
+      <div className={styles.slider}>
+        <div className={styles.arrow} onClick={handleSlideLeft}>
+          <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron} />
+        </div>
+        {products.slice(slideNumber, slideNumber + 6).map(product => (
+          <div
+            key={product.id}
+            className={styles.thumbnail}
+            onClick={() => handleProductChange(product.id)}
+          >
             <img
-              className={styles.active}
-              src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
-              alt=''
+              alt={product.name}
+              src={
+                product.image !== undefined
+                  ? product.image
+                  : 'https://cdn.pixabay.com/photo/2018/01/20/09/42/sofa-3094153_960_720.jpg'
+              }
+              className={product.id === activeProduct ? styles.active : ''}
             ></img>
           </div>
-          <div className={styles.thumbnail}>
-            <img
-              src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
-              alt=''
-            ></img>
-          </div>
-          <div className={styles.thumbnail}>
-            <img
-              src='https://cdn.pixabay.com/photo/2015/06/19/21/33/beach-815303_960_720.jpg'
-              alt=''
-            ></img>
-          </div>
-          <div className={styles.thumbnail}>
-            <img
-              src='https://cdn.pixabay.com/photo/2015/12/19/17/55/armchair-1100052_960_720.jpg'
-              alt=''
-            ></img>
-          </div>
-          <div className={styles.thumbnail}>
-            <img
-              src='https://cdn.pixabay.com/photo/2017/08/03/15/38/architecture-2576906_960_720.jpg'
-              alt=''
-            ></img>
-          </div>
-          <div className={styles.thumbnail}>
-            <img
-              src='https://cdn.pixabay.com/photo/2015/06/19/21/33/beach-815303_960_720.jpg'
-              alt=''
-            ></img>
-          </div>
-          <div className={styles.arrow}>
-            <FontAwesomeIcon icon={faChevronRight} className={styles.chevron} />
-          </div>
+        ))}
+        <div className={styles.arrow} onClick={handleSlideRight}>
+          <FontAwesomeIcon icon={faChevronRight} className={styles.chevron} />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 GallerySlider.propTypes = {
   name: PropTypes.string,
   stars: PropTypes.number,
+  gallery: PropTypes.array,
+  products: PropTypes.array,
 };
 
 export default GallerySlider;

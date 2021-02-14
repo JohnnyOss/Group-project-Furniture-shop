@@ -5,6 +5,9 @@ export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+export const getGalleryCategories = ({ galleryCategories }) => galleryCategories;
+export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoProduct;
+
 // action name creator
 const createActionName = name => `product/rating/${name}`;
 
@@ -13,6 +16,7 @@ export const SET_RATING = createActionName('SET_RATING');
 
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
+
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {

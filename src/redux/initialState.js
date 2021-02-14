@@ -729,6 +729,18 @@ const initialState = {
         'https://images.pexels.com/photos/5324927/pexels-photo-5324927.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
   ],
+  galleryCategories: [
+    { id: 'featured', name: 'Featured' },
+    { id: 'topSeller', name: 'Top seller' },
+    { id: 'saleOff', name: 'Sale off' },
+    { id: 'topRated', name: 'Top rated' },
+  ],
+  galleryPromoProduct: {
+    link: 'https://cdn.pixabay.com/photo/2020/02/17/08/12/chair-4855824_960_720.jpg',
+    category: 'furniture',
+    name: 'Bedroom Bed',
+    price: '$50.80',
+  },
 };
 
 export default initialState;
