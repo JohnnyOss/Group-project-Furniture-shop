@@ -895,7 +895,7 @@ const initialState = {
       text3: 'COLLECTION',
       text4: '$200',
       image:
-        'https://www.muebledeespana.com/media/39471/angel-cerda-new-chair-collection-4079-office-chair-02.jpg?anchor=center&mode=crop&width=1440&quality=80&slimmage=true&rnd=132381541630000000',
+        'https://cdn3.sklum.com/de/771580/teill-colors-burostuhl-mit-radern-und-armlehnen.jpg',
     },
     {
       id: 'bed',

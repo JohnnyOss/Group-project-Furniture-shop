@@ -9,31 +9,38 @@ class Promotion extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className={styles.boxLeft + 'col-xs-12 col-md-6'}>
-              <div className={styles.image}>
-                <img src={promotion[0].image} alt={promotion[1].id} />
-                <div className={styles.text}>
-                  <p>{promotion[0].text1}</p>
+            <div className={`${styles.box} col-xs-12 col-md-6`}>
+              <div className={styles.imageLeft}>
+                <div className={styles.wrapper}>
+                  <img src={promotion[0].image} alt={promotion[0].id} />
+                </div>
+                <div className={styles.text1}>
+                  <p className={styles.part1}>{promotion[0].text1}</p>
                   <p>{promotion[0].text2}</p>
-                  <p>{promotion[0].text3}</p>
+                  <p className={styles.part3}>{promotion[0].text3}</p>
                 </div>
               </div>
             </div>
-            <div className={styles.boxRight + 'col-xs-12 col-md-6'}>
-              <div className={styles.image}>
-                <img src={promotion[0].image} alt={promotion[1].id} />
-                <div className={styles.text}>
-                  <p>{promotion[0].text1}</p>
-                  <p>{promotion[0].text2}</p>
-                  <p>{promotion[0].text3}</p>
+            <div className={`${styles.box} col-xs-12 col-md-6`}>
+              <div className={styles.imageRight}>
+                <img src={promotion[1].image} alt={promotion[1].id} />
+                <div className={styles.text2}>
+                  <p>
+                    <span className={styles.part1}>{promotion[1].text1}</span>
+                    <span className={styles.part2}>{promotion[1].text2}</span>
+                  </p>
+                  <p className={styles.part3}>{promotion[1].text3}</p>
+                  <p className={styles.part4}>{promotion[1].text4}</p>
                 </div>
               </div>
-              <div className={styles.image}>
-                <img src={promotion[0].image} alt={promotion[1].id} />
-                <div className={styles.text}>
-                  <p>{promotion[0].text1}</p>
-                  <p>{promotion[0].text2}</p>
-                  <p>{promotion[0].text3}</p>
+              <div className={`${styles.imageRight} ${styles.imageBottom}`}>
+                <img src={promotion[2].image} alt={promotion[2].id} />
+                <div className={styles.text3}>
+                  <p>
+                    <span className={styles.part1}>{promotion[2].text1}</span>
+                    <span className={styles.part2}>{promotion[2].text2}</span>
+                  </p>
+                  <p className={styles.part3}>{promotion[2].text3}</p>
                 </div>
               </div>
             </div>
