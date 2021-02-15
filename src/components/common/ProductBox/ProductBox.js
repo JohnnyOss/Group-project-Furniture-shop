@@ -78,7 +78,7 @@ ProductBox.propTypes = {
   starRating: PropTypes.bool,
   removeFavourite: PropTypes.func,
   addFavourite: PropTypes.func,
-  isFavourite: PropTypes.func,
+  isFavourite: PropTypes.bool,
 };
 
 export default ProductBox;
