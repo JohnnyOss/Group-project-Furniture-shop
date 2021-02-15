@@ -138,3 +138,16 @@ img {
     margin-left: 15px;
   }
 }
+/*Media queries*/
+@media (max-width: 767px) {
+  .promo3 {
+    p:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+    .sale {
+      letter-spacing: -1px;
+      margin-left: 0;
+    }
+  }
+}
