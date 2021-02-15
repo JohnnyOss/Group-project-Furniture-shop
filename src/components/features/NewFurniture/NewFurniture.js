@@ -35,14 +35,8 @@ class NewFurniture extends React.Component {
     }
   }
 
-  closeChild = () => {
-    this.setState({
-      showChild: false,
-    });
-  };
-
   render() {
-    const { categories, products, getCompared, changeCompare, closeChild } = this.props;
+    const { categories, products, getCompared, changeCompare } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -95,8 +89,8 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
               >
                 <ProductBox
@@ -118,7 +112,6 @@ NewFurniture.propTypes = {
   children: PropTypes.node,
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
-  closeChild: PropTypes.func,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

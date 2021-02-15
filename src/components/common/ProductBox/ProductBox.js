@@ -53,10 +53,7 @@ const ProductBox = ({
               changeCompare(id);
             }
           }}
-          //variant={compare ? 'active' : 'disactive'}
           variant='outline'
-          //className={styles.outlines}
-          //className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
         >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
