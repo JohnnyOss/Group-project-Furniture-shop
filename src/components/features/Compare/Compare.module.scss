@@ -12,7 +12,7 @@
   left: 50%;
   z-index: 99;
   transform: translateX(-50%);
-  background: rgba(213,142,50,0.6);
+  background: $creme-transparent;
   
   .box {
     flex: 4;
@@ -21,7 +21,7 @@
     height: 90%;
     box-sizing: border-box;
     position: relative; 
-    border: 7px solid red;
+    border: 7px solid $dark-color-2;
   }
 
     &:before {
@@ -32,7 +32,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: #000000;
+      background-color: $dark-color-1;
       opacity: 0.5;
     }
 
@@ -45,25 +45,23 @@
     display: none;
     font-size: 46px;
     position: absolute;
-    //top: -8px;
-    //right: 5px;
     top: 15%;
     left: 45%;
   }
 
   .button {
     position: absolute;
-    color: green;
+    color: $black-color;
     top: 50%;
     right: 5px;
-    border: 1px solid black;
+    border: 1px solid $btn-outline-border-color;
     text-decoration: none;
     box-sizing: border-box;
     padding: 4px;
     
     &:hover {
-      background-color: red;
-      color: white;
+      background-color: $btn-main-background-color;
+      color: $btn-main-font-color-hover;
     }
   }
 
