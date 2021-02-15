@@ -1,4 +1,5 @@
-/* selectors */
+//selectors
+
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 
@@ -10,9 +11,11 @@ const createActionName = name => `product/rating/${name}`;
 
 // action types
 export const SET_RATING = createActionName('SET_RATING');
+export const ADD_FAVOURITE = createActionName('ADD_FAVOURITE');
 
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
+export const addFavourite = payload => ({ payload, type: ADD_FAVOURITE });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
