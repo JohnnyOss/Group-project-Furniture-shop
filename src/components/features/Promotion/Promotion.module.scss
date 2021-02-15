@@ -4,11 +4,12 @@
   padding: 20px;
   position: relative;
 }
-.wrapper {
+.imageWrapper {
   height: 100%;
   width: 100%;
   position: relative;
   ::after {
+    //pseudo selektor na samym wraperze nie działa, bez opakowania zdjecia w wrapper, pseudoselector dziala jedynie na div promo1//
     opacity: 0.3;
     content: " ";
     position: absolute;
@@ -45,7 +46,7 @@ img {
   width: 100%;
   height: 100%;
 }
-.text1 {
+.promo1 {
   color: $light-color-6;
   z-index: 10;
   top: 47%;
@@ -53,11 +54,12 @@ img {
   font-size: 45px;
   position: absolute;
   :after {
+    // nieudana proba usuniecia pseudoselektora z diva promo1//
     content: none !important;
     display: none !important;
     opacity: 0;
   }
-  .part1 {
+  .category {
     text-transform: uppercase;
     font-size: 25px;
     line-height: 38px;
@@ -69,7 +71,7 @@ img {
       opacity: 0;
     }
   }
-  .part3 {
+  .sale {
     border: 5px solid $light-color-6;
     ::after {
       content: none !important;
@@ -81,7 +83,7 @@ img {
 .imageBottom {
   margin-top: 20px;
 }
-.text2 {
+.promo2 {
   color: $black-color;
   z-index: 10;
   font-size: 30px;
@@ -90,26 +92,26 @@ img {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  .part1 {
+  .category {
     text-transform: uppercase;
     font-size: 30px;
     line-height: 25px;
     margin-right: 5px;
     font-weight: bold;
   }
-  .part2 {
+  .product {
     letter-spacing: 5px;
   }
-  .part3 {
+  .addInfo {
     letter-spacing: 2px;
     font-size: 20px;
     font-weight: bold;
   }
-  .part4 {
+  .sale {
     color: $creme-main;
   }
 }
-.text3 {
+.promo3 {
   color: $creme-main;
   z-index: 10;
   font-size: 30px;
@@ -118,17 +120,17 @@ img {
   top: 80%;
   left: 60%;
   transform: translate(-50%, -50%);
-  .part1 {
+  .category {
     text-transform: uppercase;
     font-size: 30px;
     line-height: 25px;
     margin-right: 5px;
     font-weight: bold;
   }
-  .part2 {
+  .addInfo {
     letter-spacing: 5px;
   }
-  .part3 {
+  .sale {
     letter-spacing: 2px;
     font-size: 20px;
     font-weight: bold;

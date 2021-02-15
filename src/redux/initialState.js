@@ -882,26 +882,26 @@ const initialState = {
   promotion: [
     {
       id: 'sofa',
-      text1: 'GUEST ROOM',
-      text2: 'SOFA',
-      text3: '-20%',
+      category: 'GUEST ROOM',
+      product: 'SOFA',
+      sale: '-20%',
       image:
         'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
     {
       id: 'chair',
-      text1: 'OFFICE',
-      text2: 'CHAIR',
-      text3: 'COLLECTION',
-      text4: '$200',
+      category: 'OFFICE',
+      product: 'CHAIR',
+      addInfo: 'COLLECTION',
+      sale: '$200',
       image:
         'https://cdn3.sklum.com/de/771580/teill-colors-burostuhl-mit-radern-und-armlehnen.jpg',
     },
     {
       id: 'bed',
-      text1: 'SPECIAL',
-      text2: 'COLLECTION',
-      text3: 'SAVE UP 40% OF FURNITURE',
+      category: 'SPECIAL',
+      addInfo: 'COLLECTION',
+      sale: 'SAVE UP 40% OF FURNITURE',
       image:
         'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
