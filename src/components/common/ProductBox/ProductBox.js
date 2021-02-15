@@ -9,7 +9,18 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
-const ProductBox = ({ name, price, promo, stars, image, id, starRating }) => (
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  image,
+  id,
+  isFavourite,
+  addFavourite,
+  removeFavourite,
+  starRating,
+}) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img className={styles.img} src={image} alt={name} />
@@ -32,8 +43,16 @@ const ProductBox = ({ name, price, promo, stars, image, id, starRating }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+        <Button
+          variant='outline'
+          className={isFavourite === true ? styles.favorite : 'nonclass'}
+          onClick={() =>
+            isFavourite === true ? removeFavourite({ id }) : addFavourite({ id })
+          }
+        >
+          <FontAwesomeIcon icon={faHeart} className={styles.icon}>
+            Favorite
+          </FontAwesomeIcon>
         </Button>
         <Button variant='outline'>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -57,6 +76,9 @@ ProductBox.propTypes = {
   image: PropTypes.string,
   id: PropTypes.string,
   starRating: PropTypes.bool,
+  removeFavourite: PropTypes.func,
+  addFavourite: PropTypes.func,
+  isFavourite: PropTypes.func,
 };
 
 export default ProductBox;
