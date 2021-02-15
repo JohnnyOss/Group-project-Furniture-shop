@@ -6,7 +6,7 @@
   color: $text-color;
   width: 75%;
 }
-.nav1 {
+.navLaptop {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -32,7 +32,7 @@
     text-align: center;
   }
 }
-.nav2 {
+.navPhone {
   display: none;
 }
 .active {
@@ -68,7 +68,7 @@
   color: $text-color-light;
 }
 @media (max-width: 767px) {
-  .nav2 {
+  .navPhone {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -86,8 +86,11 @@
       background: $background-light;
       text-align: center;
     }
+    div:nth-child(2) {
+      border-right: none;
+    }
   }
-  .nav1 {
+  .navLaptop {
     display: none;
   }
   .active {

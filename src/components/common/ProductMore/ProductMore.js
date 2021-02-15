@@ -9,7 +9,7 @@ const ProductMore = () => {
     <div className={styles.container}>
       <div>
         <div>
-          <div className={styles.nav1}>
+          <div className={styles.navLaptop}>
             <div className={'col-xs-6 col-md-3'}>DESCRIPTION</div>
 
             <div className={`${styles.active} col-xs-6 col-md-3`}>REVIEWS (0)</div>
@@ -18,7 +18,7 @@ const ProductMore = () => {
 
             <div className={'col-xs-6 col-md-3'}>CUSTOM TAB</div>
           </div>
-          <div className={styles.nav2}>
+          <div className={styles.navPhone}>
             <div className={'col-xs-6 col-md-3'}>DESCRIPTION</div>
 
             <div className={'col-xs-6 col-md-3'}>SPECIFICATION</div>
