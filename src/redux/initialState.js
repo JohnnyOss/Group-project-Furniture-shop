@@ -745,7 +745,7 @@ const initialState = {
       id: 'sofa-empire-classic-16',
       name: 'Sofa Empire Classic 16',
       image:
-        'https:images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
 };
