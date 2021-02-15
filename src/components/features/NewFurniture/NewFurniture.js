@@ -92,7 +92,7 @@ class NewFurniture extends React.Component {
                 key={item.id}
                 className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
               >
-                <ProductBox {...item} />
+                <ProductBox {...item} product={item} />
               </div>
             ))}
           </div>
@@ -119,6 +119,7 @@ NewFurniture.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
+      isFavourite: PropTypes.bool,
     })
   ),
 };

@@ -20,6 +20,8 @@ $light-color-4: #e2e2e2;
 $light-color-5: #e1e1e1; 
 $light-color-6: #e0e3ed;
 
+$red-heart: #fc3000;
+
 $silver-color: #a9a9a9;
 
 $transparent: transparent;
@@ -130,5 +132,5 @@ $transition: all 0.25s;
 $background-light: $white-color;
 
 //ProductBox
-$favourite-background: $footer-claim-bg; //change to $dark-color-2 after merging
-$favourite-font: $primary; //change to $creme-main after merging
+$favourite-background: $dark-color-4; //change to $dark-color-2 after merging
+$favourite-font: $red-heart; //change to $creme-main after merging
