@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Compare from '../Compare/Compare';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 class NewFurniture extends React.Component {
   state = {
@@ -34,6 +35,18 @@ class NewFurniture extends React.Component {
       this.setState({ activeCategory: newArgument });
     }
   }
+
+  changePage = (activePage, change) => {
+    if (change === 1) {
+      return this.setState({
+        activePage: activePage + 1,
+      });
+    } else if (change === -1) {
+      return this.setState({
+        activePage: activePage - 1,
+      });
+    }
+  };
 
   render() {
     const { categories, products, getCompared, changeCompare } = this.props;
@@ -87,20 +100,38 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div
-                key={item.id}
-                className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
-              >
-                <ProductBox
-                  getCompared={getCompared}
-                  changeCompare={changeCompare}
-                  {...item}
-                />
-              </div>
-            ))}
-          </div>
+          <Swipeable
+            activePage={this.state.activePage}
+            changePage={(currentPage, change) => {
+              if (change === 1) {
+                return this.setState({
+                  activePage:
+                    currentPage === dots.length - 1 ? currentPage : currentPage + 1,
+                });
+              } else if (change === -1) {
+                return this.setState({
+                  activePage: currentPage === 0 ? currentPage : currentPage - 1,
+                });
+              }
+            }}
+          >
+            <div className={'row ' + styles.swiper}>
+              {categoryProducts
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map(item => (
+                  <div
+                    key={item.id}
+                    className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
+                  >
+                    <ProductBox
+                      getCompared={getCompared}
+                      changeCompare={changeCompare}
+                      {...item}
+                    />
+                  </div>
+                ))}
+            </div>
+          </Swipeable>
         </div>
         <Compare getCompared={getCompared} changeCompare={changeCompare} />
       </div>
