@@ -16,18 +16,66 @@ import Button from '../../common/Button/Button';
 const GallerySlider = props => {
   const { stars, gallery, products } = props;
 
+  const defaultImage =
+    'https://cdn.pixabay.com/photo/2018/01/20/09/42/sofa-3094153_960_720.jpg';
+
   const defaultCategory = gallery.find(category => category.name === 'Top seller').id;
   const [activeCategory, setActiveCategory] = useState(defaultCategory);
-  const [slideNumber, setSlideNumber] = useState(0);
-  const [pictureNumber, setPictureNumber] = useState(0);
-  const defaultProduct = products.find(
-    product => product.id === 'aenean-ru-bristique-3'
-  ).id;
+
+  const categoryProducts = products.filter(item => item.subcategory === activeCategory);
+  const defaultProduct = products.find(product => product.id === categoryProducts[0].id)
+    .id;
+
   const [activeProduct, setActiveProduct] = useState(defaultProduct);
 
+  const [slideNumber, setSlideNumber] = useState(0);
+  const [fadeTrue, setFade] = useState(true);
+
+  // change category in the tab-panel (with fade-effect)
+  const handleCategoryChange = (event, newCategory) => {
+    event.preventDefault();
+    setFade(false);
+
+    setTimeout(() => {
+      makeFadeIn(newCategory);
+    }, 500);
+
+    let array = [];
+    products.forEach(function(element) {
+      if (element.subcategory === newCategory) {
+        return array.push(element);
+      }
+    });
+    setTimeout(() => {
+      setActiveProduct(array[0].id);
+    }, 500);
+  };
+
+  const makeFadeIn = newCategory => {
+    setFade(true);
+    setActiveCategory(newCategory);
+  };
+
+  //change product after click in the slider with miniatures
+  const handleProductChange = productId => {
+    setActiveProduct(productId);
+  };
+
+  // media query for amount of miniatures in the slider
+  const mobileView = window.matchMedia('(min-width: 480px)');
+  mobileView.addEventListener('change', widthChange);
+  widthChange(mobileView);
+
+  function widthChange(mobileView) {
+    let tabCount = mobileView.matches ? 6 : 4;
+    console.log('tabCount', tabCount);
+    return tabCount;
+  }
+
+  // arrow left in the slider
   const handleSlideLeft = event => {
     event.preventDefault();
-    let newSlideNumber = slideNumber - 6;
+    let newSlideNumber = slideNumber - widthChange(mobileView);
     if (newSlideNumber >= 0) {
       setSlideNumber(newSlideNumber);
     } else {
@@ -35,25 +83,11 @@ const GallerySlider = props => {
     }
   };
 
+  // arrow right in the slider
   const handleSlideRight = event => {
     event.preventDefault();
-    let newSlideNumber = slideNumber + 6;
+    let newSlideNumber = slideNumber + widthChange(mobileView);
     setSlideNumber(newSlideNumber);
-  };
-
-  const handleCategoryChange = newCategory => {
-    setActiveCategory(newCategory);
-  };
-
-  const handleProductChange = productId => {
-    let productNo = 0;
-    products.forEach(function(element, index) {
-      if (element.id === productId) {
-        productNo = index;
-      }
-    });
-    setPictureNumber(productNo);
-    setActiveProduct(productId);
   };
 
   return (
@@ -68,7 +102,7 @@ const GallerySlider = props => {
               <a
                 href='/#'
                 className={item.id === activeCategory ? styles.active : ''}
-                onClick={() => handleCategoryChange(item.id)}
+                onClick={event => handleCategoryChange(event, item.id)}
               >
                 {item.name}
               </a>
@@ -77,90 +111,93 @@ const GallerySlider = props => {
         </ul>
       </div>
 
-      {products.slice(pictureNumber, pictureNumber + 1).map(product => (
-        <div key={product.id} className={styles.imageBig}>
-          <div>
-            <img
-              src={
-                product.image !== undefined
-                  ? product.image
-                  : 'https://cdn.pixabay.com/photo/2018/01/20/09/42/sofa-3094153_960_720.jpg'
+      <div className={fadeTrue ? styles.fadeIn : styles.fadeOut}>
+        {products
+          .filter(product => product.id === activeProduct)
+          .map(product => (
+            <div
+              key={product.id}
+              className={
+                styles.imageBig + ' ' + (fadeTrue ? styles.fadeIn : styles.fadeOut)
               }
-              alt={product.name}
-            ></img>
-          </div>
-          <div className={styles.toolsWrapper}>
-            <div className={styles.toolsbox}>
-              <Button variant='gallery' className={styles.toolsItem}>
-                <FontAwesomeIcon icon={faHeart} />
-              </Button>
-              <span>Like it</span>
-            </div>
-            <div className={styles.toolsbox}>
-              <Button variant='gallery' className={styles.toolsItem}>
-                <FontAwesomeIcon icon={faExchangeAlt} />
-              </Button>
-              <span>Compare it</span>
-            </div>
-            <div className={styles.toolsbox}>
-              <Button variant='gallery' className={styles.toolsItem}>
-                <FontAwesomeIcon icon={faEye} />
-              </Button>
-              <span>Show more</span>
-            </div>
-            <div className={styles.toolsbox}>
-              <Button variant='gallery' className={styles.toolsItem}>
-                <FontAwesomeIcon icon={faShoppingBasket} />
-              </Button>
-              <span>Add to cart</span>
-            </div>
-          </div>
-          <div className={styles.nameWrapper}>
-            <div className={styles.namePrice}>
-              <div className={styles.priceNew}>${product.price}</div>
-              <div className={styles.priceOld}>$160.00</div>
-            </div>
-            <div className={styles.nameRange}>
-              <h6>{product.name}</h6>
-              <div className={styles.nameStars}>
-                {[1, 2, 3, 4, 5].map(i => (
-                  <a key={i} href='/#'>
-                    {i <= stars ? (
-                      <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                    ) : (
-                      <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                    )}
-                  </a>
-                ))}
+            >
+              <div>
+                <img
+                  src={product.image !== undefined ? product.image : `${defaultImage}`}
+                  alt={product.name}
+                ></img>
+              </div>
+              <div className={styles.toolsWrapper}>
+                <div className={styles.toolsbox}>
+                  <Button variant='gallery' className={styles.toolsItem}>
+                    <FontAwesomeIcon icon={faHeart} />
+                  </Button>
+                  <span>Like it</span>
+                </div>
+                <div className={styles.toolsbox}>
+                  <Button variant='gallery' className={styles.toolsItem}>
+                    <FontAwesomeIcon icon={faExchangeAlt} />
+                  </Button>
+                  <span>Compare it</span>
+                </div>
+                <div className={styles.toolsbox}>
+                  <Button variant='gallery' className={styles.toolsItem}>
+                    <FontAwesomeIcon icon={faEye} />
+                  </Button>
+                  <span>Show more</span>
+                </div>
+                <div className={styles.toolsbox}>
+                  <Button variant='gallery' className={styles.toolsItem}>
+                    <FontAwesomeIcon icon={faShoppingBasket} />
+                  </Button>
+                  <span>Add to cart</span>
+                </div>
+              </div>
+              <div className={styles.nameWrapper}>
+                <div className={styles.namePrice}>
+                  <div className={styles.priceNew}>${product.price}</div>
+                  <div className={styles.priceOld}>$160.00</div>
+                </div>
+                <div className={styles.nameRange}>
+                  <h6>{product.name}</h6>
+                  <div className={styles.nameStars}>
+                    {[1, 2, 3, 4, 5].map(i => (
+                      <a key={i} href='/#'>
+                        {i <= stars ? (
+                          <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                        ) : (
+                          <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                        )}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      ))}
+          ))}
 
-      <div className={styles.slider}>
-        <div className={styles.arrow} onClick={handleSlideLeft}>
-          <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron} />
-        </div>
-        {products.slice(slideNumber, slideNumber + 6).map(product => (
-          <div
-            key={product.id}
-            className={styles.thumbnail}
-            onClick={() => handleProductChange(product.id)}
-          >
-            <img
-              alt={product.name}
-              src={
-                product.image !== undefined
-                  ? product.image
-                  : 'https://cdn.pixabay.com/photo/2018/01/20/09/42/sofa-3094153_960_720.jpg'
-              }
-              className={product.id === activeProduct ? styles.active : ''}
-            ></img>
+        <div className={styles.slider}>
+          <div className={styles.arrow} onClick={handleSlideLeft}>
+            <FontAwesomeIcon icon={faChevronLeft} className={styles.chevron} />
           </div>
-        ))}
-        <div className={styles.arrow} onClick={handleSlideRight}>
-          <FontAwesomeIcon icon={faChevronRight} className={styles.chevron} />
+          {categoryProducts
+            .slice(slideNumber, slideNumber + widthChange(mobileView))
+            .map(product => (
+              <div
+                key={product.id}
+                className={styles.thumbnail}
+                onClick={() => handleProductChange(product.id)}
+              >
+                <img
+                  alt={product.name}
+                  src={product.image !== undefined ? product.image : `${defaultImage}`}
+                  className={product.id === activeProduct ? styles.active : ''}
+                ></img>
+              </div>
+            ))}
+          <div className={styles.arrow} onClick={handleSlideRight}>
+            <FontAwesomeIcon icon={faChevronRight} className={styles.chevron} />
+          </div>
         </div>
       </div>
     </div>
