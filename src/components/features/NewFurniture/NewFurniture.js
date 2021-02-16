@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Compare from '../Compare/Compare';
 
 class NewFurniture extends React.Component {
   state = {
@@ -35,7 +36,7 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, getCompared, changeCompare } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -92,11 +93,16 @@ class NewFurniture extends React.Component {
                 key={item.id}
                 className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
               >
-                <ProductBox {...item} />
+                <ProductBox
+                  getCompared={getCompared}
+                  changeCompare={changeCompare}
+                  {...item}
+                />
               </div>
             ))}
           </div>
         </div>
+        <Compare getCompared={getCompared} changeCompare={changeCompare} />
       </div>
     );
   }
@@ -104,6 +110,8 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
+  getCompared: PropTypes.array,
+  changeCompare: PropTypes.func,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
