@@ -9,7 +9,17 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
-const ProductBox = ({ name, price, promo, stars, image, id, starRating }) => (
+const ProductBox = ({
+  name,
+  price,
+  promo,
+  stars,
+  image,
+  id,
+  starRating,
+  getCompared,
+  changeCompare,
+}) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img className={styles.img} src={image} alt={name} />
@@ -35,7 +45,16 @@ const ProductBox = ({ name, price, promo, stars, image, id, starRating }) => (
         <Button variant='outline'>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button
+          onClick={() => {
+            if (getCompared.find(item => item.id === id)) {
+              changeCompare(id);
+            } else if (getCompared.length <= 3) {
+              changeCompare(id);
+            }
+          }}
+          variant='outline'
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -57,6 +76,8 @@ ProductBox.propTypes = {
   image: PropTypes.string,
   id: PropTypes.string,
   starRating: PropTypes.bool,
+  getCompared: PropTypes.array,
+  changeCompare: PropTypes.func,
 };
 
 export default ProductBox;
