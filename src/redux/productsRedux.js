@@ -16,6 +16,9 @@ export const toggleCompare = (products, id) =>
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+export const getGalleryCategories = ({ galleryCategories }) => galleryCategories;
+export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoProduct;
+
 // action name creator
 const createActionName = name => `product/rating/${name}`;
 
@@ -26,6 +29,7 @@ const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
+
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
