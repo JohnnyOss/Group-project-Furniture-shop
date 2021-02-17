@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './GallerySlider.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,13 +8,13 @@ import {
   faShoppingBasket,
   faChevronLeft,
   faChevronRight,
-  faStar,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
+import ProductRating from '../ProductRating/ProductRatingContainer';
 
 const GallerySlider = props => {
-  const { stars, gallery, products } = props;
+  const { gallery, products, starRating } = props;
 
   const defaultImage =
     'https://cdn.pixabay.com/photo/2018/01/20/09/42/sofa-3094153_960_720.jpg';
@@ -68,9 +68,20 @@ const GallerySlider = props => {
 
   function widthChange(mobileView) {
     let tabCount = mobileView.matches ? 6 : 4;
-    console.log('tabCount', tabCount);
+    // console.log('tabCount', tabCount);
     return tabCount;
   }
+
+  const [windowWidth, setWindowWidth] = useState(0);
+  let resizeWindow = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    resizeWindow();
+    window.addEventListener('resize', resizeWindow);
+    return () => window.removeEventListener('resize', resizeWindow);
+  }, []);
 
   // arrow left in the slider
   const handleSlideLeft = event => {
@@ -91,7 +102,7 @@ const GallerySlider = props => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root + ' ' + windowWidth}>
       <div className={styles.heading}>
         <h3>Furniture Gallery</h3>
       </div>
@@ -161,15 +172,11 @@ const GallerySlider = props => {
                 <div className={styles.nameRange}>
                   <h6>{product.name}</h6>
                   <div className={styles.nameStars}>
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <a key={i} href='/#'>
-                        {i <= stars ? (
-                          <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                        ) : (
-                          <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                        )}
-                      </a>
-                    ))}
+                    <ProductRating
+                      id={product.id}
+                      starRating={starRating}
+                      stars={product.stars}
+                    />
                   </div>
                 </div>
               </div>
@@ -206,9 +213,9 @@ const GallerySlider = props => {
 
 GallerySlider.propTypes = {
   name: PropTypes.string,
-  stars: PropTypes.number,
   gallery: PropTypes.array,
   products: PropTypes.array,
+  starRating: PropTypes.bool,
 };
 
 export default GallerySlider;
