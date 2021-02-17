@@ -9,11 +9,13 @@ import Feedback from '../../features/Feedback/FeedbackContainer';
 import Brands from '../../features/Brands/BrandsContainer';
 import HotDeals from '../../features/HotDeals/HotDealsContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
+import Promotion from '../../features/Promotion/PromotionContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
     <HotDeals />
     <FeatureBoxes />
+    <Promotion />
     <NewFurniture />
     <Gallery />
     <Brands />

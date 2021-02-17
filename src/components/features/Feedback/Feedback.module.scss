@@ -31,12 +31,11 @@
       }
     }
   }
-}
-
-.dot {
-  height: 15px;
-  width: 15px;
-  background-color: $creme-main;
-  border-radius: 50%;
-  position: absolute;
+  .dot {
+    height: 15px;
+    width: 15px;
+    background-color: $creme-main;
+    border-radius: 50%;
+    position: absolute;
+  }
 }

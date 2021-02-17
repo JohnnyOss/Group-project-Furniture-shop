@@ -879,6 +879,33 @@ const initialState = {
         'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
+  promotion: [
+    {
+      id: 'sofa',
+      text1: 'GUEST ROOM',
+      text2: 'SOFA',
+      text3: '-20%',
+      image:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+    {
+      id: 'chair',
+      text1: 'OFFICE',
+      text2: 'CHAIR',
+      text3: 'COLLECTION',
+      text4: '$200',
+      image:
+        'https://www.muebledeespana.com/media/39471/angel-cerda-new-chair-collection-4079-office-chair-02.jpg?anchor=center&mode=crop&width=1440&quality=80&slimmage=true&rnd=132381541630000000',
+    },
+    {
+      id: 'bed',
+      text1: 'SPECIAL',
+      text2: 'COLLECTION',
+      text3: 'SAVE UP 40% OF FURNITURE',
+      image:
+        'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+  ],
 };
 
 export default initialState;
