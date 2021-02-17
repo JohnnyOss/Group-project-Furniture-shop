@@ -27,8 +27,7 @@
       left: 20px;
 
       .contentInfo {
-
-        p{
+        p {
           margin: 0;
           text-transform: uppercase;
           font-weight: 700;
@@ -37,7 +36,6 @@
         .bigText {
           font-size: 3rem;
           color: $gallery-green-color;
-
         }
       }
 
@@ -56,5 +54,11 @@
         }
       }
     }
+  }
+}
+/*Media queries*/
+@media (max-width: 767px) {
+  .imageWrapper {
+    display: none;
   }
 }

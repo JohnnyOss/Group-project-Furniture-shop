@@ -14,7 +14,7 @@ const Gallery = props => {
           <div className='col-12 col-md-6'>
             <GallerySlider />
           </div>
-          <div className='col-12 col-md-6'>
+          <div className={'col-12 col-md-6'}>
             <div className={styles.imageWrapper}>
               <img src={promoProduct.link} alt={promoProduct.category}></img>
               <div className={styles.content}>
