@@ -879,6 +879,33 @@ const initialState = {
         'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   ],
+  promotion: [
+    {
+      id: 'sofa',
+      category: 'GUEST ROOM',
+      product: 'SOFA',
+      sale: '-20%',
+      image:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+    {
+      id: 'chair',
+      category: 'OFFICE',
+      product: 'CHAIR',
+      addInfo: 'COLLECTION',
+      sale: '$200',
+      image:
+        'https://cdn3.sklum.com/de/771580/teill-colors-burostuhl-mit-radern-und-armlehnen.jpg',
+    },
+    {
+      id: 'bed',
+      category: 'SPECIAL',
+      addInfo: 'COLLECTION',
+      sale: 'SAVE UP 40% OF FURNITURE',
+      image:
+        'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+  ],
 };
 
 export default initialState;
