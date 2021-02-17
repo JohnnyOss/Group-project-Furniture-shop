@@ -11,7 +11,7 @@ class HotDeals extends React.Component {
       <div className={styles.root}>
         <div className={'container'}>
           <div className={'row'}>
-            <div className={'col-4'}>
+            <div className={`col-xl-4 col-lg-4 col-md-5 col-sm-4 ${styles.box}`}>
               <div className={styles.heading}>
                 <h3>HOT DEALS</h3>
                 <div className={styles.dots}>
@@ -34,7 +34,9 @@ class HotDeals extends React.Component {
                 </div>
               ))}
             </div>
-            <div className={'col-8'}>
+            <div
+              className={`col-xl-8 col-lg-8 col-md-7 col-sm-8 col-12 ${styles.carouselBox}`}
+            >
               {hotdeals_slider.map(item => (
                 <div key={item.id}>
                   <HotDealsCarousel {...item} />

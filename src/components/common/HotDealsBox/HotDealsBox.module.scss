@@ -171,3 +171,8 @@
 .root:hover .price {
   background-color: $creme-main;
 }
+@media (min-width: 577px) and (max-width: 768px) {
+  .content {
+    padding: 10px !important;
+  }
+}
