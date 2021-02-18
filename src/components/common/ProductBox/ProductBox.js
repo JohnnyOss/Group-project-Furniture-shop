@@ -91,7 +91,7 @@ ProductBox.propTypes = {
   changeCompare: PropTypes.func,
   removeFavourite: PropTypes.func,
   addFavourite: PropTypes.func,
-  isFavourite: PropTypes.func,
+  isFavourite: PropTypes.bool,
 };
 
 export default ProductBox;
