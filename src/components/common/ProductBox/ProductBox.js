@@ -47,7 +47,7 @@ const ProductBox = ({
       <div className={styles.outlines}>
         <Button
           variant='outline'
-          className={isFavourite === true ? styles.favorite : 'nonclass'}
+          className={isFavourite === true ? styles.favourite : 'nonclass'}
           onClick={() =>
             isFavourite === true ? removeFavourite({ id }) : addFavourite({ id })
           }
