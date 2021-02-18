@@ -815,6 +815,30 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/5849569/pexels-photo-5849569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
+    {
+      id: 'Brand7',
+      name: 'Brand7',
+      image:
+        'https://images.pexels.com/photos/243337/pexels-photo-243337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand8',
+      name: 'Brand8',
+      image:
+        'https://images.pexels.com/photos/2881205/pexels-photo-2881205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand9',
+      name: 'Brand9',
+      image:
+        'https://images.pexels.com/photos/258174/pexels-photo-258174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand10',
+      name: 'Brand10',
+      image:
+        'https://images.pexels.com/photos/4124334/pexels-photo-4124334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
   ],
   cart: {
     products: [],
