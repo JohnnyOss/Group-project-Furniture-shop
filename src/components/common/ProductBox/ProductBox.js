@@ -19,6 +19,9 @@ const ProductBox = ({
   starRating,
   getCompared,
   changeCompare,
+  isFavourite,
+  addFavourite,
+  removeFavourite,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -42,8 +45,16 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+        <Button
+          variant='outline'
+          className={isFavourite === true ? styles.favorite : 'nonclass'}
+          onClick={() =>
+            isFavourite === true ? removeFavourite({ id }) : addFavourite({ id })
+          }
+        >
+          <FontAwesomeIcon icon={faHeart} className={styles.icon}>
+            Favorite
+          </FontAwesomeIcon>
         </Button>
         <Button
           onClick={() => {
@@ -78,6 +89,9 @@ ProductBox.propTypes = {
   starRating: PropTypes.bool,
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
+  removeFavourite: PropTypes.func,
+  addFavourite: PropTypes.func,
+  isFavourite: PropTypes.func,
 };
 
 export default ProductBox;
