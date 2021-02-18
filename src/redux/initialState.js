@@ -42,7 +42,7 @@ const initialState = {
       newFurniture: true,
       subcategory: 'saleOff',
       image:
-        'https://i.postimg.cc/7LN4f1XG/Aurora-Bed-Pink-Value-Flooring-and-Furniture.jpg',
+        'https://images.pexels.com/photos/6284232/pexels-photo-6284232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'aenean-ru-bristique-4',
