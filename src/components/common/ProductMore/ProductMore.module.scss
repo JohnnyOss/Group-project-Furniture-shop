@@ -6,29 +6,42 @@
   color: $text-color;
   width: 75%;
 }
-.nav {
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    li {
-      text-align: center;
-      display: inline-block;
-      button {
-        line-height: 2.5rem;
-        font-weight: bold;
-        border: none;
-        border-right: 1px solid $form-border-color;
-        border-bottom: 1px solid$form-border-color;
-        background: $background-light;
-      }
-      .active {
-        border-bottom: none;
-        color: $creme-main;
-      }
-    }
+.navLaptop {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  div:first-child,
+  div:nth-child(3) {
+    line-height: 2.5rem;
+    font-weight: bold;
+    border: none;
+    border-right: 1px solid $form-border-color;
+    border-bottom: 1px solid$form-border-color;
+    background: $background-light;
+    text-align: center;
   }
+  div:last-child {
+    line-height: 2.5rem;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid$form-border-color;
+    background: $background-light;
+    text-align: center;
+  }
+}
+.navPhone {
+  display: none;
+}
+.active {
+  border-bottom: none;
+  border-right: 1px solid $form-border-color;
+  color: $creme-main;
+  line-height: 2.5rem;
+  font-weight: bold;
+  text-align: center;
 }
 .stars {
   display: flex;
@@ -53,4 +66,39 @@
   border: none;
   line-height: 2.5rem;
   color: $text-color-light;
+}
+@media (max-width: 767px) {
+  .navPhone {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div:first-child,
+    div:nth-child(2),
+    div:nth-child(3) {
+      line-height: 2.5rem;
+      font-weight: bold;
+      border: none;
+      border-right: 1px solid $form-border-color;
+      border-bottom: 1px solid$form-border-color;
+      background: $background-light;
+      text-align: center;
+    }
+    div:nth-child(2) {
+      border-right: none;
+    }
+  }
+  .navLaptop {
+    display: none;
+  }
+  .active {
+    border-bottom: none;
+    border-right: none;
+    color: $creme-main;
+    line-height: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
 }

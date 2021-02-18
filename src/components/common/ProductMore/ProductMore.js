@@ -7,23 +7,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ProductMore = () => {
   return (
     <div className={styles.container}>
-      <div className='row'>
-        <div className='col'>
-          <div className={styles.nav}>
-            <ul className='row'>
-              <li>
-                <button className={'col-xs-6'}>DESCRIPTION</button>
-              </li>
-              <li>
-                <button className={`${styles.active} col-xs-6`}>REVIEWS (0)</button>
-              </li>
-              <li>
-                <button className={'col-xs-6'}>SPECIFICATION</button>
-              </li>
-              <li>
-                <button className={'col-xs-6'}>CUSTOM TAB</button>
-              </li>
-            </ul>
+      <div>
+        <div>
+          <div className={styles.navLaptop}>
+            <div className={'col-xs-6 col-md-3'}>DESCRIPTION</div>
+
+            <div className={`${styles.active} col-xs-6 col-md-3`}>REVIEWS (0)</div>
+
+            <div className={'col-xs-6 col-md-3'}>SPECIFICATION</div>
+
+            <div className={'col-xs-6 col-md-3'}>CUSTOM TAB</div>
+          </div>
+          <div className={styles.navPhone}>
+            <div className={'col-xs-6 col-md-3'}>DESCRIPTION</div>
+
+            <div className={'col-xs-6 col-md-3'}>SPECIFICATION</div>
+
+            <div className={'col-xs-6 col-md-3'}>CUSTOM TAB</div>
+            <div className={`${styles.active} col-xs-6 col-md-3`}>REVIEWS (0)</div>
           </div>
           <div className={styles.review}>
             <p> There are no review for this product.</p>

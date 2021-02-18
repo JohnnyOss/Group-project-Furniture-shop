@@ -1,0 +1,167 @@
+@import "../../../styles/settings.scss";
+.box {
+  height: 450px;
+  padding: 20px;
+  position: relative;
+}
+.imageWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  ::after {
+    //pseudo selektor na samym wraperze nie działa, bez opakowania zdjecia w wrapper, pseudoselector dziala jedynie na div promo1//
+    opacity: 0.3;
+    content: " ";
+    position: absolute;
+    width: 85%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $grey-color;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+.imageLeft {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  ::after {
+    opacity: 0.3;
+    content: " ";
+    position: absolute;
+    width: 85%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $grey-color;
+  }
+}
+.imageRight {
+  height: 195px;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.promo1 {
+  color: $light-color-6;
+  z-index: 10;
+  top: 47%;
+  left: 10%;
+  font-size: 45px;
+  position: absolute;
+  :after {
+    // nieudana proba usuniecia pseudoselektora z diva promo1//
+    content: none !important;
+    display: none !important;
+    opacity: 0;
+  }
+  .category {
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 38px;
+    margin: 0;
+    letter-spacing: 1px;
+    ::after {
+      content: none !important;
+      display: none !important;
+      opacity: 0;
+    }
+  }
+  .sale {
+    border: 5px solid $light-color-6;
+    ::after {
+      content: none !important;
+      display: none !important;
+      opacity: 0;
+    }
+  }
+}
+.imageBottom {
+  margin-top: 20px;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+.promo2 {
+  color: $black-color;
+  z-index: 10;
+  font-size: 30px;
+  line-height: 25px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .category {
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 25px;
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  .product {
+    letter-spacing: 5px;
+  }
+  .addInfo {
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .sale {
+    color: $creme-main;
+  }
+}
+.promo3 {
+  color: $creme-main;
+  z-index: 10;
+  font-size: 30px;
+  line-height: 25px;
+  position: absolute;
+  top: 80%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  .category {
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 25px;
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  .addInfo {
+    letter-spacing: 5px;
+  }
+  .sale {
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $black-color;
+    margin-left: 15px;
+  }
+}
+/*Media queries*/
+@media (max-width: 767px) {
+  .promo3 {
+    p:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+    .sale {
+      letter-spacing: -1px;
+      margin-left: 0;
+    }
+  }
+}

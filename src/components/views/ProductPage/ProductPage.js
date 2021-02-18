@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './ProductPage.module.scss';
 import ProductMore from '../../common/ProductMore/ProductMore';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+import Newsletter from '../../common/Newsletter/Newsletter';
 
 const ProductPage = () => {
   return (
@@ -10,10 +11,11 @@ const ProductPage = () => {
       This is ProductPage
       <ProductMore />
       <NewFurniture />
+      <Newsletter />
     </div>
   );
 };
 
-// ProductPage.propTypes = {};
+//ProductPage.propTypes = {};
 
 export default ProductPage;

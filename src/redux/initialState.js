@@ -16,6 +16,7 @@ const initialState = {
       starRating: true,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'featured',
       image:
         'https://s3.amazonaws.com/furniture.retailcatalog.us/products/425521018/small/jerary-queen-upholstered-bed-0.jpg',
     },
@@ -27,6 +28,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topSeller',
       image:
         'https://www.happybeds.co.uk/media/catalog/product/cache/2760f187cb7d1bcdeca5818f247800d3/f/e/fenton_grey_ottoman_2.jpg',
     },
@@ -38,6 +40,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'saleOff',
       image:
         'https://i.postimg.cc/7LN4f1XG/Aurora-Bed-Pink-Value-Flooring-and-Furniture.jpg',
     },
@@ -49,6 +52,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topRated',
       image:
         'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmVkfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
     },
@@ -60,6 +64,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'featured',
       image:
         'https://images-na.ssl-images-amazon.com/images/I/811Ah5JX4rL._AC_SL1500_.jpg',
     },
@@ -71,6 +76,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topSeller',
       image:
         'https://images-na.ssl-images-amazon.com/images/I/81S7gVpRgML._AC_SL1500_.jpg',
     },
@@ -82,6 +88,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'saleOff',
       image:
         'https://images-na.ssl-images-amazon.com/images/I/815GfbJE%2BXL._AC_SX679_.jpg',
     },
@@ -93,6 +100,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topRated',
       image:
         'https://content.valuecityfurniture.com/images/product/lydia_gray_twin-daybed-with-trundle_2748355_795887.jpg?akimg=product-img-950x950&ak-trim=false',
     },
@@ -104,6 +112,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'featured',
       image:
         'https://images-na.ssl-images-amazon.com/images/I/612cA5lJqML._AC_SL1000_.jpg',
     },
@@ -115,6 +124,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topSeller',
       image:
         'https://www.fortywinks.com.au/getmedia/d12b30d7-70af-4e56-8b5c-0601b754402d/jackson_bed_frame_contour-angle.jpg?width=1200',
     },
@@ -126,6 +136,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'saleOff',
       image:
         'https://www.bedknobsherts.co.uk/wp-content/uploads/2019/12/image-emperor-low-footend-wooden-bed-frame.jpg',
     },
@@ -137,6 +148,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topRated',
       image:
         'https://cdn.shopify.com/s/files/1/2660/5202/products/zkfd0a3bsj7hrfqllsyk_1400x.jpg?v=1598896473',
     },
@@ -148,6 +160,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'featured',
       image:
         'https://cdn.shopify.com/s/files/1/2513/8850/products/SNZXXXX_Palace_QS_3-Drawer_Bedframe_NA_Lifestyle_Angle-1_1024x@2x.progressive.jpg?v=1599800007',
     },
@@ -159,6 +172,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topSeller',
       image:
         'https://www.noaandnani.co.uk/images/single-bed-dorset-in-white-p81-6200_image.jpg',
     },
@@ -170,6 +184,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'saleOff',
       image:
         'https://www.ikea.com/th/en/images/products/slattum-upholstered-bed-frame-knisa-light-grey__0726695_PE735410_S5.JPG?f=s',
     },
@@ -181,6 +196,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topRated',
       image:
         'https://www.ikea.com/de/de/images/products/lauvik-boxbett-hafslo-mittelfest-beige__0419408_PE576296_S5.JPG?f=g',
     },
@@ -192,6 +208,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'featured',
       image:
         'https://www.ikea.com/de/de/images/products/kongsfjord-boxspringbett-hyllestad-mittelfest-tustna-djuparp-dunkelgrau__0891309_PE782265_S5.JPG?f=s',
     },
@@ -203,6 +220,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topSeller',
       image:
         'https://www.ikea.com/de/de/images/products/dunvik-boxspringbett-hyllestad-fest-tustna-gunnared-blau__0794070_PE765495_S5.JPG?f=g',
     },
@@ -214,6 +232,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'saleOff',
       image:
         'https://res.cloudinary.com/sleepnumber/image/upload/f_auto,q_auto:good/v1612973895/workarea/catalog/product_images/ile-360/postcard_desktop',
     },
@@ -225,6 +244,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topRated',
       image:
         'https://www.barkerandstonehouse.co.uk/images/uploaded/zoom/ODEON-HIGHBED_1_Zoom.jpg',
     },
@@ -236,6 +256,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'featured',
       image:
         'https://www.brunobett.de/img/boxspring/buyslide-schraeg-2019/hg/klassik_hg_mt.jpg?d=1?v=2',
     },
@@ -247,6 +268,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topSeller',
       image:
         'https://www.moebel-eins.de/out/pictures/master/product/1/paletti-180-fichte-milieu.jpg',
     },
@@ -258,6 +280,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'saleOff',
       image: 'https://www.betten.de/img/schubkasten-bett-pasja-wildeiche-geoelt.jpg',
     },
     {
@@ -268,6 +291,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      subcategory: 'topRated',
       image:
         'https://www.boxspring-welt.de/media/catalog/product/cache/1/image/fa765be5305a3720671b9e506079707b/p/a/paula_pale_1.jpg',
     },
@@ -278,7 +302,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'featured',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg?cs=srgb&dl=pexels-paula-schmidt-963486.jpg&fm=jpg',
     },
     {
       id: 'chair-royal-ludwik-2',
@@ -287,7 +314,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'topSeller',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/116910/pexels-photo-116910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-3',
@@ -296,7 +326,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'saleOff',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-4',
@@ -305,7 +338,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'topRated',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-5',
@@ -314,7 +350,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'featured',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/105004/pexels-photo-105004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-6',
@@ -323,7 +362,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'topSeller',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2082090/pexels-photo-2082090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-7',
@@ -332,7 +374,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'saleOff',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-8',
@@ -341,7 +386,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'topRated',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4857774/pexels-photo-4857774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-9',
@@ -351,6 +399,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-10',
@@ -360,6 +410,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1766485/pexels-photo-1766485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-11',
@@ -368,7 +420,10 @@ const initialState = {
       price: 20,
       stars: 2,
       promo: 'sale',
+      subcategory: 'topRated',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2495555/pexels-photo-2495555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-12',
@@ -378,6 +433,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1366872/pexels-photo-1366872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-13',
@@ -387,6 +444,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2179214/pexels-photo-2179214.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-14',
@@ -396,6 +455,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/447592/pexels-photo-447592.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'chair-royal-ludwik-15',
@@ -405,6 +466,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2258083/pexels-photo-2258083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-1',
@@ -414,6 +477,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-2',
@@ -423,6 +488,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-3',
@@ -432,6 +499,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-4',
@@ -441,6 +510,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-5',
@@ -450,6 +521,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-6',
@@ -459,6 +532,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-7',
@@ -468,6 +543,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/698170/pexels-photo-698170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-8',
@@ -477,6 +554,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/269141/pexels-photo-269141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-9',
@@ -486,6 +565,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1571457/pexels-photo-1571457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-10',
@@ -495,6 +576,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/945669/pexels-photo-945669.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-11',
@@ -504,6 +587,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/133919/pexels-photo-133919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'sofa-empire-classic-12',
@@ -513,6 +598,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2986011/pexels-photo-2986011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'table-brooklyn-grey-1',
@@ -522,6 +609,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2451264/pexels-photo-2451264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'table-brooklyn-grey-2',
@@ -531,6 +620,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2098913/pexels-photo-2098913.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'table-brooklyn-grey-3',
@@ -540,6 +631,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/851555/pexels-photo-851555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'table-brooklyn-grey-4',
@@ -549,6 +642,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'table-brooklyn-grey-5',
@@ -558,6 +653,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/280471/pexels-photo-280471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'table-brooklyn-grey-6',
@@ -567,6 +664,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-1',
@@ -576,6 +675,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/6198663/pexels-photo-6198663.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-2',
@@ -585,6 +686,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/6207816/pexels-photo-6207816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-3',
@@ -594,6 +697,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-4',
@@ -603,6 +708,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/6186507/pexels-photo-6186507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-5',
@@ -612,6 +719,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/6045083/pexels-photo-6045083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-6',
@@ -621,6 +730,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/4947749/pexels-photo-4947749.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-7',
@@ -630,6 +741,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/6180680/pexels-photo-6180680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-8',
@@ -639,6 +752,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/6045127/pexels-photo-6045127.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-9',
@@ -648,6 +763,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
     {
       id: 'dining-luxxxury-set-10',
@@ -657,6 +774,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      image:
+        'https://images.pexels.com/photos/279648/pexels-photo-279648.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
   ],
   brands: [
@@ -727,6 +846,64 @@ const initialState = {
       position: 'Strategic client',
       image:
         'https://images.pexels.com/photos/5324927/pexels-photo-5324927.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+  ],
+  galleryCategories: [
+    { id: 'featured', name: 'Featured' },
+    { id: 'topSeller', name: 'Top seller' },
+    { id: 'saleOff', name: 'Sale off' },
+    { id: 'topRated', name: 'Top rated' },
+  ],
+  galleryPromoProduct: {
+    link: 'https://cdn.pixabay.com/photo/2020/02/17/08/12/chair-4855824_960_720.jpg',
+    category: 'furniture',
+    name: 'Bedroom Bed',
+    price: '$50.80',
+  },
+  hotdeals: [
+    {
+      id: 'chair-empire-classic-13',
+      name: 'Chair Empire Classic 13',
+      category: 'chair',
+      price: 42,
+      stars: 2,
+      image:
+        'https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+  ],
+  hotdeals_slider: [
+    {
+      id: 'sofa-empire-classic-16',
+      name: 'Sofa Empire Classic 16',
+      image:
+        'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    },
+  ],
+  promotion: [
+    {
+      id: 'sofa',
+      category: 'GUEST ROOM',
+      product: 'SOFA',
+      sale: '-20%',
+      image:
+        'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+    {
+      id: 'chair',
+      category: 'OFFICE',
+      product: 'CHAIR',
+      addInfo: 'COLLECTION',
+      sale: '$200',
+      image:
+        'https://cdn3.sklum.com/de/771580/teill-colors-burostuhl-mit-radern-und-armlehnen.jpg',
+    },
+    {
+      id: 'bed',
+      category: 'SPECIAL',
+      addInfo: 'COLLECTION',
+      sale: 'SAVE UP 40% OF FURNITURE',
+      image:
+        'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
   ],
 };

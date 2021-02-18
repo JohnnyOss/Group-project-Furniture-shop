@@ -4,10 +4,17 @@ import NewFurniture from './NewFurniture';
 
 import { getAll } from '../../../redux/categoriesRedux.js';
 import { getNew } from '../../../redux/productsRedux.js';
+import { getCompared, changeCompare } from '../../../redux/productsRedux';
 
 const mapStateToProps = state => ({
   categories: getAll(state),
   products: getNew(state),
+  getCompared: getCompared(state),
+  changeCompare: changeCompare(state),
 });
 
-export default connect(mapStateToProps)(NewFurniture);
+const mapDispatchToProps = dispatch => ({
+  changeCompare: newState => dispatch(changeCompare(newState)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewFurniture);

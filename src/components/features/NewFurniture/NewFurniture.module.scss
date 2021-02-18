@@ -109,6 +109,10 @@
   animation: fadeOut 1s;
 }
 
+.swiper {
+  cursor: grab;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
