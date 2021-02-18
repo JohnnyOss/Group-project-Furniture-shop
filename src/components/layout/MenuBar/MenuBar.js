@@ -54,9 +54,9 @@ class MenuBar extends Component {
               </Button>
               <ul>
                 <li>
-                  <a href='/#' className={styles.active}>
+                  <Link to='/' className={styles.active}>
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link to='/shop/furniture'>Furniture</Link>
