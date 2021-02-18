@@ -8,6 +8,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './MenuBar.module.scss';
 import Button from '../../common/Button/Button';
+import { NavLink } from 'react-router-dom';
 
 class MenuBar extends Component {
   state = {
@@ -83,9 +84,9 @@ class MenuBar extends Component {
                   </a>
                 </li>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu}>
+                  <NavLink to='/blog' activeClassName='active'>
                     Blog
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
