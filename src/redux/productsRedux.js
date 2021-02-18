@@ -1,4 +1,5 @@
-/* selectors */
+//selectors
+
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 export const getCompared = ({ products }) => {
@@ -29,7 +30,6 @@ const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
-
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
