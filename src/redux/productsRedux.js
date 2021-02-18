@@ -23,10 +23,11 @@ export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoP
 // action name creator
 const createActionName = name => `product/rating/${name}`;
 
-// action types
+/*action types*/
+
+export const TOGGLE_FAVOURITE = createActionName('TOGGLE_FAVOURITE');
 export const SET_RATING = createActionName('SET_RATING');
 const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
-export const TOGGLE_FAVOURITE = createActionName('TOGGLE_FAVOURITE');
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
