@@ -3,6 +3,7 @@ import styles from './Login.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
+import Button from '../../common/Button/Button';
 
 const Login = () => (
   <div className={styles.root}>
@@ -22,22 +23,22 @@ const Login = () => (
         </h5>
         <input type='password' placeholder='Password'></input>
       </div>
-      <a href='/'>
-        <span>Log in</span>
-      </a>
+      <Button variant='main' href='/'>
+        Log in
+      </Button>
     </form>
     <div className={styles.features}>
       <div className={styles.featureBox}>
         <h5>Forgot your password?</h5>
-        <a href='/login/#'>
-          <span>Reset password</span>
-        </a>
+        <Button variant='main' href='/login/#'>
+          Reset password
+        </Button>
       </div>
       <div className={styles.featureBox}>
         <h5>Need a new account?</h5>
-        <a href='/login/#'>
-          <span>Sing up</span>
-        </a>
+        <Button variant='main' href='/login/#'>
+          Sing up
+        </Button>
       </div>
     </div>
   </div>
