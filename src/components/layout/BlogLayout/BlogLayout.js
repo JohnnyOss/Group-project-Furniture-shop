@@ -45,7 +45,7 @@ class BlogLayout extends React.Component {
 
             <div className={styles.sidebar__container}>
               <div className={styles.sidebar__search}>
-                <input placeholder='Search...' />
+                <input placeholder='Search in blog...' />
               </div>
               <div className={styles.sidebar__posts}>
                 <h5>Recent Post</h5>

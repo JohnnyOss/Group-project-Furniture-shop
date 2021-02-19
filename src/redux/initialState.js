@@ -924,7 +924,7 @@ const initialState = {
       image: 'https://placeimg.com/640/300/2',
       text:
         'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo. Integer ac nunc commodo ipsum primis in neque. Vestibulum non leo ut nunc ac turpis luctus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur volutpat at, malesuada fames ac risus. Morbi risus dictum lectus dapibus risus ornare tortor orci, in elit. Quisque adipiscing dui porta tellus wisi, mollis neque vitae erat blandit lectus. Nam lacus.',
-      author: 'BArack Obama',
+      author: 'Barack Obama',
       data: '09.12.2020',
       category: 'retro',
     },
