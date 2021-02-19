@@ -16,7 +16,7 @@ const Homepage = () => (
     <HotDeals />
     <FeatureBoxes />
     <Promotion />
-    <NewFurniture />
+    <NewFurniture itemsPerSlide={8} />
     <Gallery />
     <Brands />
     <Feedback />
