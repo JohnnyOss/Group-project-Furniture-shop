@@ -10,7 +10,7 @@ const ProductPage = () => {
     <div className={styles.root}>
       This is ProductPage
       <ProductMore />
-      <NewFurniture />
+      <NewFurniture itemsPerSlide={4} />
       <Newsletter />
     </div>
   );
