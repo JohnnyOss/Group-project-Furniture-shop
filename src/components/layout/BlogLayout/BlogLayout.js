@@ -11,7 +11,7 @@ class BlogLayout extends React.Component {
     return (
       <div className={styles.root}>
         <div className='container'>
-          <div className={'row' + ' ' + styles.row__blog}>
+          <div className={'row ' + styles.row__blog}>
             <div className={styles.articles__container}>
               {articles.map(item => (
                 <div key={item.id} className={styles.articles__item}>
