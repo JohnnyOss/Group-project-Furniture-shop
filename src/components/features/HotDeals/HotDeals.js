@@ -55,7 +55,7 @@ class HotDeals extends React.Component {
         <li key={dots}>
           <a
             onClick={() => this.handleProductChange(i)}
-            className={i === activeProduct_Carousel && styles.active}
+            //className={i === activeProduct_Carousel && styles.active}
           ></a>
         </li>
       );
@@ -72,13 +72,15 @@ class HotDeals extends React.Component {
                   <ul>{dots}</ul>
                 </div>
               </div>
-              {products
-                .slice(activeProduct_Carousel, activeProduct_Carousel + 1)
-                .map(item => (
-                  <div key={item.id}>
-                    <HotDealsBox {...item} />
-                  </div>
-                ))}
+              <div className={'row'}>
+                {products
+                  .slice(activeProduct_Carousel, activeProduct_Carousel + 1)
+                  .map(item => (
+                    <div key={item.id} className='col-12'>
+                      <HotDealsBox {...item} />
+                    </div>
+                  ))}
+              </div>
             </div>
             <div
               className={`col-xl-8 col-lg-8 col-md-7 col-sm-8 col-12 ${styles.carouselBox}`}
@@ -102,9 +104,9 @@ HotDeals.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       name: PropTypes.string,
-      category: PropTypes.string,
-      price: PropTypes.number,
-      stars: PropTypes.number,
+      //category: PropTypes.string,
+      //price: PropTypes.number,
+      //stars: PropTypes.number,
     })
   ),
   products: PropTypes.arrayOf(

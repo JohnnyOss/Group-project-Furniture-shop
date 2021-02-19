@@ -1,9 +1,10 @@
+import { formatWithCursor } from 'prettier';
 import { connect } from 'react-redux';
-
 import HotDeals from './HotDeals';
+import { getHotDeals } from '../../../redux/productsRedux';
 
 const mapStateToProps = state => ({
-  hotdeals: state.hotdeals,
+  products: getHotDeals(state),
   hotdeals_slider: state.hotdeals_slider,
 });
 
