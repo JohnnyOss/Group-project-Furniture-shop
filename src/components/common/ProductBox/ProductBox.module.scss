@@ -123,8 +123,10 @@
 }
 
 .favourite{
-  background-color: $favourite-background;
-  color: $favourite-font;
+  icon {
+    background-color: $favourite-background;
+    color: $favourite-font;
+  }
 }
 
 .root:hover .buttons {

@@ -46,11 +46,8 @@ const ProductBox = ({
       <div className={styles.outlines}>
         <Button
           variant='outline'
-          className={isFavourite ? styles.favourite : 'nonclass'}
-          onClick={event => {
-            event.preventDefault();
-            toggleFavourite(id);
-          }}
+          className={isFavourite ? styles.favourite : styles.default}
+          onClick={event => `${toggleFavourite({ id })} ${event.preventDefault()}`}
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
