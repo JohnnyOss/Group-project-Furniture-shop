@@ -11,7 +11,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
-import BlogLayout from './components/layout/BlogLayout/BlogLayout';
+import BlogLayout from './components/layout/BlogLayout/BlogLayoutContainer';
 
 const App = () => (
   <Provider store={store}>
