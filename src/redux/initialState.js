@@ -839,6 +839,18 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/4124334/pexels-photo-4124334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
+    {
+      id: 'Brand11',
+      name: 'Brand11',
+      image:
+        'https://images.pexels.com/photos/1356300/pexels-photo-1356300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand12',
+      name: 'Brand12',
+      image:
+        'https://images.pexels.com/photos/2255441/pexels-photo-2255441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
   ],
   cart: {
     products: [],

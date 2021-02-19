@@ -10,78 +10,81 @@ class Brands extends React.Component {
     activePage: 0,
   };
 
-  rightAction() {
-    this.setState(state => ({
-      activePage: state.activePage + 1,
-    }));
-  }
+  handlePageChange = newPage => {
+    this.setState({ activePage: newPage });
+  };
 
-  leftAction() {
-    this.setState(state => ({
-      activePage: state.activePage - 1,
-    }));
-  }
-
-  getBrandsCountFromMode(mode) {
-    switch (mode) {
-      case 'laptop':
-        return 4;
-      case 'tablet':
-        return 3;
-      case 'mobile':
-        return 2;
-      default:
-        return 6;
+  changePage = (activePage, change) => {
+    if (change === 1) {
+      return this.setState({
+        activePage: activePage + 1,
+      });
+    } else if (change === -1) {
+      return this.setState({
+        activePage: activePage - 1,
+      });
     }
-  }
+  };
 
   render() {
-    const { brands, mode } = this.props;
-
-    const brandsNumberOnSlide = this.getBrandsCountFromMode(mode);
-    const pagesCount = Math.ceil(brands.length / brandsNumberOnSlide);
+    const { brands } = this.props;
+    const { activeBrands, activePage } = this.state;
+    const itemsPerPage = 6;
+    const brandsNumber = brands.filter(brands => brands.id === activeBrands);
+    const pagesCount = Math.ceil(brandsNumber.length / itemsPerPage);
 
     const pages = [];
     for (let i = 0; i < pagesCount; i++) {
-      pages.push(
-        <div className={'row' + ' ' + styles.brandsElement}>
-          {brands
-            .slice(i * brandsNumberOnSlide, (i + 1) * brandsNumberOnSlide)
-            .map(brand => (
-              <div key={brand.id} className={'col-6 col-sm-3 col-xl-2'}>
-                <Brands {...brand} />
-              </div>
-            ))}
-        </div>
-      );
+      pages.push(<p key={i}></p>);
     }
 
-    const renderPages = () => {
-      return pages;
+    const pageDecrease = () => {
+      if (activePage > 0) {
+        this.handlePageChange(activePage - 1);
+      }
+    };
+
+    const pageIncrease = () => {
+      if (activePage === pagesCount - 1) {
+        return;
+      } else {
+        this.handlePageChange(activePage + 1);
+      }
     };
 
     return (
       <div className={styles.root}>
         <div className='container'>
-          <Swipeable
-            activePage={this.state.activePage}
-            rightAction={this.handleRightAction}
-            leftAction={this.handleLeftAction}
-          >
-            {renderPages}
-          </Swipeable>
           <div className={`row ${styles.wrapper}`}>
-            <div className={styles.arrow}>
+            <div className={styles.arrow} onClick={pageDecrease}>
               <FontAwesomeIcon className={styles.icon} icon={faAngleLeft} />
             </div>
-            <div className={styles.brandBox}>
-              {brands.map(brand => (
-                <div key={brand.id} className={styles.box}>
-                  <img src={brand.image} alt={brand.name} />
-                </div>
-              ))}
-            </div>
-            <div className={styles.arrow}>
+            <Swipeable
+              activePage={this.state.activePage}
+              changePage={(currentPage, change) => {
+                if (change === 1) {
+                  return this.setState({
+                    activePage:
+                      currentPage === pages.length - 1 ? currentPage : currentPage + 1,
+                  });
+                } else if (change === -1) {
+                  return this.setState({
+                    activePage: currentPage === 0 ? currentPage : currentPage - 1,
+                  });
+                }
+              }}
+            >
+              <div className={'row ' + styles.brandBox}>
+                {brands
+                  .slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage)
+                  .map(brand => (
+                    <div key={brand.id} className={styles.box}>
+                      <img src={brand.image} alt={brand.name} />
+                    </div>
+                  ))}
+              </div>
+            </Swipeable>
+            <div className={styles.arrow} onClick={pageIncrease}>
               <FontAwesomeIcon className={styles.icon} icon={faAngleRight} />
             </div>
           </div>
@@ -92,11 +95,14 @@ class Brands extends React.Component {
 }
 
 Brands.propTypes = {
-  brands: PropTypes.array,
-  mode: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  image: PropTypes.string,
+  brands: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      image: PropTypes.string,
+    })
+  ),
+  change: PropTypes.node,
 };
 
 Brands.defaultProps = {
