@@ -39,7 +39,7 @@ const Cart = () => (
                 <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
               </div>
               <div className='product-photo'>
-                <a href='img'></a>
+                <img alt='x'></img>
               </div>
               <div className='product-name'>Product nr 5</div>
               <div className='product-price'>
@@ -64,7 +64,6 @@ const Cart = () => (
                     className='input-group-field'
                     type='number'
                     name='quantity'
-                    value='0'
                   ></input>
                   <div className='input-group-button'>
                     <button
@@ -89,7 +88,7 @@ const Cart = () => (
                 <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
               </div>
               <div className='product-photo'>
-                <a href='img'></a>
+                <img alt='x'></img>
               </div>
               <div className='product-name'>Product nr 1</div>
               <div className='product-price'>
@@ -114,7 +113,6 @@ const Cart = () => (
                     className='input-group-field'
                     type='number'
                     name='quantity'
-                    value='0'
                   ></input>
                   <div className='input-group-button'>
                     <button
@@ -139,7 +137,7 @@ const Cart = () => (
                 <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
               </div>
               <div className='product-photo'>
-                <a href='img'></a>
+                <img alt='x'></img>
               </div>
               <div className='product-name'>Product nr 9</div>
               <div className='product-price'>
@@ -164,7 +162,6 @@ const Cart = () => (
                     className='input-group-field'
                     type='number'
                     name='quantity'
-                    value='0'
                   ></input>
                   <div className='input-group-button'>
                     <button
@@ -185,7 +182,7 @@ const Cart = () => (
               </div>
             </div>
           </div>
-          <td colSpan='6' className='action'>
+          <div colSpan='6' className='action'>
             <div className='coupon'>
               <label htmlFor='coupon-code'></label>
               <input
@@ -193,11 +190,36 @@ const Cart = () => (
                 className='input-text'
                 placeholder='Coupon code'
               ></input>
-              <button type='submit' className='button' value='Apply coupon'>
+              <button type='submit' className='button'>
                 Apply coupon
               </button>
             </div>
-          </td>
+            <button type='submit' className='button'>
+              Update cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className='cart-submit'>
+      <div className='cart-totals'>
+        <p>Cart Totals</p>
+        <div className='submit-body'>
+          <div className='cart-subtotal'>
+            <p>Subtotal</p>
+            <span className='price-currency-symbol'>$</span>
+            55.00
+          </div>
+          <div className='cart-total'>
+            <p>Total</p>
+            <span className='price-currency-symbol'>$</span>
+            55.00
+          </div>
+          <div className='chceckout-button'>
+            <button type='submit' className='button'>
+              Proceed to checkout
+            </button>
+          </div>
         </div>
       </div>
     </div>
