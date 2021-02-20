@@ -24,6 +24,17 @@
     padding: 10px 0;
     text-transform: uppercase;
   }
+
+  .filterRange {
+    display: flex;
+    flex-direction: column;
+
+    &__name {
+      border-bottom: 1px solid gray;
+      padding: 5px 0;
+      text-transform: uppercase;
+    }
+  }
 }
 
 @media (max-width: 768px) {
