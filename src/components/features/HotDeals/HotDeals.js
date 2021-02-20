@@ -6,8 +6,8 @@ import HotDealsCarousel from '../../common/HotDealsCarousel/HotDealsCarousel';
 
 class HotDeals extends React.Component {
   state = {
-    activeProduct_Carousel: 0,
-    activeProduct_Box: 0,
+    activeCarousel: 0,
+    activeSlider: 0,
   };
 
   componentDidMount() {
@@ -17,11 +17,11 @@ class HotDeals extends React.Component {
   carousel = () => {
     this.intervalId = setInterval(() => {
       this.setState(prevState => ({
-        prevProduct: prevState.activeProduct_Carousel,
-        activeProduct_Carousel:
-          prevState.activeProduct_Carousel === this.props.products.length - 1
+        prevProduct: prevState.activeCarousel,
+        activeCarousel:
+          prevState.activeCarousel === this.props.products.length - 1
             ? 0
-            : ++prevState.activeProduct_Carousel,
+            : ++prevState.activeCarousel,
       }));
     }, 3000);
   };
@@ -41,12 +41,26 @@ class HotDeals extends React.Component {
       this.carousel();
       clearTimeout(this.timeoutId);
     }, 8000);
-    this.setState({ activeProduct_Carousel: newPage });
+    this.setState({ activeCarousel: newPage });
+  }
+
+  handleSliderChange(event, value) {
+    event.preventDefault();
+
+    if (this.state.activeSlider === 0 && value === -1) {
+      this.setState({ activeSlider: 2 });
+    } else if (this.state.activeSlider === 2 && value === 1) {
+      this.setState({ activeSlider: 0 });
+    } else if (value === 1) {
+      this.setState({ activeSlider: this.state.activeSlider + 1 });
+    } else if (value === -1) {
+      this.setState({ activeSlider: this.state.activeSlider - 1 });
+    }
   }
 
   render() {
     const { products, hotdeals_slider } = this.props;
-    const { activeProduct_Carousel, activeProduct_Box } = this.state;
+    const { activeCarousel, activeSlider } = this.state;
 
     const dots = [];
 
@@ -55,7 +69,7 @@ class HotDeals extends React.Component {
         <li key={dots}>
           <a
             onClick={() => this.handleProductChange(i)}
-            //className={i === activeProduct_Carousel && styles.active}
+            className={i === activeCarousel ? styles.active : ''}
           ></a>
         </li>
       );
@@ -73,19 +87,17 @@ class HotDeals extends React.Component {
                 </div>
               </div>
               <div className={'row'}>
-                {products
-                  .slice(activeProduct_Carousel, activeProduct_Carousel + 1)
-                  .map(item => (
-                    <div key={item.id} className='col-12'>
-                      <HotDealsBox {...item} />
-                    </div>
-                  ))}
+                {products.slice(activeCarousel, activeCarousel + 1).map(item => (
+                  <div key={item.id} className='col-12'>
+                    <HotDealsBox {...item} />
+                  </div>
+                ))}
               </div>
             </div>
             <div
               className={`col-xl-8 col-lg-8 col-md-7 col-sm-8 col-12 ${styles.carouselBox}`}
             >
-              {hotdeals_slider.map(item => (
+              {hotdeals_slider.slice(activeSlider, activeSlider + 1).map(item => (
                 <div key={item.id}>
                   <HotDealsCarousel {...item} />
                 </div>
