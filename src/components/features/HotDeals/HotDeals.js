@@ -84,13 +84,8 @@ class HotDeals extends React.Component {
     }
   }
 
-  makeFadeIn(newArgument) {
+  makeFadeIn() {
     this.setState({ fadeLeft: false, fadeRight: false });
-    if (newArgument >= 0) {
-      this.setState({ activePage: newArgument });
-    } else {
-      this.setState({ activeCategory: newArgument });
-    }
   }
 
   render() {
@@ -170,16 +165,6 @@ class HotDeals extends React.Component {
 }
 
 HotDeals.propTypes = {
-  children: PropTypes.node,
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      //category: PropTypes.string,
-      //price: PropTypes.number,
-      //stars: PropTypes.number,
-    })
-  ),
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -197,11 +182,6 @@ HotDeals.propTypes = {
       name: PropTypes.string,
     })
   ),
-};
-
-HotDeals.defaultProps = {
-  products: [],
-  hotdeals_slider: [],
 };
 
 export default HotDeals;
