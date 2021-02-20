@@ -8,7 +8,6 @@ import Newsletter from '../../common/Newsletter/Newsletter';
 const ProductPage = () => {
   return (
     <div className={styles.root}>
-      This is ProductPage
       <ProductMore />
       <NewFurniture itemsPerSlide={4} />
       <Newsletter />
