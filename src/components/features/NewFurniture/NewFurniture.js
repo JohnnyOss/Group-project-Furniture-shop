@@ -51,9 +51,9 @@ class NewFurniture extends React.Component {
   render() {
     const { categories, products, getCompared, changeCompare } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
-
+    const itemsInSlide = this.props.itemsPerSlide;
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / itemsInSlide);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -117,7 +117,7 @@ class NewFurniture extends React.Component {
           >
             <div className={'row ' + styles.swiper}>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(activePage * itemsInSlide, (activePage + 1) * itemsInSlide)
                 .map(item => (
                   <div
                     key={item.id}
@@ -162,6 +162,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  itemsPerSlide: PropTypes.number,
 };
 
 NewFurniture.defaultProps = {
