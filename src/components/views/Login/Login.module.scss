@@ -11,7 +11,7 @@
   .header {
     padding: 10px;
     background-color: $login-header-bg;
-    border-bottom: 2px solid $login-border
+    border-bottom: 2px solid $login-border;
   }
 
   a {
@@ -39,6 +39,14 @@
   input {
     padding: 5px;
     margin: 10px auto;
+  }
+  .error {
+    color: $login-error-font;
+    background-color: $login-error-bg;
+    max-width: max-content;
+    margin: 10px auto;
+    font-weight: bold;
+    letter-spacing: 2px;
   }
 
   .features {

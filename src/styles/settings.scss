@@ -5,7 +5,7 @@ $base-padding: 24px;
 $black-color: #010202;
 
 $creme-main: #d58e32;
-$creme-transparent: rgba(213,142,50,0.6);
+$creme-transparent: rgba(213, 142, 50, 0.6);
 
 $dark-color-1: #363636;
 $dark-color-2: #2a2a2a;
@@ -20,7 +20,7 @@ $light-color-3: #f4f5f7;
 $light-color-4: #e2e2e2;
 $light-color-5: #e1e1e1;
 $light-color-6: #e0e3ed;
-$light-color-7:#f1efee;
+$light-color-7: #f1efee;
 
 $silver-color: #a9a9a9;
 
@@ -29,7 +29,6 @@ $transparent: transparent;
 $white-color: #ffffff;
 
 $slider-overlay: rgba(54, 54, 54, 0.5);
-
 
 // *****COLORS IN COMPONENTS*****
 
@@ -44,7 +43,6 @@ $btn-outline-border-color: $dark-color-2;
 $btn-outline-font-color: $dark-color-2;
 $btn-outline-background-color-hover: $dark-color-2;
 $btn-outline-font-color-hover: $white-color;
-
 
 //FeatureBox
 $featureBox-border: $light-color-2;
@@ -101,10 +99,9 @@ $text-color: $dark-color-2;
 $border-color: #cccccc;
 
 //Gallery
-$gallery-text-color : $creme-main;
+$gallery-text-color: $creme-main;
 $gallery-light-color: $light-color-3;
-$gallery-green-color: #389F4B;
-
+$gallery-green-color: #389f4b;
 
 //***LAYOUT***
 
@@ -150,6 +147,8 @@ $login-links-bg: $white-color;
 $login-links-font: $dark-color-1;
 $login-links-hover-bg: $creme-main;
 $login-links-hover-font: $white-color;
+$login-error-bg: $creme-main;
+$login-error-font: $dark-color-1;
 
 $transition: all 0.25s;
 

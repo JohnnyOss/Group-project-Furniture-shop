@@ -29,6 +29,7 @@ Button.propTypes = {
   noHover: PropTypes.bool,
   className: PropTypes.string,
   variant: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 export default Button;
