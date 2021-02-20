@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -34,13 +33,13 @@ const TopBar = () => (
         <div className={`col-6 col-md-6 col-sm-4 text-right ${styles.topMenu}`}>
           <ul>
             <li>
-              <Link to='/user/login'>
+              <Link to='/login'>
                 <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
                 <span className={styles.topbarText}>Login</span>
               </Link>
             </li>
             <li>
-              <Link to='/user/register'>
+              <Link to='/register'>
                 <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
                 <span className={styles.topbarText}>Register</span>
               </Link>

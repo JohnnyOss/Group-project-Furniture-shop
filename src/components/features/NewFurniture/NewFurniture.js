@@ -51,9 +51,9 @@ class NewFurniture extends React.Component {
   render() {
     const { categories, products, getCompared, changeCompare } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
-
+    const itemsInSlide = this.props.itemsPerSlide;
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / itemsInSlide);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -78,7 +78,7 @@ class NewFurniture extends React.Component {
               <div className={'col-auto ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
-              <div className={'col ' + styles.menu}>
+              <div className={'col-12 col-sm-8 ' + styles.menu}>
                 <ul>
                   {categories.map(item => (
                     <li key={item.id}>
@@ -95,7 +95,7 @@ class NewFurniture extends React.Component {
                   ))}
                 </ul>
               </div>
-              <div className={'col-auto ' + styles.dots}>
+              <div className={'col-12 col-md-auto ' + styles.dots}>
                 <ul>{dots}</ul>
               </div>
             </div>
@@ -117,11 +117,13 @@ class NewFurniture extends React.Component {
           >
             <div className={'row ' + styles.swiper}>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(activePage * itemsInSlide, (activePage + 1) * itemsInSlide)
                 .map(item => (
                   <div
                     key={item.id}
-                    className={`col-3 ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}
+                    className={`col-6 col-md-4 col-lg-3 p-2 ${
+                      fadeTrue ? styles.fadeIn : styles.fadeOut
+                    }`}
                   >
                     <ProductBox
                       getCompared={getCompared}
@@ -160,6 +162,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  itemsPerSlide: PropTypes.number,
 };
 
 NewFurniture.defaultProps = {
