@@ -7,32 +7,11 @@ function valuetext(value) {
   return `$${value}`;
 }
 
-const PriceSlider = props => {
-  let minValue = 135;
-  let maxValue = 500;
-  const [value, setValue] = useState([minValue, maxValue]);
-
-  console.log('valueMin', value[0]);
-  console.log('valueMax', value[1]);
+const PriceSlider = () => {
+  const [value, setValue] = useState([135, 500]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-  };
-
-  // const valueMin = (index, value) => {
-
-  // }
-
-  const handleInputChange = event => {
-    setValue(event.target.value === '' ? '' : Number(event.target.value));
-  };
-
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 1000) {
-      setValue(1000);
-    }
   };
 
   return (
@@ -43,11 +22,8 @@ const PriceSlider = props => {
         min={0}
         max={1000}
         step={1}
-        // defaultValue={[135, 500]}
         onChange={handleChange}
-        // valueLabelDisplay="auto"
         aria-labelledby='range-slider'
-        // getAriaLabel = {valueThumb}
         getAriaValueText={valuetext}
       />
       <div className={styles.inputBox}>
