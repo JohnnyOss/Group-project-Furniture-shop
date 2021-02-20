@@ -3,11 +3,19 @@ import PropTypes from 'prop-types';
 import styles from './HotDeals.module.scss';
 import HotDealsBox from '../../common/HotDealsBox/HotDealsBox';
 import HotDealsCarousel from '../../common/HotDealsCarousel/HotDealsCarousel';
+import {
+  faLongArrowAltLeft,
+  faLongArrowAltRight,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../../common/Button/Button';
 
 class HotDeals extends React.Component {
   state = {
     activeCarousel: 0,
     activeSlider: 0,
+    fadeLeft: true,
+    fadeRight: true,
   };
 
   componentDidMount() {
@@ -35,32 +43,59 @@ class HotDeals extends React.Component {
     }
   };
 
-  handleProductChange(newPage) {
+  handleProductChange(event, newPage) {
+    event.preventDefault();
     this.stopCarousel();
     this.timeoutId = setTimeout(() => {
       this.carousel();
       clearTimeout(this.timeoutId);
-    }, 8000);
-    this.setState({ activeCarousel: newPage });
+    }, 10000);
+    setTimeout(() => {
+      this.setState({ activeCarousel: newPage });
+    }, 1000);
   }
 
   handleSliderChange(event, value) {
     event.preventDefault();
+    setTimeout(() => {
+      if (this.state.activeSlider === 0 && value === -1) {
+        this.setState({ activeSlider: 2 });
+      } else if (this.state.activeSlider === 2 && value === 1) {
+        this.setState({ activeSlider: 0 });
+      } else if (value === 1) {
+        this.setState({ activeSlider: this.state.activeSlider + 1 });
+      } else if (value === -1) {
+        this.setState({ activeSlider: this.state.activeSlider - 1 });
+      }
+    }, 1000);
+  }
 
-    if (this.state.activeSlider === 0 && value === -1) {
-      this.setState({ activeSlider: 2 });
-    } else if (this.state.activeSlider === 2 && value === 1) {
-      this.setState({ activeSlider: 0 });
-    } else if (value === 1) {
-      this.setState({ activeSlider: this.state.activeSlider + 1 });
-    } else if (value === -1) {
-      this.setState({ activeSlider: this.state.activeSlider - 1 });
+  makeFadeOut(event, newArgument) {
+    event.preventDefault();
+    this.setState({ fadeLeft: false, fadeRight: false });
+    if (newArgument >= 0) {
+      setTimeout(() => {
+        this.makeFadeIn(newArgument);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        this.makeFadeIn(newArgument);
+      }, 1000);
+    }
+  }
+
+  makeFadeIn(newArgument) {
+    this.setState({ fadeLeft: false, fadeRight: false });
+    if (newArgument >= 0) {
+      this.setState({ activePage: newArgument });
+    } else {
+      this.setState({ activeCategory: newArgument });
     }
   }
 
   render() {
     const { products, hotdeals_slider } = this.props;
-    const { activeCarousel, activeSlider } = this.state;
+    const { activeCarousel, activeSlider, fadeLeft, fadeRight } = this.state;
 
     const dots = [];
 
@@ -68,7 +103,9 @@ class HotDeals extends React.Component {
       dots.push(
         <li key={dots}>
           <a
-            onClick={() => this.handleProductChange(i)}
+            onClick={event => {
+              this.handleProductChange(event, i);
+            }}
             className={i === activeCarousel ? styles.active : ''}
           ></a>
         </li>
@@ -86,20 +123,42 @@ class HotDeals extends React.Component {
                   <ul>{dots}</ul>
                 </div>
               </div>
-              <div className={'row'}>
-                {products.slice(activeCarousel, activeCarousel + 1).map(item => (
-                  <div key={item.id} className='col-12'>
-                    <HotDealsBox {...item} />
-                  </div>
-                ))}
-              </div>
+              {products.slice(activeCarousel, activeCarousel + 1).map(item => (
+                <div
+                  key={item.id}
+                  className={fadeLeft ? styles.fadeIn : styles.fadeOut}
+                >
+                  <HotDealsBox {...item} />
+                </div>
+              ))}
             </div>
             <div
               className={`col-xl-8 col-lg-8 col-md-7 col-sm-8 col-12 ${styles.carouselBox}`}
             >
               {hotdeals_slider.slice(activeSlider, activeSlider + 1).map(item => (
-                <div key={item.id}>
+                <div
+                  key={item.id}
+                  className={fadeRight ? styles.fadeInRight : styles.fadeOutRight}
+                >
                   <HotDealsCarousel {...item} />
+                  <div className={styles.arrows}>
+                    <Button
+                      variant='main-carousel'
+                      onClick={event => {
+                        this.handleSliderChange(event, -1);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faLongArrowAltLeft}></FontAwesomeIcon>
+                    </Button>
+                    <Button
+                      variant='main-carousel'
+                      onClick={event => {
+                        this.handleSliderChange(event, 1);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faLongArrowAltRight}></FontAwesomeIcon>
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>

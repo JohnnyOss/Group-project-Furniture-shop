@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './HotDealsCarousel.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLongArrowAltLeft,
-  faLongArrowAltRight,
-} from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
 
 const HotDealsCarousel = ({ image, name }) => (
@@ -21,14 +16,6 @@ const HotDealsCarousel = ({ image, name }) => (
       <div className={styles.buttons}>
         <Button variant='main-light'>SHOP NOW</Button>
       </div>
-    </div>
-    <div className={styles.arrows}>
-      <Button variant='main-carousel'>
-        <FontAwesomeIcon icon={faLongArrowAltLeft}></FontAwesomeIcon>
-      </Button>
-      <Button variant='main-carousel'>
-        <FontAwesomeIcon icon={faLongArrowAltRight}></FontAwesomeIcon>
-      </Button>
     </div>
   </div>
 );

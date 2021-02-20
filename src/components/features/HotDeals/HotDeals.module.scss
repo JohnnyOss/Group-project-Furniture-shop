@@ -5,6 +5,44 @@
   padding-top: 5rem;
 }
 
+.arrows {
+  display: flex;
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+}
+
+.fadeOut {
+  animation: fadeOut 1s;
+}
+
+.fadeInRight {
+  animation: fadeIn 2s;
+}
+
+.fadeOutRight {
+  animation: fadeOut 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .heading {
   background-color: $footer-bg;
   display: flex;
