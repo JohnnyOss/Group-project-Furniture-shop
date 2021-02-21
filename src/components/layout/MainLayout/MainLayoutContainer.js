@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 import MainLayout from './MainLayout';
-import { currentRwdMode, setResponsiveMode } from '../../../redux/rwdModeRedux';
+import { setResponsiveMode } from '../../../redux/rwdModeRedux';
 
 const mapStateToProps = state => ({
-  currentRwdMode: currentRwdMode(state),
+  currentRwdMode: state.rwd.mode,
 });
 
 const mapDispatchToProps = dispatch => ({

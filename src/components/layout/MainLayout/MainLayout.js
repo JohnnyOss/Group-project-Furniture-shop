@@ -4,35 +4,48 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const MainLayout = ({ children, setResponsiveMode, currentRwdMode }) => {
-  const checkRwdMode = windowInnerWidth => {
-    if (windowInnerWidth <= 576) {
-      console.log('mobile');
+class MainLayout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.resizer = null;
+
+    this.checkRwdMode();
+  }
+
+  componentDidMount() {
+    this.resizer = window.addEventListener('resize', () => this.checkRwdMode());
+  }
+
+  componentWillUnmount() {
+    this.resizer.removeEventListener('resize', () => this.checkRwdMode());
+  }
+
+  checkRwdMode() {
+    const windowInnerWidth = window.innerWidth;
+    const { setResponsiveMode, currentRwdMode } = this.props;
+    if (windowInnerWidth <= 576 && currentRwdMode !== 'mobile') {
       setResponsiveMode('mobile');
-    } else if (windowInnerWidth > 576 && windowInnerWidth <= 768) {
-      console.log('tablet');
+    } else if (
+      windowInnerWidth > 576 &&
+      windowInnerWidth <= 992 &&
+      currentRwdMode !== 'tablet'
+    ) {
       setResponsiveMode('tablet');
-    } else {
-      console.log('desktop');
+    } else if (windowInnerWidth > 992 && currentRwdMode !== 'desktop') {
       setResponsiveMode('desktop');
-      //console.log('current RWD mode:', currentRwdMode);
     }
-  };
+  }
 
-  checkRwdMode(window.innerWidth);
-
-  window.addEventListener('resize', () => {
-    checkRwdMode(window.innerWidth);
-  });
-
-  return (
-    <div>
-      <Header />
-      {children}
-      <Footer />
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+        <Header />
+        {this.props.children}
+        <Footer />
+      </div>
+    );
+  }
+}
 
 MainLayout.propTypes = {
   children: PropTypes.node,
