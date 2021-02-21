@@ -16,22 +16,22 @@ const FilterByCategories = () => (
         <container>
           <ul className={styles.byCategories}>
             <li>
-              Furniture<span className={styles.dot}>4</span>
+              Furniture<span className={styles.dot}>3</span>
             </li>
             <li>
-              Sofa<span className={styles.dot}>3</span>
+              Sofa<span className={styles.dot}>4</span>
             </li>
             <li>
-              Chair<span className={styles.dot}>1</span>
+              Chair<span className={styles.dot}>5</span>
             </li>
             <li>
-              Table<span className={styles.dot}>6</span>
+              Table<span className={styles.dot}>5</span>
             </li>
             <li>
-              Bedroom<span className={styles.dot}>2</span>
+              Bedroom<span className={styles.dot}>5</span>
             </li>
             <li>
-              Furniture <span className={styles.dot}>1</span>
+              Furniture <span className={styles.dot}>5</span>
             </li>
           </ul>
         </container>
