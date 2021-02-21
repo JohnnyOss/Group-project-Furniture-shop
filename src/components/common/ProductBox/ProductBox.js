@@ -19,53 +19,60 @@ const ProductBox = ({
   starRating,
   getCompared,
   changeCompare,
-}) => (
-  <div className={styles.root}>
-    <div className={styles.photo}>
-      <img className={styles.img} src={image} alt={name} />
-      {promo && <div className={styles.sale}>{promo}</div>}
-      <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
-        <Button variant='small'>
-          <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-        </Button>
+  addProduct,
+}) => {
+  const addToCart = event => {
+    event.preventDefault();
+    addProduct({ id, price, ...ProductBox });
+  };
+  return (
+    <div className={styles.root}>
+      <div className={styles.photo}>
+        <img className={styles.img} src={image} alt={name} />
+        {promo && <div className={styles.sale}>{promo}</div>}
+        <div className={styles.buttons}>
+          <Button variant='small'>Quick View</Button>
+          <Button variant='small' onClick={() => addToCart}>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          </Button>
+        </div>
+      </div>
+      <div className={styles.content}>
+        <Link id={id} to={`/product/${id}`}>
+          <h5>{name}</h5>
+        </Link>
+        <div>
+          <ProductRating id={id} starRating={starRating} stars={stars} />
+        </div>
+      </div>
+      <div className={styles.line}></div>
+      <div className={styles.actions}>
+        <div className={styles.outlines}>
+          <Button variant='outline'>
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
+          <Button
+            onClick={() => {
+              if (getCompared.find(item => item.id === id)) {
+                changeCompare(id);
+              } else if (getCompared.length <= 3) {
+                changeCompare(id);
+              }
+            }}
+            variant='outline'
+          >
+            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+          </Button>
+        </div>
+        <div className={styles.price}>
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
-    <div className={styles.content}>
-      <Link id={id} to={`/product/${id}`}>
-        <h5>{name}</h5>
-      </Link>
-      <div>
-        <ProductRating id={id} starRating={starRating} stars={stars} />
-      </div>
-    </div>
-    <div className={styles.line}></div>
-    <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button
-          onClick={() => {
-            if (getCompared.find(item => item.id === id)) {
-              changeCompare(id);
-            } else if (getCompared.length <= 3) {
-              changeCompare(id);
-            }
-          }}
-          variant='outline'
-        >
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-        </Button>
-      </div>
-      <div className={styles.price}>
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 ProductBox.propTypes = {
   children: PropTypes.node,
@@ -78,6 +85,7 @@ ProductBox.propTypes = {
   starRating: PropTypes.bool,
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
+  addProduct: PropTypes.func,
 };
 
 export default ProductBox;
