@@ -15,28 +15,33 @@ class Login extends React.Component {
       passwordError: '',
     };
   }
+
   handleUserChange = event => {
     this.setState({ user: event.target.value }, () => {
       this.validateUserName();
     });
   };
+
   handlePasswordChange = event => {
     this.setState({ password: event.target.value }, () => {
       this.validatePassword();
     });
   };
+
   validateUserName = () => {
     const { user } = this.state;
     this.setState({
       nameError: user === 'admin' ? null : 'Wrong user name',
     });
   };
+
   validatePassword = () => {
     const { password } = this.state;
     this.setState({
       passwordError: password === 'pass' ? null : 'Invalid password',
     });
   };
+
   validateAccess = () => {
     this.validatePassword();
     this.validateUserName();
@@ -94,7 +99,7 @@ class Login extends React.Component {
           <div className={styles.featureBox}>
             <h5>Need a new account?</h5>
             <Button variant='main' href='/login/#'>
-              Sing up
+              Sign up
             </Button>
           </div>
         </div>
