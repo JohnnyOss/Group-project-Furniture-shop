@@ -14,6 +14,7 @@ import ProductPage from './components/views/ProductPage/ProductPage';
 import BlogLayout from './components/layout/BlogLayout/BlogLayoutContainer';
 import Login from './components/views/Login/Login';
 import Register from './components/views/Register/Register';
+import Search from './components/views/Search/Search';
 
 
 const App = () => (
@@ -27,6 +28,7 @@ const App = () => (
           <Route exact path='/blog' component={BlogLayout} />
           <Route exact path={'/login'} component={Login} />
           <Route exact path={'/register'} component={Register} />
+          <Route exact path={'/search'} component={Search} />
         </Switch>
       </MainLayout>
     </BrowserRouter>

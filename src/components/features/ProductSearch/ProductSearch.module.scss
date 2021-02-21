@@ -109,10 +109,9 @@
       }
     }
 
-    button {
-      border: 0;
-      background-color: $form-select-background;
-      outline: none;
+    a {
+      padding: 5px;
+      color: $black-color;
     }
   }
 }
