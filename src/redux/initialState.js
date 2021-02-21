@@ -906,6 +906,29 @@ const initialState = {
         'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
   ],
+  blogArticles: [
+    {
+      id: 1,
+      title: 'Witamy na nowej stronie sklepu',
+      image:
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-montanah-1350789.jpg&fm=jpg',
+      text:
+        'Lorem ipsum sed felis. Integer eu lectus. Nam libero ante, cursus ut, metus. Curabitur ornare dapibus. Aenean augue eget leo facilisis vel, hendrerit wisi. Sed sed turpis. Donec sollicitudin mi. Aliquam nisl. Nulla lobortis semper. Praesent quis orci. Vestibulum ante imperdiet nec, hendrerit nonummy. Nam sit amet, consectetuer vulputate at, elit.',
+      author: 'Bill Clinton',
+      data: '18.02.2021',
+      category: 'modern',
+    },
+    {
+      id: 2,
+      title: 'Title of Post 2',
+      image: 'https://placeimg.com/640/300/2',
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo. Integer ac nunc commodo ipsum primis in neque. Vestibulum non leo ut nunc ac turpis luctus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur volutpat at, malesuada fames ac risus. Morbi risus dictum lectus dapibus risus ornare tortor orci, in elit. Quisque adipiscing dui porta tellus wisi, mollis neque vitae erat blandit lectus. Nam lacus.',
+      author: 'Barack Obama',
+      data: '09.12.2020',
+      category: 'retro',
+    },
+  ],
 };
 
 export default initialState;

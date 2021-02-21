@@ -74,7 +74,9 @@ class MenuBar extends Component {
                   <Link to='/shop/bedroom'>Bedroom</Link>
                 </li>
                 <li>
-                  <Link to='/shop/blog'>Blog</Link>
+                  <Link to='/blog' activeClassName='active'>
+                    Blog
+                  </Link>
                 </li>
               </ul>
             </div>
