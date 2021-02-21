@@ -183,7 +183,17 @@ HotDeals.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
-  hotdeals_slider: PropTypes.array,
+  hotdeals_slider: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
+};
+
+HotDeals.defaultProps = {
+  products: [],
+  hotdeals_slider: [],
 };
 
 export default HotDeals;
