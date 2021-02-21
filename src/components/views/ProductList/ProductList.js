@@ -2,6 +2,8 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import PriceSlider from '../../common/PriceSlider/PriceSlider';
+import { StylesProvider } from '@material-ui/core/styles';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -17,6 +19,12 @@ const ProductList = () => (
         </Col>
         <Col xs md={4} lg={3} className={styles.filters}>
           <h3 className={styles.header}>Filtry</h3>
+          <div className={styles.filterRange}>
+            <h5 className={styles.filterRange__name}>Filter by price</h5>
+            <StylesProvider injectFirst>
+              <PriceSlider />
+            </StylesProvider>
+          </div>
         </Col>
       </Row>
     </Grid>
