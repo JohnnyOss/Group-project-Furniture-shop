@@ -21,7 +21,6 @@ const HotDealsCarousel = ({ image, name }) => (
 );
 
 HotDealsCarousel.propTypes = {
-  children: PropTypes.node,
   name: PropTypes.string,
   image: PropTypes.string,
 };

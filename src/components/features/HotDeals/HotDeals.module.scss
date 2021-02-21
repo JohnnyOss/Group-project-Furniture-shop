@@ -2,44 +2,45 @@
 @import "../../../styles/bootstrap.scss";
 
 .root {
+  
   padding-top: 5rem;
-}
 
-.arrows {
-  display: flex;
-}
-
-.fadeIn {
-  animation: fadeIn 1s;
-}
-
-.fadeOut {
-  animation: fadeOut 1s;
-}
-
-.fadeInRight {
-  animation: fadeIn 2s;
-}
-
-.fadeOutRight {
-  animation: fadeOut 2s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  .arrows {
+    display: flex;
   }
-  to {
-    opacity: 1;
+  
+  .fadeIn {
+    animation: fadeIn 1s;
   }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
+  
+  .fadeOut {
+    animation: fadeOut 1s;
   }
-  to {
-    opacity: 0;
+  
+  .fadeInRight {
+    animation: fadeIn 2s;
+  }
+  
+  .fadeOutRight {
+    animation: fadeOut 2s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
 }
 

@@ -165,6 +165,13 @@ class HotDeals extends React.Component {
 }
 
 HotDeals.propTypes = {
+  children: PropTypes.node,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -176,12 +183,7 @@ HotDeals.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
-  hotdeals_slider: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
+  hotdeals_slider: PropTypes.array,
 };
 
 export default HotDeals;
