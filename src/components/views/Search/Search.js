@@ -6,7 +6,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 const Search = () => {
   return (
     <div className={styles.root}>
-      <NewFurniture />
+      <NewFurniture itemsPerSlide={8} />
     </div>
   );
 };
