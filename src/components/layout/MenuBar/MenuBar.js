@@ -8,7 +8,6 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './MenuBar.module.scss';
 import Button from '../../common/Button/Button';
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 class MenuBar extends Component {
