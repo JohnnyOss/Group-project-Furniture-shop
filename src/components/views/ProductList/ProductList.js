@@ -6,6 +6,9 @@ import PriceSlider from '../../common/PriceSlider/PriceSlider';
 import { StylesProvider } from '@material-ui/core/styles';
 import FilterByCategories from '../../common/FilterByCategories/FilterByCategories';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTags } from '@fortawesome/free-solid-svg-icons';
+
 const ProductList = () => (
   <div className={styles.root}>
     <Grid>
@@ -26,6 +29,49 @@ const ProductList = () => (
             <StylesProvider injectFirst>
               <PriceSlider />
             </StylesProvider>
+          </div>
+          <div className={styles.headerTags}>
+            <span className={styles.title}>Filter by tag</span>
+          </div>
+          <div className={`${styles.filtresList}`}>
+            <ul className={`${styles.tagFilter}`}>
+              <li>
+                <div className={styles.tag}>
+                  <FontAwesomeIcon className={styles.icon} icon={faTags} />
+                  <span>Table</span>
+                </div>
+              </li>
+              <li>
+                <div className={styles.tag}>
+                  <FontAwesomeIcon className={styles.icon} icon={faTags} />
+                  <span>Chair</span>
+                </div>
+              </li>
+              <li>
+                <div className={styles.tag}>
+                  <FontAwesomeIcon className={styles.icon} icon={faTags} />
+                  <span>Hand Bag</span>
+                </div>
+              </li>
+              <li>
+                <div className={styles.tag}>
+                  <FontAwesomeIcon className={styles.icon} icon={faTags} />
+                  <span>Women</span>
+                </div>
+              </li>
+              <li>
+                <div className={styles.tag}>
+                  <FontAwesomeIcon className={styles.icon} icon={faTags} />
+                  <span>Fashion</span>
+                </div>
+              </li>
+              <li>
+                <div className={styles.tag}>
+                  <FontAwesomeIcon className={styles.icon} icon={faTags} />
+                  <span>Clothes</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </Col>
       </Row>
