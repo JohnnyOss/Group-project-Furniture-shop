@@ -20,7 +20,7 @@ const ProductList = () => (
         </Col>
         <Col xs md={4} lg={3} className={styles.filters}>
           <h3 className={styles.header}>Filtry</h3>
-          <FilterByCategories />
+          <FilterByCategories /> 
           <div className={styles.filterRange}>
             <h5 className={styles.filterRange__name}>Filter by price</h5>
             <StylesProvider injectFirst>
