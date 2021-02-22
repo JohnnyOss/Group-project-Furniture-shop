@@ -7,11 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const FeedbackContent = ({ text, name, position, image, id }) => {
   return (
     <div className={styles.root}>
-      <div className={styles.container + 'col-xs-12 col-md-12'}>
+      <div className={styles.container + ' col-xs-12 col-md-12'}>
         <div className={styles.icon}>
           <FontAwesomeIcon icon={faQuoteRight}></FontAwesomeIcon>
         </div>
-        <div className={styles.textWrapper + 'col-xs-12 col-md-12'}>
+        <div className={styles.textWrapper + ' col-xs-12 col-md-12'}>
           <div className={styles.text}>{text}</div>
         </div>
         <div className={styles.person}>

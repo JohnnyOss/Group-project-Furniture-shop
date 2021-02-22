@@ -4,13 +4,11 @@
   .panelBar {
     margin-bottom: 30px;
     position: relative;
-
-    :global(.row) > * {
-      border-bottom: 4px solid #e2e2e2;
-    }
+    border-bottom: 4px solid #e2e2e2;
 
     .heading {
       position: relative;
+      padding-left: 0;
 
       h3 {
         color: $creme-main;
@@ -31,11 +29,64 @@
       }
     }
   }
-  .dot {
-    height: 15px;
-    width: 15px;
-    background-color: $creme-main;
-    border-radius: 50%;
+
+  .dots {
     position: absolute;
+    right: 0;
+    top: 0;
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 1rem;
+      list-style: none;
+      background-color: $white-color;
+      transform: translateY(15px);
+
+      li {
+        display: inline-block;
+        margin-left: 0.5rem;
+
+        a {
+          @extend %hover-effect;
+          display: block;
+          width: 13px;
+          height: 13px;
+          border-radius: 6px;
+          background-color: $light-color-5;
+          font-size: 0;
+
+          &.active,
+          &:hover {
+            background-color: $creme-main;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+}
+
+.fadeOut {
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
