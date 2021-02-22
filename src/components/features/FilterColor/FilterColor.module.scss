@@ -15,6 +15,7 @@
     p {
       margin:0;
       padding: 6px 6px 6px 0;
+      font-size: 15px;
     }
 
     &:hover {
@@ -26,11 +27,12 @@
 
 span {
   display: inline-block;
-  background-color: blueviolet;
+  background-color: none;
   width: 15px;
   height: 15px;
   border-radius: 2px;
   margin: 10px;
+
 }
 
 .red {

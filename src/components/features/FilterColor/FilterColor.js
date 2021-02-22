@@ -4,8 +4,6 @@ import styles from './FilterColor.module.scss';
 const FilterColor = () => {
   return (
     <div className={styles.filterHeading}>
-      <h6 className={styles.filterTitle}>{'FILTER BY COLOR'}</h6>
-      <hr></hr>
       <div className={styles.filterColor}>
         <span className={styles.red}></span>
         <p>Red</p>
