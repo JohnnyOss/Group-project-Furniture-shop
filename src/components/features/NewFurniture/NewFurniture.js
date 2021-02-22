@@ -48,29 +48,27 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, getCompared, changeCompare } = this.props;
     const {
-      activeCategory,
-      activePage,
-      fadeTrue,
-      setResponsiveMode,
+      categories,
+      products,
+      getCompared,
+      changeCompare,
       currentRwdMode,
-    } = this.state;
+    } = this.props;
+    const { activeCategory, activePage, fadeTrue } = this.state;
     const itemsInSlide = this.props.itemsPerSlide;
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
     let countPerPage = 8;
-    if (setResponsiveMode === 'tablet') {
+    if (currentRwdMode === 'tablet') {
       countPerPage = 2;
-      console.log(countPerPage);
-    } else if (setResponsiveMode === 'mobile') {
+    } else if (currentRwdMode === 'mobile') {
       countPerPage = 1;
-      console.log(countPerPage);
     } else {
       countPerPage = 8;
     }
-    console.log(currentRwdMode);
-    const pagesCount = Math.ceil(categoryProducts.length / countPerPage);
+
+    const pagesCount = Math.ceil(categoryProducts.length / itemsInSlide);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -134,7 +132,7 @@ class NewFurniture extends React.Component {
           >
             <div className={'row ' + styles.swiper}>
               {categoryProducts
-                .slice(activePage * countPerPage, (activePage + 1) * countPerPage)
+                .slice(activePage * countPerPage, (activePage + 1) * itemsInSlide)
                 .map(item => (
                   <div
                     key={item.id}
@@ -179,7 +177,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
-  //setResponsiveMode: PropTypes.node,
+  currentRwdMode: PropTypes.string,
   itemsPerSlide: PropTypes.number,
 };
 

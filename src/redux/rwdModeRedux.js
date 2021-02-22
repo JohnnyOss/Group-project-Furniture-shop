@@ -1,5 +1,3 @@
-export const currentRwdMode = ({ rwd }) => rwd.mode;
-
 // action name creator
 const reducerName = 'responsiveMode';
 const createActionName = name => `app/${reducerName}/${name}`;
@@ -9,7 +7,6 @@ const SET_RESPONSIVE_MODE = createActionName('SET_RESPONSIVE_MODE');
 
 // action creators
 export const setResponsiveMode = payload => {
-  console.log(payload);
   return { payload, type: SET_RESPONSIVE_MODE };
 };
 
