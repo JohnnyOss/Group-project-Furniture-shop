@@ -1,3 +1,5 @@
+export const currentRwdMode = ({ rwd }) => rwd.mode;
+
 // action name creator
 const reducerName = 'responsiveMode';
 const createActionName = name => `app/${reducerName}/${name}`;
