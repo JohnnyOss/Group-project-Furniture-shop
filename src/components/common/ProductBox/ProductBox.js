@@ -32,7 +32,7 @@ const ProductBox = ({
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
-          <Button variant='small' onClick={() => addToCart}>
+          <Button variant='small' onClick={addToCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
