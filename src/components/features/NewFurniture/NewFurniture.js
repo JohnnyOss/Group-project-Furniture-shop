@@ -60,10 +60,10 @@ class NewFurniture extends React.Component {
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
     let countPerPage = 8;
-    if (currentRwdMode === 'tablet') {
+    if (setResponsiveMode === 'tablet') {
       countPerPage = 2;
-      console.log(currentRwdMode);
-    } else if (currentRwdMode === 'mobile') {
+      console.log(countPerPage);
+    } else if (setResponsiveMode === 'mobile') {
       countPerPage = 1;
       console.log(countPerPage);
     } else {
