@@ -33,7 +33,7 @@ const ProductList = () => (
           <div className={styles.headerTags}>
             <span className={styles.title}>Filter by tag</span>
           </div>
-          <div className={`${styles.filtresList}`}>
+          <div className={`${styles.filtersList}`}>
             <ul className={`${styles.tagFilter}`}>
               <li>
                 <div className={styles.tag}>
