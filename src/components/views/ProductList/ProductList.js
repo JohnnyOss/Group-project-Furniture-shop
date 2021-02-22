@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import PriceSlider from '../../common/PriceSlider/PriceSlider';
 import { StylesProvider } from '@material-ui/core/styles';
 import FilterByCategories from '../../common/FilterByCategories/FilterByCategories';
+import ProductListBanner from '../../features/ProductListBanner/ProductListBanner';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTags } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +13,11 @@ import { faTags } from '@fortawesome/free-solid-svg-icons';
 const ProductList = () => (
   <div className={styles.root}>
     <Grid>
+      <Row>
+        <Col className='col-12'>
+          <ProductListBanner />
+        </Col>
+      </Row>
       <Row>
         <Col md={8} lg={9} className={styles.content}>
           <div className='col-12'>
