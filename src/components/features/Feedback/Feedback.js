@@ -48,36 +48,36 @@ class Feedback extends React.Component {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div>
-                <div className={'col-auto ' + styles.heading}>
-                  <h3>Client Feedback</h3>
-                </div>
-                <div className={'col-12 col-md-auto ' + styles.dots}>
-                  <ul>{dots}</ul>
-                </div>
+              <div className={'col-auto ' + styles.heading}>
+                <h3>Client Feedback</h3>
               </div>
-              <Swipeable
-                activePage={this.state.activePage}
-                changePage={(currentPage, change) => {
-                  if (change === 1) {
-                    return this.setState({
-                      activePage:
-                        currentPage === dots.length - 1 ? currentPage : currentPage + 1,
-                    });
-                  } else if (change === -1) {
-                    return this.setState({
-                      activePage: currentPage === 0 ? currentPage : currentPage - 1,
-                    });
-                  }
-                }}
-              >
-                <div className={`row ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}>
-                  {feedbacks.slice(activePage, activePage + 1).map(item => (
-                    <FeedbackContent key={item.id} {...item} />
-                  ))}
-                </div>
-              </Swipeable>
+              <div className={'col-12 col-md-auto ' + styles.dots}>
+                <ul>{dots}</ul>
+              </div>
             </div>
+          </div>
+          <div className={styles.contentBox}>
+            <Swipeable
+              activePage={this.state.activePage}
+              changePage={(currentPage, change) => {
+                if (change === 1) {
+                  return this.setState({
+                    activePage:
+                      currentPage === dots.length - 1 ? currentPage : currentPage + 1,
+                  });
+                } else if (change === -1) {
+                  return this.setState({
+                    activePage: currentPage === 0 ? currentPage : currentPage - 1,
+                  });
+                }
+              }}
+            >
+              <div className={`row ${fadeTrue ? styles.fadeIn : styles.fadeOut}`}>
+                {feedbacks.slice(activePage, activePage + 1).map(item => (
+                  <FeedbackContent key={item.id} {...item} />
+                ))}
+              </div>
+            </Swipeable>
           </div>
         </div>
       </div>
