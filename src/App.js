@@ -15,7 +15,9 @@ import BlogLayout from './components/layout/BlogLayout/BlogLayoutContainer';
 import Login from './components/views/Login/Login';
 import Register from './components/views/Register/Register';
 import Search from './components/views/Search/Search';
-
+import FooterInformation from './components/features/FooterInformation/FooterInformation';
+import FooterAccount from './components/features/FooterAccount/FooterAccount';
+import FooterOrders from './components/features/FooterOrders/FooterOrders';
 
 const App = () => (
   <Provider store={store}>
@@ -29,6 +31,9 @@ const App = () => (
           <Route exact path={'/login'} component={Login} />
           <Route exact path={'/register'} component={Register} />
           <Route exact path={'/search'} component={Search} />
+          <Route exact path={'/info/:id'} component={FooterInformation} />
+          <Route exact path={'/account/:id'} component={FooterAccount} />
+          <Route exact path={'/orders/:id'} component={FooterOrders} />
         </Switch>
       </MainLayout>
     </BrowserRouter>

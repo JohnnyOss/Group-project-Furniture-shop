@@ -48,7 +48,7 @@ const Footer = ({ children }) => (
                   <Link to='/account/my_cart'>My cart</Link>
                 </li>
                 <li>
-                  <Link to='account/wishlist'>Wishlist</Link>
+                  <Link to='/account/wishlist'>Wishlist</Link>
                 </li>
                 <li>
                   <Link to='/account/checkout'>Checkout</Link>
