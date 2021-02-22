@@ -106,7 +106,6 @@ const HotDealsBox = ({ name, price, promo, stars, id, image }) => (
 );
 
 HotDealsBox.propTypes = {
-  children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
