@@ -4,6 +4,7 @@ import styles from './ProductList.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import PriceSlider from '../../common/PriceSlider/PriceSlider';
 import { StylesProvider } from '@material-ui/core/styles';
+import Furniture from './../Furniture/FurnitureContainer';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -11,7 +12,7 @@ const ProductList = () => (
       <Row>
         <Col md={8} lg={9} className={styles.content}>
           <div className='col-12'>
-            <h3 className={styles.header}>Zawartość</h3>
+            <Furniture itemsPerSlide={6} />
             <div className={styles.noProduct}>
               <p>Empty</p>
             </div>

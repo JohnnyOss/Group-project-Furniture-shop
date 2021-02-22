@@ -1,0 +1,66 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding-top: 2rem;
+  margin-left: 80px;
+
+  .panelBox {
+    margin-bottom: 30px;
+    position: relative;
+
+    .heading {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $dark-color-1;
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+    }
+
+    .menu {
+      display: inline-flex;
+    }
+
+    .sortInput {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 20px;
+
+      h5 {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .filter {
+        border: 1px solid $light-color-2;
+        padding: 5px 10px 5px 15px;
+        margin: 0 10px;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+
+        p {
+          margin: 0;
+          font-size: 15px;
+          opacity: 0.7;
+        }
+
+        .icon {
+          margin-left: 30px;
+          opacity: 0.7;
+        }
+      }
+    }
+      .buttons {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
