@@ -9,6 +9,8 @@ import ProductListBanner from '../../features/ProductListBanner/ProductListBanne
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTags } from '@fortawesome/free-solid-svg-icons';
+import Newsletter from '../../common/Newsletter/Newsletter';
+import Brands from '../../features/Brands/BrandsContainer';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -82,6 +84,10 @@ const ProductList = () => (
         </Col>
       </Row>
     </Grid>
+    <Brands />
+    <div className={styles.newsletter}>
+      <Newsletter />
+    </div>
   </div>
 );
 
