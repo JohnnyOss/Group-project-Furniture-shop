@@ -11,15 +11,21 @@
     li {
       display: inline-block;
       line-height: 55px;
+      position: relative;
 
+      ul {
+        position: absolute;
+      }
       a {
-        @extend %hover-effect;
+        //@extend %hover-effect;
         color: $topBar-links;
         font-size: 13px;
+        padding-left: 10px;
 
         &:hover {
           color: $topBar-links-hover;
           text-decoration: none;
+
         }
       }
     }
@@ -33,6 +39,25 @@
     }
   }
 
+  .topOptions ul ul {
+    display: none;
+      li {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  .topOptions li ul {
+    position: absolute;
+  }
+
+  .topOptions li:hover ul {
+    display: block;
+    text-align: left;
+    background-color: $header-topbar-bg;
+    z-index: 1;
+  }
+
   .topMenu ul li {
     margin-left: 1.5rem;
 
@@ -40,6 +65,26 @@
       margin-right: 5px;
     }
   }
+
+  @media (max-width: 300px) {
+    .topOptions{
+      ul li {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .topOptions{
+      ul li {
+
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     .topbarText {
       display: none;
