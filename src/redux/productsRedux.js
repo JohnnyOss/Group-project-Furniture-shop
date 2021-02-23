@@ -16,6 +16,16 @@ export const toggleCompare = (products, id) =>
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+/* action names creator */
+const reducerName = 'products';
+const actionName = name => `app/${reducerName}/${name}`;
+
+/* action types */
+export const SET_FAVOURITE = actionName('SET_FAVOURITE');
+
+/* action creators */
+export const setFavourite = payload => ({ payload, type: SET_FAVOURITE });
+
 export const getGalleryCategories = ({ galleryCategories }) => galleryCategories;
 export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoProduct;
 
@@ -29,7 +39,6 @@ const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
-
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -50,6 +59,12 @@ export default function reducer(statePart = [], action = {}) {
       });
       return starState;
     }
+    case SET_FAVOURITE:
+      return [
+        ...statePart,
+        (statePart[statePart.findIndex(el => el.id === action.payload.id)].favourite =
+          action.payload.isFavourite),
+      ];
     default:
       return statePart;
   }
