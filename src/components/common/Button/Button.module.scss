@@ -89,4 +89,8 @@
   color: $white-color;
   font-size: 13px;
   line-height: 22px;
+
+  &:not(.noHover):hover {
+    color: $btn-main-font-color-hover !important;
+  }
 }
