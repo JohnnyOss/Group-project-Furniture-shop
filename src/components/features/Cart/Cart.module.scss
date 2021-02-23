@@ -17,8 +17,8 @@
 .header{
   margin: 0;
   padding: 0 15px;
-  height: 80px;
-  background-color: $light-color-7;
+  height: 60px;
+  background-color: $grey-color;
   align-items: center;
   color: $creme-main;
 }
@@ -37,36 +37,67 @@
 }
 
 .productImage {
-  object-fit: cover;
   border-radius: 5px;
+  width: 30px;
+  height: 30px;
 }
 
 .theadItem {
-  text-align: center;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .item1{
+    width: 50px;
+  }
+  .item2{
+    width: 110px;
+  }
+  .item3{
+    width: 520px;
+  }
+  .item4{
+    width: 165px;
+  }
+  .item5{
+    width: 165px;
+  }
+  .item6{
+    width: 165px;;
+  }
 }
 
 .table {
   padding-top: 20px;
+  padding-left: 670px;
 }
 
 .tableTotal {
   width: 500px;
   height: 150px;
-
 }
 
 .buttons{
   display: flex;
-  //justify-content: space-between;
   align-items: center;
   .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 155px;
+    height: 35px;
+    text-transform: uppercase;
+    margin: 15px;
+  }
+  .button2{
+    margin-left: 675px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 150px;
     height: 35px;
     text-transform: uppercase;
-    margin: 15px;
+
   }
   .checkoutButton{
     display: flex;
@@ -85,3 +116,23 @@
   font-size: 13px;
 }
 
+.quantity {
+  margin: 5px;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+  .inputNumber {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+  }
+  .buttonQty {
+    color:$dark-color-2;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 3px;
+  }
+}
