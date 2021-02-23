@@ -71,7 +71,7 @@ class NewFurniture extends React.Component {
     const pagesCount = Math.ceil(categoryProducts.length / itemsInSlide);
 
     const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
+    for (let i = 0; i < itemsInSlide; i++) {
       dots.push(
         <li key={i}>
           <a
