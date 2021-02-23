@@ -1,229 +1,72 @@
 import React from 'react';
 import styles from './Cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import Button from '../../common/Button/Button';
+import Button from '../../common/Button/Button';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import {
   faMinusSquare,
-  faPlusSquare,
+  //faPlusSquare,
   faTimesCircle,
 } from '@fortawesome/free-regular-svg-icons';
 
-const Cart = () => (
-  <div className={styles.root}>
-    <div className='container'>
-      <div className='row align-items-center'>
-        <div className={`col-6 col-md-6 text-left ${styles.cart}`}>
-          <p>Cart</p>
-        </div>
-        <div className={`col-6 col-md-6 text-right ${styles.iconBox}`}>
-          <FontAwesomeIcon className={styles.icon} icon={faHome} />
-          <p> Cart</p>
-        </div>
-      </div>
-    </div>
-    <div className='container'>
-      <div className='row'>
-        <div className='cart-form'>
-          <div className='cart-head'>
-            <div className='product-remove'></div>
-            <div className='product-photo'></div>
-            <div className='product-name'>PRODUCT</div>
-            <div className='product-price'>PRICE</div>
-            <div className='product-quantity'>QUANTITY</div>
-            <div className='product-subtotal'>SUBTOTAL</div>
+const Cart = () => {
+  return (
+    <div className={styles.root}>
+      <div className='container'>
+        <div className={`row align-items-center ${styles.header}`}>
+          <div className={`col text-left ${styles.cart}`}>
+            <p className={styles.title}>Cart</p>
           </div>
-          <div className='cart-body'>
-            <div className='cart-item'>
-              <div className='product-remove'>
-                <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
-              </div>
-              <div className='product-photo'>
-                <img alt='x'></img>
-              </div>
-              <div className='product-name'>Product nr 5</div>
-              <div className='product-price'>
-                <div className='price-amount'>
-                  <span className='price-currency-symbol'>$</span>
-                  85.00
-                </div>
-              </div>
-              <div className='product-quantity'>
-                <div className='input-group plus-minus-input'>
-                  <div className='input-group-button'>
-                    <button
-                      type='button'
-                      className='button hollow circle'
-                      data-quantity='minus'
-                      data-field='quantity'
-                    >
-                      <FontAwesomeIcon className={styles.icon} icon={faMinusSquare} />
-                    </button>
-                  </div>
-                  <input
-                    className='input-group-field'
-                    type='number'
-                    name='quantity'
-                  ></input>
-                  <div className='input-group-button'>
-                    <button
-                      type='button'
-                      className='button hollow circle'
-                      data-quantity='plus'
-                      data-field='quantity'
-                    >
-                      <FontAwesomeIcon className={styles.icon} icon={faPlusSquare} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className='product-subtotal'></div>
-              <div className='subtotal-amount'>
-                <span className='price-currency-symbol'>$</span>
-                85.00
-              </div>
-            </div>
-            <div className='cart-item'>
-              <div className='product-remove'>
-                <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
-              </div>
-              <div className='product-photo'>
-                <img alt='x'></img>
-              </div>
-              <div className='product-name'>Product nr 1</div>
-              <div className='product-price'>
-                <div className='price-amount'>
-                  <span className='price-currency-symbol'>$</span>
-                  30.00
-                </div>
-              </div>
-              <div className='product-quantity'>
-                <div className='input-group plus-minus-input'>
-                  <div className='input-group-button'>
-                    <button
-                      type='button'
-                      className='button hollow circle'
-                      data-quantity='minus'
-                      data-field='quantity'
-                    >
-                      <FontAwesomeIcon className={styles.icon} icon={faMinusSquare} />
-                    </button>
-                  </div>
-                  <input
-                    className='input-group-field'
-                    type='number'
-                    name='quantity'
-                  ></input>
-                  <div className='input-group-button'>
-                    <button
-                      type='button'
-                      className='button hollow circle'
-                      data-quantity='plus'
-                      data-field='quantity'
-                    >
-                      <FontAwesomeIcon className={styles.icon} icon={faPlusSquare} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className='product-subtotal'></div>
-              <div className='subtotal-amount'>
-                <span className='price-currency-symbol'>$</span>
-                30.00
-              </div>
-            </div>
-            <div className='cart-item'>
-              <div className='product-remove'>
-                <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
-              </div>
-              <div className='product-photo'>
-                <img alt='x'></img>
-              </div>
-              <div className='product-name'>Product nr 9</div>
-              <div className='product-price'>
-                <div className='price-amount'>
-                  <span className='price-currency-symbol'>$</span>
-                  55.00
-                </div>
-              </div>
-              <div className='product-quantity'>
-                <div className='input-group plus-minus-input'>
-                  <div className='input-group-button'>
-                    <button
-                      type='button'
-                      className='button hollow circle'
-                      data-quantity='minus'
-                      data-field='quantity'
-                    >
-                      <FontAwesomeIcon className={styles.icon} icon={faMinusSquare} />
-                    </button>
-                  </div>
-                  <input
-                    className='input-group-field'
-                    type='number'
-                    name='quantity'
-                  ></input>
-                  <div className='input-group-button'>
-                    <button
-                      type='button'
-                      className='button hollow circle'
-                      data-quantity='plus'
-                      data-field='quantity'
-                    >
-                      <FontAwesomeIcon className={styles.icon} icon={faPlusSquare} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className='product-subtotal'></div>
-              <div className='subtotal-amount'>
-                <span className='price-currency-symbol'>$</span>
-                55.00
-              </div>
-            </div>
-          </div>
-          <div colSpan='6' className='action'>
-            <div className='coupon'>
-              <label htmlFor='coupon-code'></label>
-              <input
-                type='text'
-                className='input-text'
-                placeholder='Coupon code'
-              ></input>
-              <button type='submit' className='button'>
-                Apply coupon
-              </button>
-            </div>
-            <button type='submit' className='button'>
-              Update cart
-            </button>
+          <div className={`col text-right ${styles.iconBox}`}>
+            <FontAwesomeIcon className={styles.icon} icon={faHome} />
+            {`> Cart`}
           </div>
         </div>
       </div>
-    </div>
-    <div className='cart-submit'>
-      <div className='cart-totals'>
-        <p>Cart Totals</p>
-        <div className='submit-body'>
-          <div className='cart-subtotal'>
-            <p>Subtotal</p>
-            <span className='price-currency-symbol'>$</span>
-            55.00
-          </div>
-          <div className='cart-total'>
-            <p>Total</p>
-            <span className='price-currency-symbol'>$</span>
-            55.00
-          </div>
-          <div className='chceckout-button'>
-            <button type='submit' className='button'>
-              Proceed to checkout
-            </button>
-          </div>
+      <div className='container'>
+        <div className='table'>
+          <table className='table table-hover'>
+            <thead className={styles.thead}>
+              <tr className={styles.theadItem}>
+                <th scope='col'>&nbsp;</th>
+                <th scope='col'>&nbsp;</th>
+                <th scope='col'>Product</th>
+                <th scope='col'>Price</th>
+                <th scope='col'>Quantity</th>
+                <th scope='col'>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className={styles.theadItem}>
+                <th scope='row'>
+                  <Button className={styles.productRemover}>
+                    <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
+                  </Button>
+                </th>
+                <td>
+                  <img className={styles.productImage} alt='x'></img>
+                </td>
+                <td>Product nr 9</td>
+                <td>price</td>
+                <td>
+                  quantity
+                  <button
+                    type='button'
+                    className='button hollow circle'
+                    data-quantity='minus'
+                    data-field='quantity'
+                  >
+                    <FontAwesomeIcon className={styles.icon} icon={faMinusSquare} />
+                  </button>
+                </td>
+                <td>total</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Cart;

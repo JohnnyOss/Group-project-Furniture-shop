@@ -1,1 +1,46 @@
 @import "../../../styles/settings.scss";
+
+.root {
+  padding: 3rem 0;
+}
+
+.title{
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.iconBox{
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+.header{
+  margin: 0;
+  padding: 0 15px;
+  height: 80px;
+  background-color: $light-color-7;
+  align-items: center;
+  color: $creme-main;
+}
+
+.thead {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.productRemover {
+  cursor: pointer;
+  color: $creme-transparent;
+  &:hover{
+    color: $black-color;
+  }
+}
+
+.productImage {
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.theadItem{
+  text-align: center;
+}
