@@ -61,17 +61,17 @@ class NewFurniture extends React.Component {
 
     let countPerPage = 8;
     if (currentRwdMode === 'tablet') {
-      countPerPage = 2;
+      countPerPage = 3;
     } else if (currentRwdMode === 'mobile') {
-      countPerPage = 1;
+      countPerPage = 2;
     } else {
       countPerPage = 8;
     }
 
-    const pagesCount = Math.ceil(categoryProducts.length / itemsInSlide);
+    const pagesCount = Math.ceil(categoryProducts.length / countPerPage);
 
     const dots = [];
-    for (let i = 0; i < itemsInSlide; i++) {
+    for (let i = 0; i < pagesCount; i++) {
       dots.push(
         <li key={i}>
           <a
@@ -132,7 +132,7 @@ class NewFurniture extends React.Component {
           >
             <div className={'row ' + styles.swiper}>
               {categoryProducts
-                .slice(activePage * countPerPage, (activePage + 1) * itemsInSlide)
+                .slice(activePage * countPerPage, (activePage + 1) * countPerPage)
                 .map(item => (
                   <div
                     key={item.id}
