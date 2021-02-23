@@ -56,7 +56,6 @@ class NewFurniture extends React.Component {
       currentRwdMode,
     } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
-    const itemsInSlide = this.props.itemsPerSlide;
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
     let countPerPage = 8;
