@@ -7,7 +7,7 @@ export const getCompared = ({ products }) => {
 export const getHotDeals = ({ products }) =>
   products.filter(product => product.hotDeal);
 
-export const getHotDeals_slider = ({ hotdeals_slider }) => hotdeals_slider;
+export const getHotDeals_Slider = ({ hotdeals_slider }) => hotdeals_slider;
 
 export const toggleCompare = (products, id) =>
   products.map(product => {

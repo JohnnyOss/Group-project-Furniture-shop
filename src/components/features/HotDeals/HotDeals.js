@@ -98,11 +98,14 @@ class HotDeals extends React.Component {
       dots.push(
         <li key={dots}>
           <a
+            href='/#'
             onClick={event => {
               this.handleProductChange(event, i);
             }}
             className={i === activeCarousel ? styles.active : ''}
-          ></a>
+          >
+            {}
+          </a>
         </li>
       );
     }
