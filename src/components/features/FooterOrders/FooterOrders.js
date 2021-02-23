@@ -14,7 +14,7 @@ const FooterOrders = props => {
   return (
     <div className={styles.root}>
       <div className='container'>
-        <h3>Information</h3>
+        <h3>Orders</h3>
         <div className={styles.box}>
           <h4>{changeName(props.match.params.id)}</h4>
           <div className={styles.text}>
