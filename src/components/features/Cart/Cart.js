@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../../common/Button/Button';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import {
-  faMinusSquare,
+  //faMinusSquare,
   //faPlusSquare,
   faTimesCircle,
 } from '@fortawesome/free-regular-svg-icons';
@@ -24,8 +24,8 @@ const Cart = () => {
         </div>
       </div>
       <div className='container'>
-        <div className='table'>
-          <table className='table table-hover'>
+        <div className='table1'>
+          <table className='table'>
             <thead className={styles.thead}>
               <tr className={styles.theadItem}>
                 <th scope='col'>&nbsp;</th>
@@ -47,22 +47,59 @@ const Cart = () => {
                   <img className={styles.productImage} alt='x'></img>
                 </td>
                 <td>Product nr 9</td>
-                <td>price</td>
                 <td>
-                  quantity
-                  <button
-                    type='button'
-                    className='button hollow circle'
-                    data-quantity='minus'
-                    data-field='quantity'
-                  >
-                    <FontAwesomeIcon className={styles.icon} icon={faMinusSquare} />
-                  </button>
+                  <span className='price-currency-symbol'>$ </span>
+                  price
                 </td>
-                <td>total</td>
+                <td>quantity</td>
+                <td>
+                  <span className='price-currency-symbol'>$ </span>
+                  Total price
+                </td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className={styles.buttons}>
+          <label htmlFor='coupon-code'></label>
+          <input type='text' placeholder='Coupon code' className={styles.input}></input>
+          <Button variant='small' className={styles.button}>
+            Apply coupon
+          </Button>
+          <Button variant='small' className={`${styles.button}`}>
+            Update cart
+          </Button>
+        </div>
+        <div className={`table ${styles.table}`}>
+          <table className={`col-6 ${styles.tableTotal}`}>
+            <thead className={styles.thead}>
+              <tr className={styles.theadItem}>
+                <th>&nbsp;</th>
+                <th scope='col'>Cart total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className={styles.theadItem}>
+                <th scope='col'>Subtotal</th>
+                <td>
+                  <span className='price-currency-symbol'>$ </span>
+                  Subtotal price
+                </td>
+              </tr>
+              <tr className={styles.theadItem}>
+                <th scope='col'>Total</th>
+                <td>
+                  <span className='price-currency-symbol'>$ </span>
+                  Total price
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div className={styles.buttons}>
+            <Button variant='small' className={styles.checkoutButton}>
+              Proceed to checkout
+            </Button>
+          </div>
         </div>
       </div>
     </div>

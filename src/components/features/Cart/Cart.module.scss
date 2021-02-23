@@ -41,6 +41,47 @@
   border-radius: 5px;
 }
 
-.theadItem{
+.theadItem {
   text-align: center;
 }
+
+.table {
+  padding-top: 20px;
+}
+
+.tableTotal {
+  width: 500px;
+  height: 150px;
+
+}
+
+.buttons{
+  display: flex;
+  //justify-content: space-between;
+  align-items: center;
+  .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 35px;
+    text-transform: uppercase;
+    margin: 15px;
+  }
+  .checkoutButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 35px;
+    text-transform: uppercase;
+    padding: 0;
+  }
+}
+
+.input{
+  width: 150px;
+  height: 35px;
+  font-size: 13px;
+}
+
