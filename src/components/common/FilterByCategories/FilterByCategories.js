@@ -13,7 +13,7 @@ const FilterByCategories = () => (
         >
           {'FILTER BY CATEGORIES'}
         </div>
-        <container>
+        <div>
           <ul className={styles.byCategories}>
             <li>
               Furniture<span className={styles.dot}>3</span>
@@ -34,7 +34,7 @@ const FilterByCategories = () => (
               Furniture <span className={styles.dot}>5</span>
             </li>
           </ul>
-        </container>
+        </div>
       </div>
     </div>
   </div>
