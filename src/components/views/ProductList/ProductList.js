@@ -39,7 +39,6 @@ const ProductList = () => (
               <PriceSlider />
             </StylesProvider>
           </div>
-
           <div>
             <h5 className={styles.filterRange__name}>Filter by color</h5>
             <FilterColor />
