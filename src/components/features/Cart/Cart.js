@@ -127,7 +127,7 @@ const Cart = () => {
           </Button>
         </div>
         <div className={`table ${styles.table}`}>
-          <table className={`col-6 ${styles.tableTotal}`}>
+          <table className={`col ${styles.tableTotal}`}>
             <thead className={styles.thead}>
               <tr className={styles.theadItem}>
                 <th>&nbsp;</th>

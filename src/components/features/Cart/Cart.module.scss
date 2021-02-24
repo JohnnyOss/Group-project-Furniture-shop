@@ -1,8 +1,10 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  padding: 3rem 0;
+  margin: 30px auto;
+  text-align: center;
 }
+
 
 .title{
   font-size: 25px;
@@ -69,7 +71,9 @@
 
 .table {
   padding-top: 20px;
-  padding-left: 670px;
+  margin-left: auto;
+  margin-right: 0;
+  width: 500px;
 }
 
 .tableTotal {
@@ -90,13 +94,13 @@
     margin: 15px;
   }
   .button2{
-    margin-left: 675px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 150px;
     height: 35px;
     text-transform: uppercase;
+    margin-left: auto;
 
   }
   .checkoutButton{
@@ -134,5 +138,61 @@
     cursor: pointer;
     font-size: 13px;
     margin: 3px;
+  }
+}
+
+@media (max-width: 992px) {
+  .root{
+    font-size: 80%;
+  }
+
+  .table{
+    width: 50%;
+    margin-left: auto;
+  }
+
+  .tableTotal{
+    width: 50%;
+    margin-left: auto;
+    font-size: 80%;
+  }
+
+  .buttons {
+    .button, .button2{
+      font-size: 70%;
+    }
+    .checkoutButton{
+      width: 50%;
+      margin-left: auto;
+      font-size: 70%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root{
+    font-size: 70%;
+  }
+
+  .table {
+    width: 30%;
+    margin-left: auto;
+  }
+
+  .tableTotal{
+    width: 40%;
+    margin-left: auto;
+    font-size: 80%;
+  }
+
+  .buttons {
+    .buttons, .button2 {
+      font-size: 70%;
+    }
+    .checkoutButton{
+      width: 115px;
+      margin-left: auto;
+      font-size: 70%;
+    }
   }
 }
