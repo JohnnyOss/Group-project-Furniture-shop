@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
   products: getNew(state),
   getCompared: getCompared(state),
   changeCompare: changeCompare(state),
+  currentRwdMode: state.rwd.mode,
 });
 
 const mapDispatchToProps = dispatch => ({

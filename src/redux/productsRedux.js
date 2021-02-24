@@ -22,14 +22,18 @@ export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoP
 // action name creator
 const createActionName = name => `product/rating/${name}`;
 
+const reducerName = 'products';
+const actionName = name => `app/${reducerName}/${name}`;
+
 // action types
 export const SET_RATING = createActionName('SET_RATING');
 const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
+const SET_FAVOURITE = actionName('SET_FAVOURITE');
 
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
-
+export const setFavourite = payload => ({ payload, type: SET_FAVOURITE });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -50,6 +54,12 @@ export default function reducer(statePart = [], action = {}) {
       });
       return starState;
     }
+    case SET_FAVOURITE:
+      return [
+        ...statePart,
+        (statePart[statePart.findIndex(el => el.id === action.payload.id)].favourite =
+          action.payload.isFavourite),
+      ];
     default:
       return statePart;
   }

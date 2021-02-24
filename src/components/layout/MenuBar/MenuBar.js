@@ -8,6 +8,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './MenuBar.module.scss';
 import Button from '../../common/Button/Button';
+import { Link } from 'react-router-dom';
 
 class MenuBar extends Component {
   state = {
@@ -53,39 +54,29 @@ class MenuBar extends Component {
               </Button>
               <ul>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu} className={styles.active}>
+                  <Link to='/' className={styles.active}>
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu}>
-                    Furniture
-                  </a>
+                  <Link to='/shop/furniture'>Furniture</Link>
                 </li>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu}>
-                    Chair
-                  </a>
+                  <Link to='/shop/chair'>Chair</Link>
                 </li>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu}>
-                    Table
-                  </a>
+                  <Link to='/shop/table'>Table</Link>
                 </li>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu}>
-                    Sofa
-                  </a>
+                  <Link to='/shop/sofa'>Sofa</Link>
                 </li>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu}>
-                    Bedroom
-                  </a>
+                  <Link to='/shop/bedroom'>Bedroom</Link>
                 </li>
                 <li>
-                  <a href='/#' onClick={this.toggleMenu}>
+                  <Link to='/blog' activeclassname='active'>
                     Blog
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

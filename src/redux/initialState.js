@@ -19,6 +19,7 @@ const initialState = {
       subcategory: 'featured',
       image:
         'https://s3.amazonaws.com/furniture.retailcatalog.us/products/425521018/small/jerary-queen-upholstered-bed-0.jpg',
+      favourite: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -42,7 +43,8 @@ const initialState = {
       newFurniture: true,
       subcategory: 'saleOff',
       image:
-        'https://i.postimg.cc/7LN4f1XG/Aurora-Bed-Pink-Value-Flooring-and-Furniture.jpg',
+        'https://images.pexels.com/photos/6284232/pexels-photo-6284232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      favourite: true,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -815,6 +817,42 @@ const initialState = {
       image:
         'https://images.pexels.com/photos/5849569/pexels-photo-5849569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     },
+    {
+      id: 'Brand7',
+      name: 'Brand7',
+      image:
+        'https://images.pexels.com/photos/243337/pexels-photo-243337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand8',
+      name: 'Brand8',
+      image:
+        'https://images.pexels.com/photos/2881205/pexels-photo-2881205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand9',
+      name: 'Brand9',
+      image:
+        'https://images.pexels.com/photos/258174/pexels-photo-258174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand10',
+      name: 'Brand10',
+      image:
+        'https://images.pexels.com/photos/4124334/pexels-photo-4124334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand11',
+      name: 'Brand11',
+      image:
+        'https://images.pexels.com/photos/1356300/pexels-photo-1356300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
+    {
+      id: 'Brand12',
+      name: 'Brand12',
+      image:
+        'https://images.pexels.com/photos/2255441/pexels-photo-2255441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    },
   ],
   cart: {
     products: [],
@@ -904,6 +942,29 @@ const initialState = {
       sale: 'SAVE UP 40% OF FURNITURE',
       image:
         'https://images.pexels.com/photos/545012/pexels-photo-545012.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    },
+  ],
+  blogArticles: [
+    {
+      id: 1,
+      title: 'Witamy na nowej stronie sklepu',
+      image:
+        'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?cs=srgb&dl=pexels-eric-montanah-1350789.jpg&fm=jpg',
+      text:
+        'Lorem ipsum sed felis. Integer eu lectus. Nam libero ante, cursus ut, metus. Curabitur ornare dapibus. Aenean augue eget leo facilisis vel, hendrerit wisi. Sed sed turpis. Donec sollicitudin mi. Aliquam nisl. Nulla lobortis semper. Praesent quis orci. Vestibulum ante imperdiet nec, hendrerit nonummy. Nam sit amet, consectetuer vulputate at, elit.',
+      author: 'Bill Clinton',
+      data: '18.02.2021',
+      category: 'modern',
+    },
+    {
+      id: 2,
+      title: 'Title of Post 2',
+      image: 'https://placeimg.com/640/300/2',
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo. Integer ac nunc commodo ipsum primis in neque. Vestibulum non leo ut nunc ac turpis luctus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur volutpat at, malesuada fames ac risus. Morbi risus dictum lectus dapibus risus ornare tortor orci, in elit. Quisque adipiscing dui porta tellus wisi, mollis neque vitae erat blandit lectus. Nam lacus.',
+      author: 'Barack Obama',
+      data: '09.12.2020',
+      category: 'retro',
     },
   ],
 };
