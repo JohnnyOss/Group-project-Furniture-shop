@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import Compare from '../Compare/Compare';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
@@ -49,11 +48,26 @@ class NewFurniture extends React.Component {
   };
 
   render() {
-    const { categories, products, getCompared, changeCompare } = this.props;
+    const {
+      categories,
+      products,
+      getCompared,
+      changeCompare,
+      currentRwdMode,
+    } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
-    const itemsInSlide = this.props.itemsPerSlide;
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / itemsInSlide);
+
+    let countPerPage = 8;
+    if (currentRwdMode === 'tablet') {
+      countPerPage = 3;
+    } else if (currentRwdMode === 'mobile') {
+      countPerPage = 2;
+    } else {
+      countPerPage = 8;
+    }
+
+    const pagesCount = Math.ceil(categoryProducts.length / countPerPage);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -117,7 +131,7 @@ class NewFurniture extends React.Component {
           >
             <div className={'row ' + styles.swiper}>
               {categoryProducts
-                .slice(activePage * itemsInSlide, (activePage + 1) * itemsInSlide)
+                .slice(activePage * countPerPage, (activePage + 1) * countPerPage)
                 .map(item => (
                   <div
                     key={item.id}
@@ -160,8 +174,10 @@ NewFurniture.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
+      favourite: PropTypes.bool,
     })
   ),
+  currentRwdMode: PropTypes.string,
   itemsPerSlide: PropTypes.number,
 };
 
