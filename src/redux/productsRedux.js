@@ -38,6 +38,8 @@ export const getProductById = ({ products }, productId) => {
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+export const getProductByPrice = ({ products }) =>
+  products.map(product => product.price);
 
 export const getGalleryCategories = ({ galleryCategories }) => galleryCategories;
 
