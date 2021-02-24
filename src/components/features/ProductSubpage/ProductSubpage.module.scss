@@ -65,9 +65,11 @@
 
   .rating {
     div {
-      margin-left: 5px;
       color: $silver-color;
       font-size: 12px;
+      p {
+        margin: 10px 5px 0 0;
+      }
     }
   }
 
