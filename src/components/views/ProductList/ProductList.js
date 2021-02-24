@@ -4,6 +4,7 @@ import styles from './ProductList.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import PriceSlider from '../../common/PriceSlider/PriceSlider';
 import { StylesProvider } from '@material-ui/core/styles';
+import FilterColor from '../../features/FilterColor/FilterColor';
 
 import Furniture from './../Furniture/FurnitureContainer';
 import FilterByCategories from '../../common/FilterByCategories/FilterByCategories';
@@ -37,6 +38,11 @@ const ProductList = () => (
             <StylesProvider injectFirst>
               <PriceSlider />
             </StylesProvider>
+          </div>
+
+          <div>
+            <h5 className={styles.filterRange__name}>Filter by color</h5>
+            <FilterColor />
           </div>
           <div className={styles.headerTags}>
             <span className={styles.title}>Filter by tag</span>
