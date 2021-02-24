@@ -27,6 +27,10 @@ $silver-color: #a9a9a9;
 $transparent: transparent;
 
 $white-color: #ffffff;
+$facebook-blue: #4267b2;
+$linkedIn-blue: #0072b1;
+$twitter-blue: #1da1f2;
+$google-red: #db4437;
 
 $slider-overlay: rgba(54, 54, 54, 0.5);
 
@@ -43,6 +47,10 @@ $btn-outline-border-color: $dark-color-2;
 $btn-outline-font-color: $dark-color-2;
 $btn-outline-background-color-hover: $dark-color-2;
 $btn-outline-font-color-hover: $white-color;
+$btn-facebook: $facebook-blue;
+$btn-linkedIn: $linkedIn-blue;
+$btn-twitter: $twitter-blue;
+$btn-google: $google-red;
 
 //FeatureBox
 $featureBox-border: $light-color-2;
@@ -140,11 +148,6 @@ $menuBar-links-active-font: $white-color;
 $menuBar-links-acive-border: $creme-main;
 $menuBar-shadow: $black-color;
 
-//TopBar
-$header-topbar-bg: $grey-color;
-$topBar-links: $white-color;
-$topBar-links-hover: $creme-main;
-
 //***VIEWS***
 
 //Login
@@ -158,6 +161,11 @@ $login-links-hover-bg: $creme-main;
 $login-links-hover-font: $white-color;
 $login-error-bg: $creme-main;
 $login-error-font: $dark-color-1;
+
+//TopBar
+$header-topbar-bg: $grey-color;
+$topBar-links: $white-color;
+$topBar-links-hover: $creme-main;
 
 $transition: all 0.25s;
 
