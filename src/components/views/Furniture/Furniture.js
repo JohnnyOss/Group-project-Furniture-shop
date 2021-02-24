@@ -5,6 +5,7 @@ import { faCaretDown, faThList, faThLarge } from '@fortawesome/free-solid-svg-ic
 import Button from '../../common/Button/Button';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import PropTypes from 'prop-types';
+import SortBy from '../../features/SortBy/SortBy';
 
 class Furniture extends React.Component {
   render() {
@@ -18,9 +19,8 @@ class Furniture extends React.Component {
               <div className={styles.menu}>
                 <div className={styles.sortInput}>
                   <h5>Sort By</h5>
-                  <div className={styles.filter}>
-                    <p>Price. Lowest Price</p>
-                    <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
+                  <div>
+                    <SortBy />
                   </div>
                 </div>
                 <div className={styles.sortInput}>
