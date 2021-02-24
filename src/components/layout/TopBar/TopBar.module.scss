@@ -44,7 +44,16 @@
       li {
       display: block;
       margin-bottom: 5px;
+      line-height: 35px;
     }
+  }
+
+  .list1 li, .list2 li {
+    width: auto;
+  }
+
+  .list3 li{
+    width: 110px;
   }
 
   .topOptions li ul {
@@ -73,14 +82,6 @@
         flex-direction: column;
         padding: 0px;
         margin: 0px;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    .topOptions{
-      ul li {
-
       }
     }
   }

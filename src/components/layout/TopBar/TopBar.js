@@ -17,7 +17,7 @@ const TopBar = () => (
               <a href='/#'>
                 USD <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
-              <ul className={styles.list}>
+              <ul className={styles.list1}>
                 <li>
                   <a href='/#'>USD</a>
                 </li>
@@ -33,7 +33,7 @@ const TopBar = () => (
               <a href='/#'>
                 English <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
-              <ul className={styles.list}>
+              <ul className={styles.list2}>
                 <li>
                   <a href='/#'>English</a>
                 </li>
@@ -46,15 +46,15 @@ const TopBar = () => (
               <a href='/#'>
                 Help <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
-              <ul className={styles.list}>
+              <ul className={styles.list3}>
                 <li>
-                  <a href='/#'>Payment_options</a>
+                  <a href='/#'>Payment options</a>
                 </li>
                 <li>
                   <a href='/#'>Delivery</a>
                 </li>
                 <li>
-                  <a href='/#'>Shop_list</a>
+                  <a href='/#'>Shop list</a>
                 </li>
               </ul>
             </li>
