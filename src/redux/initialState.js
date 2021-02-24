@@ -19,6 +19,7 @@ const initialState = {
       subcategory: 'featured',
       image:
         'https://s3.amazonaws.com/furniture.retailcatalog.us/products/425521018/small/jerary-queen-upholstered-bed-0.jpg',
+      favourite: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -43,6 +44,7 @@ const initialState = {
       subcategory: 'saleOff',
       image:
         'https://images.pexels.com/photos/6284232/pexels-photo-6284232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      favourite: true,
     },
     {
       id: 'aenean-ru-bristique-4',

@@ -20,6 +20,8 @@ const ProductBox = ({
   getCompared,
   changeCompare,
   addProduct,
+  favourite,
+  setFavourite,
 }) => {
   const addToCart = event => {
     event.preventDefault();
@@ -48,7 +50,13 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button
+            variant={favourite ? 'favourite' : 'outline'}
+            onClick={e => {
+              e.preventDefault();
+              setFavourite(id, !favourite);
+            }}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
@@ -86,6 +94,8 @@ ProductBox.propTypes = {
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
   addProduct: PropTypes.func,
+  setFavourite: PropTypes.func,
+  favourite: PropTypes.bool,
 };
 
 export default ProductBox;

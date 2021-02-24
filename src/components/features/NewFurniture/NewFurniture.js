@@ -159,6 +159,7 @@ NewFurniture.propTypes = {
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
+      favourite: PropTypes.bool,
     })
   ),
   itemsPerSlide: PropTypes.number,
