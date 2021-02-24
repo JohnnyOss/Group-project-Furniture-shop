@@ -32,6 +32,8 @@ class Brands extends React.Component {
     const itemsPerPage = 6;
     const brandsNumber = brands.filter(brands => brands.id === activeBrands);
     const pagesCount = Math.ceil(brandsNumber.length / itemsPerPage);
+    console.log('pagesCount', pagesCount);
+    console.log('activePage', activePage);
 
     const pages = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -44,13 +46,30 @@ class Brands extends React.Component {
       }
     };
 
+    const amountOfPages = Math.ceil(brands.length / itemsPerPage);
+    console.log('amountOfPages', amountOfPages);
+
     const pageIncrease = () => {
+      console.log('activePage', activePage.length);
       if (activePage === pagesCount - 1) {
         return;
       } else {
-        this.handlePageChange(activePage + 1);
+        if (activePage < amountOfPages - 1) {
+          this.handlePageChange(activePage + 1);
+        } else {
+          this.handlePageChange(activePage);
+        }
       }
+      // console.log(activePage);
     };
+
+    // const getAmountOfPages = () => {
+    //   if(activePage < amountOfPages) {
+    //     return (activePage * itemsPerPage, (activePage + 1) * itemsPerPage);
+    //   } else {
+    //     return (activePage * itemsPerPage);
+    //   }
+    // };
 
     return (
       <div className={styles.root}>
