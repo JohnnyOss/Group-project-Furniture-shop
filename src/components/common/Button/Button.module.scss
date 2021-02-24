@@ -94,3 +94,8 @@
     color: $btn-main-font-color-hover !important;
   }
 }
+
+.furniture{
+  @extend .gallery;
+  border: 1px solid $light-color-2 !important;
+}

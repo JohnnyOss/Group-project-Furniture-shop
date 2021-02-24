@@ -4,21 +4,27 @@ import styles from './ProductList.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import PriceSlider from '../../common/PriceSlider/PriceSlider';
 import { StylesProvider } from '@material-ui/core/styles';
+
+import Furniture from './../Furniture/FurnitureContainer';
 import FilterByCategories from '../../common/FilterByCategories/FilterByCategories';
+import ProductListBanner from '../../features/ProductListBanner/ProductListBanner';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTags } from '@fortawesome/free-solid-svg-icons';
+
 
 const ProductList = () => (
   <div className={styles.root}>
     <Grid>
       <Row>
+        <Col className='col-12'>
+          <ProductListBanner />
+        </Col>
+      </Row>
+      <Row>
         <Col md={8} lg={9} className={styles.content}>
           <div className='col-12'>
-            <h3 className={styles.header}>Zawartość</h3>
-            <div className={styles.noProduct}>
-              <p>Empty</p>
-            </div>
+            <Furniture itemsPerSlide={6} />
           </div>
         </Col>
         <Col xs md={4} lg={3} className={styles.filters}>
