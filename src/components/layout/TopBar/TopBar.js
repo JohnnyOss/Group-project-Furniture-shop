@@ -17,16 +17,46 @@ const TopBar = () => (
               <a href='/#'>
                 USD <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
+              <ul className={styles.list1}>
+                <li>
+                  <a href='/#'>USD</a>
+                </li>
+                <li>
+                  <a href='/#'>PLN</a>
+                </li>
+                <li>
+                  <a href='/#'>EUR</a>
+                </li>
+              </ul>
             </li>
             <li>
               <a href='/#'>
                 English <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
+              <ul className={styles.list2}>
+                <li>
+                  <a href='/#'>English</a>
+                </li>
+                <li>
+                  <a href='/#'>Polish</a>
+                </li>
+              </ul>
             </li>
             <li>
               <a href='/#'>
                 Help <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
+              <ul className={styles.list3}>
+                <li>
+                  <a href='/#'>Payment options</a>
+                </li>
+                <li>
+                  <a href='/#'>Delivery</a>
+                </li>
+                <li>
+                  <a href='/#'>Shop list</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
