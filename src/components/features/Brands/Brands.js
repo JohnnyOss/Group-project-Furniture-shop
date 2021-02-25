@@ -8,6 +8,7 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 class Brands extends React.Component {
   state = {
     activePage: 0,
+    windowWidth: 0,
   };
 
   handlePageChange = newPage => {
@@ -26,14 +27,44 @@ class Brands extends React.Component {
     }
   };
 
+  componentDidMount() {
+    window.addEventListener('resize', e => this.reportWidth(e));
+    window.addEventListener('resize', e => this.reportActivePage(e));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', e => this.reportWidth(e));
+    window.removeEventListener('resize', e => this.reportActivePage(e));
+  }
+
+  reportWidth(e) {
+    this.setState({
+      windowWidth: window.innerWidth,
+    });
+  }
+
+  reportActivePage(e) {
+    this.setState({
+      activePage: 0,
+    });
+  }
+
   render() {
     const { brands } = this.props;
     const { activeBrands, activePage } = this.state;
-    let itemsPerPage = 6;
+    const reportItemsPerPage = () => {
+      if (window.innerWidth > 1000) {
+        return 6;
+      } else if (window.innerWidth < 600) {
+        return 3;
+      } else {
+        return 4;
+      }
+    };
 
     const brandsNumber = brands.filter(brands => brands.id === activeBrands);
-    const pagesCount = Math.ceil(brandsNumber.length / itemsPerPage);
-    const amountOfPages = Math.ceil(brands.length / itemsPerPage);
+    const pagesCount = Math.ceil(brandsNumber.length / reportItemsPerPage());
+    const amountOfPages = Math.ceil(brands.length / reportItemsPerPage());
 
     const pages = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -82,7 +113,10 @@ class Brands extends React.Component {
             >
               <div className={'row ' + styles.brandBox}>
                 {brands
-                  .slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage)
+                  .slice(
+                    activePage * reportItemsPerPage(),
+                    (activePage + 1) * reportItemsPerPage()
+                  )
                   .map(brand => (
                     <div key={brand.id} className={styles.box}>
                       <img src={brand.image} alt={brand.name} />
