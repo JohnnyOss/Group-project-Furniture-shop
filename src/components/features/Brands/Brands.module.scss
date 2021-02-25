@@ -11,6 +11,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+    margin: 0;
 
     .arrow {
       height: 92px;
@@ -34,66 +35,27 @@
 
     .brandBox {
       display: flex;
+      flex-wrap: nowrap;
       overflow: hidden;
       padding: 0;
-      margin: 0;
+      margin: 5px;
 
-      img {
-        width: 143px;
-        height: 92px;
-        object-fit: cover;
-        margin: 25px 15px;
+      .box {
+        flex: 1;
+        margin: 0 3px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.5;
+          filter: grayscale(85%) contrast(140%)
+        }
+
+        img {
+          width: 100%;
+          height: 92px;
+          object-fit: cover;
+        }
       }
-    }
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-  .root .wrapper {
-    display: flex;
-
-    .brandBox img {
-      object-fit: cover;
-      width: calc(143px * .9);
-      height: calc(92px * .75);
-      margin: 0 10px;
-    }
-  }
-}
-
-@media (max-width: 768px) and (min-width: 426px) {
-  .root .wrapper {
-    display: flex;
-
-    .brandBox img {
-      object-fit: cover;
-      width: calc(143px * .7);
-      height: calc(92px * .65);
-      margin: 0 5px;
-    }
-  }
-}
-
-@media (max-width: 425px) {
-  .root .wrapper {
-    display: flex;
-
-    .brandBox img {
-      width: calc(143px * .46);
-      height: calc(75px * .55);
-      margin: 10px 17px;
-    }
-  }
-}
-
-@media (max-width: 320px) {
-  .root .wrapper {
-    display: flex;
-
-    .brandBox img {
-      width: calc(143px * .46);
-      height: calc(75px * .55);
-      margin: 10px 10px;
     }
   }
 }

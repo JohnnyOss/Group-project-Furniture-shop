@@ -29,10 +29,12 @@ class Brands extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', e => this.reportWidth(e));
+    window.addEventListener('resize', e => this.reportActivePage(e));
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', e => this.reportWidth(e));
+    window.removeEventListener('resize', e => this.reportActivePage(e));
   }
 
   reportWidth(e) {
@@ -41,12 +43,16 @@ class Brands extends React.Component {
     });
   }
 
+  reportActivePage(e) {
+    this.setState({
+      activePage: 0,
+    });
+  }
+
   render() {
     const { brands } = this.props;
     const { activeBrands, activePage } = this.state;
-    // let itemsPerPage = 6;
     const reportItemsPerPage = () => {
-      // let itemsPerPage = 0;
       if (window.innerWidth > 1000) {
         return 6;
       } else if (window.innerWidth < 600) {
