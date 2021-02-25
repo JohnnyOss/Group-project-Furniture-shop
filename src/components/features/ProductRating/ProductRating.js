@@ -41,10 +41,10 @@ const ProductRating = ({ id, starRating, stars, setRating }) => {
 };
 
 ProductRating.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   starRating: PropTypes.bool,
-  stars: PropTypes.number.isRequired,
-  setRating: PropTypes.func.isRequired,
+  stars: PropTypes.number,
+  setRating: PropTypes.func,
 };
 
 export default ProductRating;
