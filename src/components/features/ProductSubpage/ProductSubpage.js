@@ -175,10 +175,10 @@ const ProductSubpage = () => {
 };
 
 ProductSubpage.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   starRating: PropTypes.bool,
-  stars: PropTypes.number.isRequired,
-  setRating: PropTypes.func.isRequired,
+  stars: PropTypes.number,
+  setRating: PropTypes.func,
 };
 
 export default ProductSubpage;
