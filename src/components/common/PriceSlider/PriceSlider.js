@@ -13,20 +13,20 @@ const PriceSlider = ({
   getProductByPrice, 
   setCategoryProducts, 
   setPriceValuesTo, 
-  setPriceValuesFrom
-}) => {
+  setPriceValuesFrom}) => {
+
   const [value, setValue] = useState([135, 500]);
+
   const handlePriceTo = event => {
     setCategoryProducts(products.filter(item => item.category === category));
     if (event.target.value.length === 0) {
       setTimeout(() => {
         setPriceValuesTo(Math.max(...getProductByPrice));
       }, 500);
-  console.log('products', setCategoryProducts);
 
     }
     if (event.target.value.length !== 0){
-      event.presist();
+      event.persist();
       setTimeout(() => {
         setPriceValuesTo(parseInt(event.target.value));
       }, 500);
@@ -41,7 +41,7 @@ const PriceSlider = ({
       }, 500);
     }
     if (event.target.value.length !== 0) {
-      event.presist();
+      event.persist();
       setTimeout(() => {
         setPriceValuesTo(parseInt(event.target.value));
       }, 500);
@@ -52,8 +52,18 @@ const PriceSlider = ({
     setValue(newValue);
   };
 
+  //console.log(category);
+  //console.log(products);
+
   return (
     <div className={styles.root}>
+    <form>
+      <input type='text' placeholder='from' onChange={handlePriceFrom} />
+      <div>-</div>
+      <input type='text' placeholder='to' onChange={handlePriceTo} />
+    </form>
+
+    <div>
       <Slider
         className={styles.box}
         value={value}
@@ -67,11 +77,14 @@ const PriceSlider = ({
       <div className={styles.inputBox}>
         <input type='submit' value='FILTER' className={styles.inputBox__button} />
         <div className={styles.inputBox__price}>
-          <span onClick={handlePriceFrom}>${value[0]} - </span>
+          <span>${value[0]} - </span>
           <span>${value[1]}</span>
         </div>
       </div>
     </div>
+  </div>
+
+   
   );
 };
 

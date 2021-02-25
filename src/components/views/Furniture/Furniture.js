@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 class Furniture extends React.Component {
   render() {
-    const { products } = this.props;
+    const { products, categoryProducts } = this.props;
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -49,7 +49,19 @@ class Furniture extends React.Component {
           <div className='row'>
             {products.slice(0, 6).map(item => (
               <div key={item.id} className='col-4'>
-                <ProductBox {...item} />
+                {categoryProducts.length > 0 &&
+                  categoryProducts.map(item => {
+                    return (
+                      <div key={item.id}>
+                        <ProductBox {...item} />
+                      </div>
+                    );
+                  })}
+                {categoryProducts.length <= 0 && (
+                  <div className={styles.noProduct}>
+                    <p>No product available in given criteria. Please search again.</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>

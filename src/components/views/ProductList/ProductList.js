@@ -59,7 +59,9 @@ const ProductList = ({products, getProductByPrice}) => {
         <Row>
           <Col md={8} lg={9} className={styles.content}>
             <div className='col-12'>
-              <Furniture itemsPerSlide={6} />
+              <Furniture
+              categoryProducts={categoryProducts} 
+              itemsPerSlide={6} />
             </div>
           </Col>
           <Col xs md={4} lg={3} className={styles.filters}>
