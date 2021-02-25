@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import PriceSlider from '../../common/PriceSlider/PriceSlider';
+import PriceSlider from '../../common/PriceSlider/PriceSliderContainer';
 import { StylesProvider } from '@material-ui/core/styles';
 import FilterColor from '../../features/FilterColor/FilterColor';
 
@@ -21,9 +21,8 @@ const ProductList = ({products, getProductByPrice}) => {
   const [categoryProducts, setCategoryProducts] = useState(
     products.filter(item => item.category === category)
   );
-  const [priceValuesFrom, setPriceValuesFrom] = useState(0);
   const [priceValuesTo, setPriceValuesTo] = useState(Math.max(...getProductByPrice));
-
+  const [priceValuesFrom, setPriceValuesFrom] = useState(0);
   const history = useHistory();
   const initialLoad = useRef(false);
 
@@ -48,7 +47,7 @@ const ProductList = ({products, getProductByPrice}) => {
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [priceValuesFrom, priceValuesTo]);
-  
+
   return (
     <div className={styles.root}>
       <Grid>
