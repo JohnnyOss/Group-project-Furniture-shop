@@ -67,7 +67,7 @@ const GallerySlider = props => {
   widthChange(mobileView);
 
   function widthChange(mobileView) {
-    let tabCount = mobileView.matches ? 6 : 4;
+    let tabCount = mobileView.matches ? 5 : 3;
     // console.log('tabCount', tabCount);
     return tabCount;
   }
@@ -98,7 +98,11 @@ const GallerySlider = props => {
   const handleSlideRight = event => {
     event.preventDefault();
     let newSlideNumber = slideNumber + widthChange(mobileView);
-    setSlideNumber(newSlideNumber);
+    if (newSlideNumber >= categoryProducts.length) {
+      setSlideNumber(slideNumber);
+    } else {
+      setSlideNumber(newSlideNumber);
+    }
   };
 
   return (
