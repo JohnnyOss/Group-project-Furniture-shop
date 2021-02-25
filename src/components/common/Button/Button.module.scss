@@ -96,16 +96,17 @@
 .furniture {
   @extend .gallery;
   border: 1px solid $light-color-2 !important;
-  .product {
-    @extend.main-light;
-    padding: 5px 10px;
-    border: 1px solid $dark-color-2;
-    margin: 5px;
-    &:hover {
-      border-color: $creme-main;
-    }
+}
+.product {
+  @extend.main-light;
+  padding: 5px 10px;
+  border: 1px solid $dark-color-2;
+  margin: 5px;
+  &:hover {
+    border-color: $creme-main;
   }
 }
+
 .facebook {
   @extend.main;
   background-color: $white-color;
