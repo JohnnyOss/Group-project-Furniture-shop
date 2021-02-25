@@ -3,7 +3,7 @@ import styles from './Furniture.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faThList, faThLarge } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import PropTypes from 'prop-types';
 
 class Furniture extends React.Component {
