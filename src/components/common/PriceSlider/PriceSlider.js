@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Slider from '@material-ui/core/Slider';
 import styles from './PriceSlider.module.scss';
 
@@ -7,8 +7,45 @@ function valuetext(value) {
   return `$${value}`;
 }
 
-const PriceSlider = () => {
+const PriceSlider = ({
+  products, 
+  category, 
+  getProductByPrice, 
+  setCategoryProducts, 
+  setPriceValuesTo, 
+  setPriceValuesFrom
+}) => {
   const [value, setValue] = useState([135, 500]);
+
+  const handlePriceTo = event => {
+    setCategoryProducts(products.filter(item => item.category === category));
+    if (event.target.value.length === 0) {
+      setTimeout(() => {
+        setPriceValuesTo(Math.max(...getProductByPrice));
+      }, 500);
+    }
+    if (event.target.value.length !== 0){
+      event.presist();
+      setTimeout(() => {
+        setPriceValuesTo(parseInt(event.target.value));
+      }, 500);
+    }
+  };
+
+  const handlePriceFrom = event => {
+    setCategoryProducts(products.filter(item => item.category === category));
+    if (event.target.value.length === 0) {
+      setTimeout(() => {
+        setPriceValuesFrom(0);
+      }, 500);
+    }
+    if (event.target.value.length !== 0) {
+      event.presist();
+      setTimeout(() => {
+        setPriceValuesTo(parseInt(event.target.value));
+      }, 500);
+    }
+  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -35,6 +72,15 @@ const PriceSlider = () => {
       </div>
     </div>
   );
+};
+
+PriceSlider.propTypes = {
+  products: PropTypes.array,
+  getProductByPrice: PropTypes.array,
+  category: PropTypes.string,
+  setCategoryProducts: PropTypes.func,
+  setPriceValuesTo: PropTypes.func,
+  setPriceValuesFrom: PropTypes.func,
 };
 
 export default PriceSlider;
