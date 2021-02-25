@@ -4,6 +4,10 @@ export const getCount = ({ products }) => products.length;
 export const getCompared = ({ products }) => {
   return products.filter(item => item.compare === true);
 };
+export const getHotDeals = ({ products }) =>
+  products.filter(product => product.hotDeal);
+
+export const getHotDeals_Slider = ({ hotdeals_slider }) => hotdeals_slider;
 
 export const toggleCompare = (products, id) =>
   products.map(product => {
