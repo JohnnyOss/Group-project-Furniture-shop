@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Slider from '@material-ui/core/Slider';
 import styles from './PriceSlider.module.scss';
-
-function valuetext(value) {
-  return `$${value}`;
-}
 
 const PriceSlider = ({
   products, 
@@ -14,8 +9,6 @@ const PriceSlider = ({
   setCategoryProducts, 
   setPriceValuesTo, 
   setPriceValuesFrom}) => {
-
-  const [value, setValue] = useState([135, 500]);
 
   const handlePriceTo = event => {
     setCategoryProducts(products.filter(item => item.category === category));
@@ -32,7 +25,7 @@ const PriceSlider = ({
       }, 500);
     }
   };
-
+  
   const handlePriceFrom = event => {
     setCategoryProducts(products.filter(item => item.category === category));
     if (event.target.value.length === 0) {
@@ -48,43 +41,14 @@ const PriceSlider = ({
     }
   };
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  //console.log(category);
-  //console.log(products);
-
   return (
     <div className={styles.root}>
-    <form>
-      <input type='text' placeholder='from' onChange={handlePriceFrom} />
-      <div>-</div>
-      <input type='text' placeholder='to' onChange={handlePriceTo} />
-    </form>
-
-    <div>
-      <Slider
-        className={styles.box}
-        value={value}
-        min={0}
-        max={1000}
-        step={1}
-        onChange={handleChange}
-        aria-labelledby='range-slider'
-        getAriaValueText={valuetext}
-      />
-      <div className={styles.inputBox}>
-        <input type='submit' value='FILTER' className={styles.inputBox__button} />
-        <div className={styles.inputBox__price}>
-          <span>${value[0]} - </span>
-          <span>${value[1]}</span>
-        </div>
-      </div>
+        <form>
+          <input type='text' placeholder='from' onChange={handlePriceFrom} />
+          <div>-</div>
+          <input type='text' placeholder='to' onChange={handlePriceTo} />
+        </form>
     </div>
-  </div>
-
-   
   );
 };
 
