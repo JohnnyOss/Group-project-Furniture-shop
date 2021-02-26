@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  padding: $base-padding 0;
+  padding: $base-padding 0 0 0;
 
   .heading {
     width: 100%;
@@ -17,38 +17,42 @@
   }
 }
 
-.byCategories {
-  list-style: ">";
-  cursor: pointer;
-  padding-left: 10px;
+.listWrapper {
+  width: 100%;
 
-  li {
-    margin-top: 5px;
-    padding: 5px;
-    font-size: 14px;
-    position: relative;
-    top: -15px;
-    padding-left: 15px;
+  .byCategories {
+    list-style: ">";
+    cursor: pointer;
+    padding-left: 10px;
 
-    &:hover {
-      color: #d58e32;
-      transform: translateX(10px);
+    li {
+      margin-top: 5px;
+      padding: 5px;
+      font-size: 14px;
+      position: relative;
+      top: -15px;
+      padding-left: 15px;
 
-      .dot {
-        background-color: #d58e32;
-        transform: translateX(-10px);
+      &:hover {
+        color: #d58e32;
+        transform: translateX(10px);
+
+        .dot {
+          background-color: #d58e32;
+          transform: translateX(-10px);
+        }
       }
     }
-  }
 
-  .dot {
-    color: $white-color;
-    float: right;
-    border-radius: 50%;
-    background-color: $black-color;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    margin-left: 170px;
+    .dot {
+      color: $white-color;
+      float: right;
+      border-radius: 50%;
+      background-color: $black-color;
+      height: 20px;
+      width: 20px;
+      text-align: center;
+      margin: 0;
+    }
   }
 }

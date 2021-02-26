@@ -15,7 +15,7 @@ const PriceSlider = () => {
   };
 
   return (
-    <div>
+    <div className={styles.root}>
       <Slider
         className={styles.box}
         value={value}
