@@ -24,7 +24,7 @@ const ProductList = () => (
           <ProductListBanner />
         </Col>
       </Row>
-      <Row>
+      <Row className={styles.order}>
         <Col md={8} lg={9} className={styles.content}>
           <div className='col-12'>
             <Furniture itemsPerSlide={6} />
