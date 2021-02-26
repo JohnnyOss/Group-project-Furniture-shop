@@ -32,6 +32,8 @@ $linkedIn-blue: #0072b1;
 $twitter-blue: #1da1f2;
 $google-red: #db4437;
 
+$red-color: #d11504;
+
 $slider-overlay: rgba(54, 54, 54, 0.5);
 
 // *****COLORS IN COMPONENTS*****
@@ -166,6 +168,9 @@ $login-error-font: $dark-color-1;
 $header-topbar-bg: $grey-color;
 $topBar-links: $white-color;
 $topBar-links-hover: $creme-main;
+
+//Register
+$register-error: $red-color;
 
 $transition: all 0.25s;
 

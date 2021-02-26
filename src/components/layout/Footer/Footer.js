@@ -93,7 +93,7 @@ const Footer = ({ children }) => (
                 </li>
               </ul>
             </div>
-            <img src='./images/cards.png' alt='Supported credit cards' />
+            <img src='/images/cards.png' alt='Supported credit cards' />
           </div>
         </div>
       </div>
