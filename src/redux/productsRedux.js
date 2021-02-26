@@ -17,6 +17,12 @@ export const toggleCompare = (products, id) =>
     return product;
   });
 
+export const getProductById = ({ products }, productId) => {
+  products.filter(product => product.id === productId);
+
+  return products.length ? products[0] : { error: true };
+};
+
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
