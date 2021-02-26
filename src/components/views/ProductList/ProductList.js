@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import PriceSlider from '../../common/PriceSlider/PriceSlider';
 import { StylesProvider } from '@material-ui/core/styles';
 import FilterColor from '../../features/FilterColor/FilterColor';
+import FilterSize from '../../features/FilterSize/FilterSize';
 
 import Furniture from './../Furniture/FurnitureContainer';
 import FilterByCategories from '../../common/FilterByCategories/FilterByCategories';
@@ -14,7 +15,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTags } from '@fortawesome/free-solid-svg-icons';
 import Newsletter from '../../common/Newsletter/Newsletter';
 import Brands from '../../features/Brands/BrandsContainer';
-
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -43,6 +43,10 @@ const ProductList = () => (
           <div>
             <h5 className={styles.filterRange__name}>Filter by color</h5>
             <FilterColor />
+          </div>
+          <div>
+            <h5 className={styles.filterRange__name}>Filter by size</h5>
+            <FilterSize />
           </div>
           <div className={styles.headerTags}>
             <span className={styles.title}>Filter by tag</span>
