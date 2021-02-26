@@ -32,6 +32,12 @@
       @extend %hover-effect;
       display: flex;
       justify-content: space-between;
+      opacity: 0;
+      .button {
+        flex: 50%;
+        padding: 5px;
+        text-align: center;
+      }
     }
 
     img {
@@ -88,7 +94,7 @@
     @extend %hover-effect;
     display: flex;
 
-    @media(max-width: 992px) {
+    @media (max-width: 992px) {
       display: block;
     }
 
@@ -100,7 +106,7 @@
       font-weight: 400;
       text-align: center;
 
-      @media(max-width: 992px) {
+      @media (max-width: 992px) {
         font-size: 11px;
         line-height: 1.4;
       }
@@ -110,7 +116,7 @@
       font-weight: 700;
       text-align: center;
 
-      @media(max-width: 992px) {
+      @media (max-width: 992px) {
         font-size: 11px;
         line-height: 1.4;
       }

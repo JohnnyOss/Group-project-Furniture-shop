@@ -60,53 +60,32 @@ const HotDealsBox = ({ name, price, promo, stars, id, image }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button
-          variant='outline'
-          className={parseInt(id.slice(20)) % 2 === 0 ? styles.checked : ''}
-        >
+        <Button variant='outline'>
           <FontAwesomeIcon icon={faEye} className={styles.icon}>
             Favorite
           </FontAwesomeIcon>
         </Button>
-        <Button
-          variant='outline'
-          className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
-        >
+        <Button variant='outline'>
           <FontAwesomeIcon icon={faHeart} className={styles.icon}>
             Add to compare
           </FontAwesomeIcon>
         </Button>
-        <Button
-          variant='outline'
-          className={parseInt(id.slice(20)) % 3 === 0 ? styles.checked : ''}
-        >
+        <Button variant='outline'>
           <FontAwesomeIcon icon={faExchangeAlt} className={styles.icon}>
             Add to compare
           </FontAwesomeIcon>
         </Button>
       </div>
-      {parseInt(id.slice(20)) % 3 === 0 ? (
-        <div className={styles.price}>
-          <Button noHover variant='small' className={styles.firstPrice}>
-            $ {1.4 * price}
-          </Button>
-          <Button noHover variant='small' className={styles.promoPrice}>
-            $ {price}
-          </Button>
-        </div>
-      ) : (
-        <div className={styles.price}>
-          <Button noHover variant='small' className={styles.promoPrice}>
-            $ {price}
-          </Button>
-        </div>
-      )}
+      <div className={styles.price}>
+        <Button noHover variant='small' className={styles.promoPrice}>
+          $ {price}
+        </Button>
+      </div>
     </div>
   </div>
 );
 
 HotDealsBox.propTypes = {
-  children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
