@@ -14,6 +14,7 @@ const ProductRating = ({ id, starRating, stars, setRating }) => {
     <div className={starRating || isRated ? styles.starRated : styles.starDefault}>
       {[1, 2, 3, 4, 5].map(i => (
         <span
+          className={styles.stars}
           key={i}
           onClick={() => setRating({ id, i })}
           onMouseOver={() => {
