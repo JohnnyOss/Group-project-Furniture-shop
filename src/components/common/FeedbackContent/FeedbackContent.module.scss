@@ -1,4 +1,5 @@
 @import "../../../styles/settings.scss";
+
 .root {
   .container {
     display: flex;
@@ -6,22 +7,28 @@
     align-items: center;
     justify-content: center;
   }
+
   .icon {
     align-items: center;
     justify-content: center;
     display: flex;
-    padding: 15px;
+    padding: 25px;
   }
+
   .text {
+    width: 100%;
     text-align: center;
-    padding: 15px;
+    padding: 0 10px;
     font-style: italic;
   }
+
   .person {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
+
     .image {
       img {
         width: 90px;
@@ -30,6 +37,7 @@
         padding: 10px;
       }
     }
+
     .data {
       .name {
         font-weight: bold;
