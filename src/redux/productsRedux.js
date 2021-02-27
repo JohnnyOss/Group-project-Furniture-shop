@@ -28,6 +28,7 @@ export const getNew = ({ products }) =>
 
 export const getGalleryCategories = ({ galleryCategories }) => galleryCategories;
 export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoProduct;
+//export const getQuickView = ({products}) => products;
 
 // action name creator
 const createActionName = name => `product/rating/${name}`;

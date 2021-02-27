@@ -22,7 +22,13 @@ const ProductBox = ({
   addProduct,
   favourite,
   setFavourite,
+  //displayQuickView,
 }) => {
+  const quickView = event => {
+    event.preventDefault();
+    //displayQuickView({...ProductBox});
+    //console.log('szybki wgląd!');
+  };
   const addToCart = event => {
     event.preventDefault();
     addProduct({ id, price, ...ProductBox });
@@ -33,7 +39,7 @@ const ProductBox = ({
         <img className={styles.img} src={image} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small' className={styles.button}>
+          <Button variant='small' className={styles.button} onClick={quickView}>
             Quick View
           </Button>
           <Button variant='small' className={styles.button} onClick={addToCart}>

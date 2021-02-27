@@ -8,6 +8,7 @@ import { getAll, setFavourite } from '../../../redux/productsRedux';
 const mapStateToProps = state => ({
   cartAmount: getCount(state),
   products: getAll(state),
+  //displayQuickView: toggleCompare(state),
 });
 
 const mapDispatchToProps = dispatch => ({
