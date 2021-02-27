@@ -13,31 +13,22 @@ const PriceSlider = ({
   const handlePriceTo = event => {
     setCategoryProducts(products.filter(item => item.category === category));
     if (event.target.value.length === 0) {
-      setTimeout(() => {
-        setPriceValuesTo(Math.max(...getProductByPrice));
-      }, 500);
-
+      setPriceValuesTo(Math.max(...getProductByPrice));
     }
     if (event.target.value.length !== 0){
       event.persist();
-      setTimeout(() => {
-        setPriceValuesTo(parseInt(event.target.value));
-      }, 500);
+      setPriceValuesTo(parseInt(event.target.value));
     }
   };
   
   const handlePriceFrom = event => {
     setCategoryProducts(products.filter(item => item.category === category));
     if (event.target.value.length === 0) {
-      setTimeout(() => {
-        setPriceValuesFrom(0);
-      }, 500);
+      setPriceValuesFrom(0);
     }
     if (event.target.value.length !== 0) {
       event.persist();
-      setTimeout(() => {
-        setPriceValuesTo(parseInt(event.target.value));
-      }, 500);
+      setPriceValuesTo(parseInt(event.target.value));
     }
   };
 
