@@ -27,15 +27,15 @@
       align-items: center;
       position: relative;
 
-      input[type=checkbox] {
+      input[type="checkbox"] {
         outline: none;
         content: none;
         margin: 0 10px;
         cursor: pointer;
       }
 
-      input[type=checkbox]:before {
-        content: '\2713';
+      input[type="checkbox"]:before {
+        content: "\2713";
         font-size: 15px;
         color: transparent !important;
         background: white;
@@ -48,7 +48,7 @@
         border-radius: 3px;
       }
 
-      input[type=checkbox]:checked:before {
+      input[type="checkbox"]:checked:before {
         color: white !important;
         background: $creme-main;
         border: 1px solid $creme-main;
