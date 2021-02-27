@@ -12,6 +12,7 @@ const mapStateToProps = state => ({
   getCompared: getCompared(state),
   changeCompare: changeCompare(state),
   currentRwdMode: state.rwd.mode,
+  //quickView: toggleCompare(state),
 });
 
 const mapDispatchToProps = dispatch => ({
