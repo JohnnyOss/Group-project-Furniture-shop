@@ -62,7 +62,8 @@ const ProductBox = ({
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
-            onClick={() => {
+            onClick={e => {
+              e.preventDefault();
               if (getCompared.find(item => item.id === id)) {
                 changeCompare(id);
               } else if (getCompared.length <= 3) {
