@@ -81,9 +81,10 @@ class Cart extends React.Component {
                     <td>
                       <img
                         className={styles.productImage}
-                        src={
-                          'https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg?cs=srgb&dl=pexels-paula-schmidt-963486.jpg&fm=jpg'
-                        }
+                        src={product.image}
+                        // src={
+                        //   'https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg?cs=srgb&dl=pexels-paula-schmidt-963486.jpg&fm=jpg'
+                        // }
                         alt=''
                       ></img>
                     </td>
@@ -174,21 +175,9 @@ Cart.propTypes = {
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
       favourite: PropTypes.bool,
+      image: PropTypes.string,
     })
   ),
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      category: PropTypes.string,
-      price: PropTypes.number,
-      stars: PropTypes.number,
-      promo: PropTypes.string,
-      newFurniture: PropTypes.bool,
-      favourite: PropTypes.bool,
-    })
-  ),
-  addProduct: PropTypes.func,
 };
 
 export default Cart;

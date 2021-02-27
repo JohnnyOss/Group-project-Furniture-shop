@@ -5,6 +5,7 @@ import Cart from './Cart';
 const mapStateToProps = state => ({
   productsInCart: getAll(state),
   numberOfProductsInCart: getCount(state),
+  image: state.products.image,
   // products: state.cart.products,
 });
 
