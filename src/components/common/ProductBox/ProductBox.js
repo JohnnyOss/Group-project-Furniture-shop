@@ -22,12 +22,11 @@ const ProductBox = ({
   addProduct,
   favourite,
   setFavourite,
-  //displayQuickView,
+  getQuickView,
 }) => {
   const quickView = event => {
     event.preventDefault();
-    //displayQuickView({...ProductBox});
-    //console.log('szybki wgląd!');
+    getQuickView(id);
   };
   const addToCart = event => {
     event.preventDefault();

@@ -4,6 +4,8 @@ import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import Compare from '../Compare/Compare';
 import Swipeable from '../../common/Swipeable/Swipeable';
+import { getQuickView } from '../../../redux/productsRedux';
+import QuickView from '../QuickView/QuickView';
 
 class NewFurniture extends React.Component {
   state = {
@@ -54,6 +56,7 @@ class NewFurniture extends React.Component {
       getCompared,
       changeCompare,
       currentRwdMode,
+      getQuickView,
     } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -142,6 +145,7 @@ class NewFurniture extends React.Component {
                     <ProductBox
                       getCompared={getCompared}
                       changeCompare={changeCompare}
+                      getQuickView={getQuickView}
                       {...item}
                     />
                   </div>
@@ -150,6 +154,7 @@ class NewFurniture extends React.Component {
           </Swipeable>
         </div>
         <Compare getCompared={getCompared} changeCompare={changeCompare} />
+        <QuickView getQuickView={getQuickView} />
       </div>
     );
   }

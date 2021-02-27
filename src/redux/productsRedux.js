@@ -1,6 +1,8 @@
 /* selectors */
 export const getAll = ({ products }) => products;
+
 export const getCount = ({ products }) => products.length;
+
 export const getCompared = ({ products }) => {
   return products.filter(item => item.compare === true);
 };
@@ -27,9 +29,11 @@ export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
 export const getGalleryCategories = ({ galleryCategories }) => galleryCategories;
-export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoProduct;
-//export const getQuickView = ({products}) => products;
 
+export const getGalleryPromoProduct = ({ galleryPromoProduct }) => galleryPromoProduct;
+export const getQuickView = ({products}) => {
+  return products.filter(item => item.compare === true);
+};
 // action name creator
 const createActionName = name => `product/rating/${name}`;
 
