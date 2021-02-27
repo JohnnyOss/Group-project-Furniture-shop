@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
@@ -29,6 +29,12 @@ const ProductBox = ({
     event.preventDefault();
     addProduct({ id, price, name, image, ...ProductBox });
   };
+  const [value, setValue] = useState(localStorage.getItem('favourite', id) || '');
+
+  useEffect(() => {
+    localStorage.setItem('favourite', value);
+  }, [value]);
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -69,7 +75,8 @@ const ProductBox = ({
             variant={favourite ? 'favourite' : 'outline'}
             onClick={e => {
               e.preventDefault();
-              setFavourite(id, !favourite);
+              localStorage.setItem('favourite', setFavourite(id, !favourite));
+              localStorage.setItem(!favourite, e.target.value);
             }}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
