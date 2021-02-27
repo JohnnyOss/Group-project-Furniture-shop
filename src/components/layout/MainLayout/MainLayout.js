@@ -17,7 +17,7 @@ class MainLayout extends React.Component {
   }
 
   componentWillUnmount() {
-    this.resizer.removeEventListener('resize', () => this.checkRwdMode());
+    this.resizer = window.removeEventListener('resize', () => this.checkRwdMode());
   }
 
   checkRwdMode() {

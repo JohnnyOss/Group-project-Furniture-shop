@@ -16,6 +16,7 @@ export const addProduct = payload => ({ payload, type: ADD_PRODUCT });
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_PRODUCT: {
+      console.log('reducer', action.payload);
       return {
         ...statePart,
         products: [...statePart.products, action.payload],
