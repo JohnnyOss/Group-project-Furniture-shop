@@ -11,17 +11,48 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 class Cart extends React.Component {
-  // componentDidMount() {
-  //   const {addProduct} = this.props;
-  //   addProduct();
-  //   console.log('addProduct', addProduct);
-  // }
-
   render() {
-    const { productsInCart, numberOfProductsInCart } = this.props;
+    const {
+      productsInCart,
+      numberOfProductsInCart,
+      changeAmount,
+      removeProduct,
+      setValue,
+    } = this.props;
     console.log('productsInCart', productsInCart);
     console.log('numberOfProductsInCart', numberOfProductsInCart);
     console.log('this.props', this.props);
+
+    const removeFromCart = id => {
+      removeProduct({ id });
+    };
+
+    const changeQuantity = (id, type) => {
+      changeAmount({ id, type });
+    };
+
+    // (product.quantity === undefined || product.quantity < 0) ? 1 : product.quantity;
+
+    const finalAmount = product => {
+      if (product.quantity === undefined) {
+        return 1;
+      } else if (product.quantity < 0) {
+        return 0;
+      } else {
+        return product.quantity;
+      }
+    };
+    // product.quantity === undefined ? 1*product.price : product.quantity*product.price
+
+    const finalPrice = product => {
+      if (product.quantity === undefined) {
+        return product.price;
+      } else if (product.quantity < 0) {
+        return 0;
+      } else {
+        return product.quantity * product.price;
+      }
+    };
 
     return (
       <div className={styles.root}>
@@ -37,15 +68,6 @@ class Cart extends React.Component {
           </div>
         </div>
         <div className='container'>
-          {/* <div>
-            {productsInCart.map(product =>
-              <div key={product.id}>
-                <div>{product.id}</div>
-                <div>{product.price}</div>
-              </div>
-            )}
-          </div> */}
-
           <div className='table1'>
             <table className='table'>
               <thead className={styles.thead}>
@@ -70,11 +92,15 @@ class Cart extends React.Component {
                   </th>
                 </tr>
               </thead>
+
               <tbody>
                 {productsInCart.map(product => (
                   <tr key={product.id} className={styles.theadItem}>
                     <th scope='row'>
-                      <Button className={styles.productRemover}>
+                      <Button
+                        className={styles.productRemover}
+                        onClick={() => removeFromCart(product.id)}
+                      >
                         <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
                       </Button>
                     </th>
@@ -82,32 +108,41 @@ class Cart extends React.Component {
                       <img
                         className={styles.productImage}
                         src={product.image}
-                        // src={
-                        //   'https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg?cs=srgb&dl=pexels-paula-schmidt-963486.jpg&fm=jpg'
-                        // }
                         alt=''
                       ></img>
                     </td>
-                    <td>{product.id}</td>
+                    <td>{product.name}</td>
                     <td>
                       <span className='price-currency-symbol'>$ </span>
                       {product.price}
                     </td>
                     <td className={styles.quantity}>
-                      <Button variant='product' className={styles.buttonQty}>
+                      <Button
+                        variant='product'
+                        className={styles.buttonQty}
+                        onClick={() => changeQuantity(product.id, 'decrease')}
+                      >
                         <FontAwesomeIcon icon={faMinus} />
                       </Button>
                       <input
                         className={styles.inputNumber}
-                        type='number'
+                        type='text'
                         min='0'
-                      ></input>
-                      <Button variant='product' className={styles.buttonQty}>
+                        value={finalAmount(product)}
+                        onChange={event => setValue(event.currentTarget.value)}
+                      />
+                      {/* <span>{product.quantity === undefined ? 1 : product.quantity}</span> */}
+                      <Button
+                        variant='product'
+                        className={styles.buttonQty}
+                        onClick={() => changeQuantity(product.id, 'increase')}
+                      >
                         <FontAwesomeIcon icon={faPlus} />
                       </Button>
                     </td>
                     <td>
-                      <span className='price-currency-symbol'>$ </span>0
+                      <span className='price-currency-symbol'>$ </span>
+                      {finalPrice(product)}
                     </td>
                   </tr>
                 ))}
@@ -178,6 +213,9 @@ Cart.propTypes = {
       image: PropTypes.string,
     })
   ),
+  changeAmount: PropTypes.func,
+  removeProduct: PropTypes.func,
+  setValue: PropTypes.func,
 };
 
 export default Cart;

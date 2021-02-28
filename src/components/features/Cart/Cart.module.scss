@@ -65,7 +65,16 @@
     width: 165px;
   }
   .item6{
-    width: 165px;;
+    width: 165px;
+  }
+  th, td {
+    vertical-align: middle;
+
+    span {
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
   }
 }
 
@@ -122,6 +131,7 @@
 
 .quantity {
   margin: 5px;
+  min-width: 125px;
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -138,6 +148,7 @@
     cursor: pointer;
     font-size: 13px;
     margin: 3px;
+    border: none;
   }
 }
 
