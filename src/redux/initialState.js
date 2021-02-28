@@ -967,6 +967,11 @@ const initialState = {
       category: 'retro',
     },
   ],
+  currencyChange: [
+    { id: 'USA', name: 'USD', icon: '$', value: 1 },
+    { id: 'POLAND', name: 'PLN', icon: 'zł', value: 3.72 },
+    { id: 'EUROPA', name: 'EURO', icon: 'Euro', value: 0.83 },
+  ],
 };
 
 export default initialState;
