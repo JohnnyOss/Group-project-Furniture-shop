@@ -22,12 +22,9 @@ const ProductBox = ({
   addProduct,
   favourite,
   setFavourite,
-  getQuickView,
+  getViewOn,
+  changeQuickView,
 }) => {
-  const quickView = event => {
-    event.preventDefault();
-    getQuickView(id);
-  };
   const addToCart = event => {
     event.preventDefault();
     addProduct({ id, price, ...ProductBox });
@@ -38,7 +35,18 @@ const ProductBox = ({
         <img className={styles.img} src={image} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small' className={styles.button} onClick={quickView}>
+          <Button
+            variant='small'
+            className={styles.button}
+            onClick={event => {
+              event.preventDefault();
+              if (getViewOn.find(item => item.id === id)) {
+                changeQuickView(id);
+              } else if (getViewOn.length < 1) {
+                changeQuickView(id);
+              }
+            }}
+          >
             Quick View
           </Button>
           <Button variant='small' className={styles.button} onClick={addToCart}>
@@ -101,6 +109,8 @@ ProductBox.propTypes = {
   starRating: PropTypes.bool,
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
+  getViewOn: PropTypes.array,
+  changeQuickView: PropTypes.func,
   addProduct: PropTypes.func,
   setFavourite: PropTypes.func,
   favourite: PropTypes.bool,

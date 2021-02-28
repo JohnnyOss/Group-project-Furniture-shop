@@ -5,7 +5,6 @@ import Button from '../../common/Button/Button';
 
 const Compare = ({ getCompared, changeCompare }) => {
   let isActive = getCompared.length;
-
   if (isActive) {
     return (
       <div className={styles.component}>

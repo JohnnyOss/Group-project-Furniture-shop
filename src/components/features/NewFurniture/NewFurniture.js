@@ -4,7 +4,6 @@ import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import Compare from '../Compare/Compare';
 import Swipeable from '../../common/Swipeable/Swipeable';
-import { getQuickView } from '../../../redux/productsRedux';
 import QuickView from '../QuickView/QuickView';
 
 class NewFurniture extends React.Component {
@@ -56,7 +55,8 @@ class NewFurniture extends React.Component {
       getCompared,
       changeCompare,
       currentRwdMode,
-      getQuickView,
+      getViewOn,
+      changeQuickView,
     } = this.props;
     const { activeCategory, activePage, fadeTrue } = this.state;
     const categoryProducts = products.filter(item => item.category === activeCategory);
@@ -145,7 +145,8 @@ class NewFurniture extends React.Component {
                     <ProductBox
                       getCompared={getCompared}
                       changeCompare={changeCompare}
-                      getQuickView={getQuickView}
+                      getViewOn={getViewOn}
+                      changeQuickView={changeQuickView}
                       {...item}
                     />
                   </div>
@@ -154,7 +155,7 @@ class NewFurniture extends React.Component {
           </Swipeable>
         </div>
         <Compare getCompared={getCompared} changeCompare={changeCompare} />
-        <QuickView getQuickView={getQuickView} />
+        <QuickView getViewOn={getViewOn} changeQuickView={changeQuickView} />
       </div>
     );
   }
@@ -164,6 +165,8 @@ NewFurniture.propTypes = {
   children: PropTypes.node,
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
+  getViewOn: PropTypes.array,
+  changeQuickView: PropTypes.func,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
