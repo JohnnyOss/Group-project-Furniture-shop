@@ -4,10 +4,12 @@
   width: 100%;
   text-decoration: solid;
   padding-top: 10px;
-  margin:0;
+  padding-bottom: 24px;
+  margin: 0;
 
   .filterColor {
     display: flex;
+    cursor: pointer;
 
     p {
       margin:0;

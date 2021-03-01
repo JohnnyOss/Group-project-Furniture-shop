@@ -26,6 +26,8 @@
       h1,
       h3 {
         color: $text-color-light;
+        flex: 100%;
+        text-align: center;
       }
 
       h1 {
@@ -33,6 +35,8 @@
 
         & span {
           font-weight: 700;
+          width: auto;
+          height: auto;
         }
       }
 

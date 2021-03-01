@@ -90,6 +90,7 @@ export default function reducer(statePart = [], action = {}) {
         (statePart[statePart.findIndex(el => el.id === action.payload.id)].favourite =
           action.payload.isFavourite),
       ];
+
     default:
       return statePart;
   }
