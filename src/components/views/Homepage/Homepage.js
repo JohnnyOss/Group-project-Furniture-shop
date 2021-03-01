@@ -9,6 +9,7 @@ import Brands from '../../features/Brands/BrandsContainer';
 import HotDeals from '../../features/HotDeals/HotDealsContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 import Promotion from '../../features/Promotion/PromotionContainer';
+import ChatBot from '../../features/ChatBot/ChatBot';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -19,6 +20,7 @@ const Homepage = () => (
     <Gallery />
     <Brands />
     <Feedback />
+    <ChatBot />
   </div>
 );
 
