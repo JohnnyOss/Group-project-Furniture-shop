@@ -57,6 +57,7 @@ const ProductBox = ({
             onClick={e => {
               e.preventDefault();
               setFavourite(id, !favourite);
+              localStorage.setItem('favourite', id);
             }}
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
