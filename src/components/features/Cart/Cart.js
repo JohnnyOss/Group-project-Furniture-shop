@@ -4,24 +4,11 @@ import styles from './Cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../../common/Button/Button';
 import { faHome, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import {
-  // faMinus,
-  // faPlus,
-  faTimesCircle,
-} from '@fortawesome/free-regular-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 
 class Cart extends React.Component {
   render() {
-    const {
-      productsInCart,
-      numberOfProductsInCart,
-      changeAmount,
-      removeProduct,
-      setValue,
-    } = this.props;
-    console.log('productsInCart', productsInCart);
-    console.log('numberOfProductsInCart', numberOfProductsInCart);
-    console.log('this.props', this.props);
+    const { productsInCart, changeAmount, removeProduct, setValue } = this.props;
 
     const removeFromCart = id => {
       removeProduct({ id });
@@ -30,8 +17,6 @@ class Cart extends React.Component {
     const changeQuantity = (id, type) => {
       changeAmount({ id, type });
     };
-
-    // (product.quantity === undefined || product.quantity < 0) ? 1 : product.quantity;
 
     const finalAmount = product => {
       if (product.quantity === undefined) {
@@ -42,7 +27,6 @@ class Cart extends React.Component {
         return product.quantity;
       }
     };
-    // product.quantity === undefined ? 1*product.price : product.quantity*product.price
 
     const finalPrice = product => {
       if (product.quantity === undefined) {
@@ -51,6 +35,16 @@ class Cart extends React.Component {
         return 0;
       } else {
         return product.quantity * product.price;
+      }
+    };
+
+    const totalPrice = products => {
+      if (products.length > 0) {
+        const mapByPrice = products.map(
+          product =>
+            product.price * (product.quantity === undefined ? 1 : product.quantity)
+        );
+        return mapByPrice.reduce((prev, next) => prev + next);
       }
     };
 
@@ -94,8 +88,8 @@ class Cart extends React.Component {
               </thead>
 
               <tbody>
-                {productsInCart.map(product => (
-                  <tr key={product.id} className={styles.theadItem}>
+                {productsInCart.map((product, i) => (
+                  <tr key={i} className={styles.theadItem}>
                     <th scope='row'>
                       <Button
                         className={styles.productRemover}
@@ -131,7 +125,6 @@ class Cart extends React.Component {
                         value={finalAmount(product)}
                         onChange={event => setValue(event.currentTarget.value)}
                       />
-                      {/* <span>{product.quantity === undefined ? 1 : product.quantity}</span> */}
                       <Button
                         variant='product'
                         className={styles.buttonQty}
@@ -180,8 +173,9 @@ class Cart extends React.Component {
                 </tr>
                 <tr className={styles.theadItem}>
                   <th scope='col'>Total</th>
-                  <td>
-                    <span className='price-currency-symbol'>$ </span>0
+                  <td className={styles.totalPrice}>
+                    <span className='price-currency-symbol'>$ </span>
+                    {totalPrice(productsInCart)}
                   </td>
                 </tr>
               </tbody>
@@ -199,7 +193,6 @@ class Cart extends React.Component {
 }
 
 Cart.propTypes = {
-  numberOfProductsInCart: PropTypes.number,
   productsInCart: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

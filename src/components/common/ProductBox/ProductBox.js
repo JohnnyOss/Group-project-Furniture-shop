@@ -24,11 +24,10 @@ const ProductBox = ({
   setFavourite,
   getViewOn,
   changeQuickView,
-  quantity,
 }) => {
   const addToCart = event => {
     event.preventDefault();
-    addProduct({ id, price, name, image, quantity, ...ProductBox });
+    addProduct({ id, price, name, image, ...ProductBox });
   };
   return (
     <div className={styles.root}>
@@ -115,7 +114,6 @@ ProductBox.propTypes = {
   addProduct: PropTypes.func,
   setFavourite: PropTypes.func,
   favourite: PropTypes.bool,
-  quantity: PropTypes.number,
 };
 
 export default ProductBox;
