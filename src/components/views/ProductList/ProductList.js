@@ -24,7 +24,7 @@ const ProductList = () => (
           <ProductListBanner />
         </Col>
       </Row>
-      <Row>
+      <Row className={styles.order}>
         <Col md={8} lg={9} className={styles.content}>
           <div className='col-12'>
             <Furniture itemsPerSlide={6} />
@@ -32,7 +32,10 @@ const ProductList = () => (
         </Col>
         <Col xs md={4} lg={3} className={styles.filters}>
           <h3 className={styles.header}>Filtry</h3>
-          <FilterByCategories />
+          <div className={styles.filterRange}>
+            <h5 className={styles.filterRange__name}>Filter by categories</h5>
+            <FilterByCategories />
+          </div>
           <div className={styles.filterRange}>
             <h5 className={styles.filterRange__name}>Filter by price</h5>
             <StylesProvider injectFirst>
@@ -49,10 +52,10 @@ const ProductList = () => (
             <FilterSize />
           </div>
           <div className={styles.headerTags}>
-            <span className={styles.title}>Filter by tag</span>
+            <h5 className={styles.filterRange__name}>Filter by tag</h5>
           </div>
-          <div className={`${styles.filtersList}`}>
-            <ul className={`${styles.tagFilter}`}>
+          <div className={styles.filtersList}>
+            <ul className={styles.tagFilter}>
               <li>
                 <div className={styles.tag}>
                   <FontAwesomeIcon className={styles.icon} icon={faTags} />

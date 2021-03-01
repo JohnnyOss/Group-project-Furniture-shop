@@ -22,6 +22,8 @@ const ProductBox = ({
   addProduct,
   favourite,
   setFavourite,
+  getViewOn,
+  changeQuickView,
 }) => {
   const addToCart = event => {
     event.preventDefault();
@@ -33,7 +35,18 @@ const ProductBox = ({
         <img className={styles.img} src={image} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small' className={styles.button}>
+          <Button
+            variant='small'
+            className={styles.button}
+            onClick={event => {
+              event.preventDefault();
+              if (getViewOn.find(item => item.id === id)) {
+                changeQuickView(id);
+              } else if (getViewOn.length < 1) {
+                changeQuickView(id);
+              }
+            }}
+          >
             Quick View
           </Button>
           <Button variant='small' className={styles.button} onClick={addToCart}>
@@ -96,6 +109,8 @@ ProductBox.propTypes = {
   starRating: PropTypes.bool,
   getCompared: PropTypes.array,
   changeCompare: PropTypes.func,
+  getViewOn: PropTypes.array,
+  changeQuickView: PropTypes.func,
   addProduct: PropTypes.func,
   setFavourite: PropTypes.func,
   favourite: PropTypes.bool,

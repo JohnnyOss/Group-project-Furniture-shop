@@ -4,8 +4,8 @@
   .row__blog {
     padding: 40px 0;
 
-    .articles{
-      &__container{
+    .articles {
+      &__container {
         flex: 2;
       }
 
@@ -51,17 +51,18 @@
             }
           }
 
-          > div:not(last-child) {
-            padding: 0 10px;
+          > div {
+            padding: 0 5px;
 
             span {
               padding-left: 5px;
+              min-width: max-content;
             }
           }
 
           div:last-child {
-            flex: 1;
             text-align: right;
+            margin-top: 10px;
           }
         }
 
@@ -71,8 +72,8 @@
       }
     }
 
-    .sidebar{
-      &__container{
+    .sidebar {
+      &__container {
         flex: 1;
         padding: 0 80px 0 50px;
         flex-direction: column;
