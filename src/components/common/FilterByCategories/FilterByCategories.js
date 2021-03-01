@@ -5,15 +5,7 @@ const FilterByCategories = () => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
-        <div
-          className={
-            'row no-gutters align-items-center justify-content-between ' +
-            styles.heading
-          }
-        >
-          {'FILTER BY CATEGORIES'}
-        </div>
-        <div>
+        <div className={styles.listWrapper}>
           <ul className={styles.byCategories}>
             <li>
               Furniture<span className={styles.dot}>3</span>
