@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 class CurrencyChange extends React.Component {
   static propTypes = {
     currency: PropTypes.array,
-    handleChangeCurrency: PropTypes.func,
+    setCurrency: PropTypes.func,
   };
 
   state = {
     activeCurrency: 'USD',
   };
 
-  handleChangeCurrency(name, value) {
+  setCurrency(name, value) {
     this.setState({ activeCurrency: name, value });
   }
 

@@ -968,9 +968,9 @@ const initialState = {
     },
   ],
   currency: [
-    { key: 'USA', name: 'USD', icon: '$', value: 1 },
-    { key: 'POLAND', name: 'PLN', icon: 'zł', value: 3.72 },
-    { key: 'EUROPA', name: 'EURO', icon: 'Euro', value: 0.83 },
+    { key: 'USA', name: 'USD', icon: '$', value: 1, active: true },
+    { key: 'POLAND', name: 'PLN', icon: 'zł', value: 3.72, active: false },
+    { key: 'EUROPA', name: 'EURO', icon: 'Euro', value: 0.83, active: false },
   ],
 };
 

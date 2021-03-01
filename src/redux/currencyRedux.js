@@ -9,13 +9,20 @@ const createActionName = name => `app/${reducerName}/${name}`;
 export const SET_CURRENCY = createActionName('SET_CURRENCY');
 
 // action creators
-export const setCurrency = payload => ({ payload, type: SET_CURRENCY });
+export const setCurrency = (payload, value) => ({ payload, value, type: SET_CURRENCY });
 
 // reducer
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
-    case SET_CURRENCY:
-      return [...statePart, action.payload];
+    case SET_CURRENCY: {
+      return {
+        ...statePart,
+        option: {
+          name: action.payload,
+          value: action.value,
+        },
+      };
+    }
     default:
       return statePart;
   }
