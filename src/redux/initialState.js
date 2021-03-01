@@ -1,4 +1,4 @@
-const initialState = {
+let initialState = {
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
@@ -1107,5 +1107,19 @@ const initialState = {
     },
   ],
 };
+
+const localFavourite = localStorage.getItem('favourite');
+console.log(localFavourite);
+if (localFavourite !== null) {
+  const favourite = JSON.parse(localFavourite);
+
+  initialState = {
+    ...initialState,
+    products: initialState.products.map(product => ({
+      ...product,
+      favourite: favourite.contains(product.id),
+    })),
+  };
+}
 
 export default initialState;
