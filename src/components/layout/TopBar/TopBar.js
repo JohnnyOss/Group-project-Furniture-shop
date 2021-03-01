@@ -6,6 +6,7 @@ import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg
 import styles from './TopBar.module.scss';
 
 import { Link } from 'react-router-dom';
+import CurrencyChange from '../../features/CurrencyChange/CurrencyChangeContainer';
 
 const TopBar = () => (
   <div className={styles.root}>
@@ -13,6 +14,7 @@ const TopBar = () => (
       <div className='row'>
         <div className={`col-6 col-md-6 col-sm-8 text-left ${styles.topOptions}`}>
           <ul>
+            <CurrencyChange />
             <li>
               <a href='/#'>
                 USD <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
