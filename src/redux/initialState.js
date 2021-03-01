@@ -1109,7 +1109,7 @@ let initialState = {
 };
 
 const localFavourite = localStorage.getItem('favourite');
-console.log(localFavourite);
+
 if (localFavourite !== null) {
   const favourite = JSON.parse(localFavourite);
 
@@ -1117,7 +1117,7 @@ if (localFavourite !== null) {
     ...initialState,
     products: initialState.products.map(product => ({
       ...product,
-      favourite: favourite.contains(product.id),
+      favourite: favourite.includes(product.id),
     })),
   };
 }
