@@ -6,6 +6,7 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import rwdReducer from './rwdModeRedux';
+import currencyRedux from './currencyRedux';
 
 // define reducers
 const reducers = {
@@ -14,6 +15,7 @@ const reducers = {
   products: productsReducer,
   brands: brandsReducer,
   rwd: rwdReducer,
+  currency: currencyRedux,
 };
 
 // add blank reducers for initial state properties without reducers
