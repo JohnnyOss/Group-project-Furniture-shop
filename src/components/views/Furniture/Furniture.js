@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 class Furniture extends React.Component {
   render() {
-    const { products } = this.props;
+    const { categoryProducts } = this.props;
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -47,11 +47,19 @@ class Furniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {products.slice(0, 6).map(item => (
-              <div key={item.id} className='col-4'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+                {categoryProducts.length > 0 &&
+                  categoryProducts.map(item => {
+                    return (
+                      <div className={'col-4'} key={item.id}>
+                        <ProductBox {...item} />
+                      </div>
+                    );
+                  })}
+                {categoryProducts.length <= 0 && (
+                  <div className={styles.noProduct}>
+                    <p>No product available in given criteria. Please search again.</p>
+                  </div>
+                )}
           </div>
         </div>
       </div>
@@ -60,21 +68,7 @@ class Furniture extends React.Component {
 }
 
 Furniture.propTypes = {
-  children: PropTypes.node,
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      category: PropTypes.string,
-      price: PropTypes.number,
-      stars: PropTypes.number,
-      promo: PropTypes.string,
-    })
-  ),
-};
-
-Furniture.defaultProps = {
-  products: [],
+  categoryProducts: PropTypes.array,
 };
 
 export default Furniture;

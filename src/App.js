@@ -9,9 +9,9 @@ import './styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayoutContainer';
 import Homepage from './components/views/Homepage/Homepage';
-import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPageContainer';
 import Cart from './components/features/Cart/CartContainer';
+import ProductList from './components/views/ProductList/ProductListContainer';
 import BlogLayout from './components/layout/BlogLayout/BlogLayoutContainer';
 import Login from './components/views/Login/Login';
 import Register from './components/views/Register/Register';
