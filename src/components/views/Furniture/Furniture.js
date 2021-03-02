@@ -11,14 +11,8 @@ class Furniture extends React.Component {
     productsAmount: 12,
   };
   render() {
-<<<<<<< HEAD
     const { categoryProducts, products } = this.props;
     const { productsAmount } = this.state;
-=======
-    const { products } = this.props;
-    const { productsAmount } = this.state;
-
->>>>>>> 97766cc... add state with amount of products on the page
     let productsOnPage = products.slice(0, productsAmount);
 
     const showOnPage = event => {
