@@ -27,7 +27,7 @@ const ProductBox = ({
 }) => {
   const addToCart = event => {
     event.preventDefault();
-    addProduct({ id, price, ...ProductBox });
+    addProduct({ id, price, name, image, ...ProductBox });
   };
   return (
     <div className={styles.root}>
