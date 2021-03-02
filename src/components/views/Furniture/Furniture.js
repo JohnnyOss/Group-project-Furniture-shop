@@ -7,8 +7,18 @@ import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import PropTypes from 'prop-types';
 
 class Furniture extends React.Component {
+  state = {
+    productsAmount: 12,
+  };
   render() {
-    const { categoryProducts } = this.props;
+    const { categoryProducts, products } = this.props;
+    const { productsAmount } = this.state;
+    let productsOnPage = products.slice(0, productsAmount);
+
+    const showOnPage = event => {
+      event.preventDefault();
+      this.setState({ productsAmount: event.target.value });
+    };
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -24,12 +34,13 @@ class Furniture extends React.Component {
                   </div>
                 </div>
                 <div className={styles.sortInput}>
-                  <h5>Show</h5>
-                  <div className={styles.filter}>
-                    {' '}
-                    <p>12</p>
-                    <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-                  </div>
+                  <label htmlFor='show'>Show</label>
+                  <select onClick={showOnPage} id='show' className='custom-select'>
+                    <option value='4'>4</option>
+                    <option value='8'>8</option>
+                    <option value='12'>12</option>
+                    <option value='16'>16</option>
+                  </select>
                 </div>
                 <div className={styles.buttons}>
                   <Button variant='furniture'>
@@ -47,19 +58,24 @@ class Furniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-                {categoryProducts.length > 0 &&
-                  categoryProducts.map(item => {
-                    return (
-                      <div className={'col-4'} key={item.id}>
-                        <ProductBox {...item} />
-                      </div>
-                    );
-                  })}
-                {categoryProducts.length <= 0 && (
-                  <div className={styles.noProduct}>
-                    <p>No product available in given criteria. Please search again.</p>
+            {categoryProducts.length > 0 &&
+              categoryProducts.map(item => {
+                return (
+                  <div className={'col-4'} key={item.id}>
+                    <ProductBox {...item} />
                   </div>
-                )}
+                );
+              })}
+            {categoryProducts.length <= 0 && (
+              <div className={styles.noProduct}>
+                <p>No product available in given criteria. Please search again.</p>
+              </div>
+            )}
+            {productsOnPage.map(item => (
+              <div key={item.id} className='col-4'>
+                <ProductBox {...item} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -69,6 +85,21 @@ class Furniture extends React.Component {
 
 Furniture.propTypes = {
   categoryProducts: PropTypes.array,
+  children: PropTypes.node,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      category: PropTypes.string,
+      price: PropTypes.number,
+      stars: PropTypes.number,
+      promo: PropTypes.string,
+    })
+  ),
+};
+
+Furniture.defaultProps = {
+  products: [],
 };
 
 export default Furniture;

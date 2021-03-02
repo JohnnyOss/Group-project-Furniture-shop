@@ -56,12 +56,14 @@ export const SET_RATING = createActionName('SET_RATING');
 const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
 const CHANGE_QUICK_VIEW = createActionName('CHANGE_QUICK_VIEW');
 const SET_FAVOURITE = actionName('SET_FAVOURITE');
+const GET_BY_NUMBER = actionName('GET_BY_NUMBER');
 
 // action creators
 export const setRating = payload => ({ payload, type: SET_RATING });
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
 export const changeQuickView = payload => ({ payload, type: CHANGE_QUICK_VIEW });
 export const setFavourite = payload => ({ payload, type: SET_FAVOURITE });
+export const getByNumber = payload => ({ payload, type: GET_BY_NUMBER });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
