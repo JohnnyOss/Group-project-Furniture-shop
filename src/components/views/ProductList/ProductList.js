@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -16,7 +16,7 @@ import Newsletter from '../../common/Newsletter/Newsletter';
 import Brands from '../../features/Brands/BrandsContainer';
 import { useHistory } from 'react-router-dom';
 
-const ProductList = ({products, getProductByPrice}) => {
+const ProductList = ({ products, getProductByPrice }) => {
   const [category, setCategory] = useState(window.location.pathname.split('/')[2]);
   const [categoryProducts, setCategoryProducts] = useState(
     products.filter(item => item.category === category)
@@ -36,10 +36,7 @@ const ProductList = ({products, getProductByPrice}) => {
   useEffect(() => {
     if (initialLoad.current) {
       const filteredProduct = categoryProducts.filter(product => {
-        return (
-          product.price >= priceValuesFrom &&
-          product.price <= priceValuesTo
-        );
+        return product.price >= priceValuesFrom && product.price <= priceValuesTo;
       });
       setCategoryProducts(filteredProduct);
     } else {
@@ -59,9 +56,7 @@ const ProductList = ({products, getProductByPrice}) => {
         <Row>
           <Col md={8} lg={9} className={styles.content}>
             <div className='col-12'>
-              <Furniture
-              categoryProducts={categoryProducts} 
-              itemsPerSlide={6} />
+              <Furniture categoryProducts={categoryProducts} itemsPerSlide={6} />
             </div>
           </Col>
           <Col xs md={4} lg={3} className={styles.filters}>
@@ -71,10 +66,10 @@ const ProductList = ({products, getProductByPrice}) => {
               <h5 className={styles.filterRange__name}>Filter by price</h5>
               <StylesProvider injectFirst>
                 <PriceSlider
-                setPriceValuesTo={setPriceValuesTo}
-                setPriceValuesFrom={setPriceValuesFrom}
-                category={category}
-                setCategoryProducts={setCategoryProducts}
+                  setPriceValuesTo={setPriceValuesTo}
+                  setPriceValuesFrom={setPriceValuesFrom}
+                  category={category}
+                  setCategoryProducts={setCategoryProducts}
                 />
               </StylesProvider>
             </div>
