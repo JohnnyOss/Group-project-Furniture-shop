@@ -78,6 +78,14 @@
         display: flex;
         align-items: center;
         margin: 5px;
+
+        .active {
+          color: red;
+        }
       }
+    }
+
+    .productListBox{
+      width: 100%;
     }
   }

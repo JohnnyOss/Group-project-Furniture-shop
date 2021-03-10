@@ -21,7 +21,11 @@ let initialState = {
         'https://s3.amazonaws.com/furniture.retailcatalog.us/products/425521018/small/jerary-queen-upholstered-bed-0.jpg',
       favourite: true,
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -35,7 +39,11 @@ let initialState = {
       image:
         'https://www.happybeds.co.uk/media/catalog/product/cache/2760f187cb7d1bcdeca5818f247800d3/f/e/fenton_grey_ottoman_2.jpg',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+ 
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -50,7 +58,11 @@ let initialState = {
         'https://images.pexels.com/photos/6284232/pexels-photo-6284232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       favourite: true,
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -64,7 +76,11 @@ let initialState = {
       image:
         'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8YmVkfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -78,7 +94,10 @@ let initialState = {
       image:
         'https://images-na.ssl-images-amazon.com/images/I/811Ah5JX4rL._AC_SL1500_.jpg',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -92,6 +111,8 @@ let initialState = {
       image:
         'https://images-na.ssl-images-amazon.com/images/I/81S7gVpRgML._AC_SL1500_.jpg',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
       quickView: false,
     },
     {
@@ -106,7 +127,11 @@ let initialState = {
       image:
         'https://images-na.ssl-images-amazon.com/images/I/815GfbJE%2BXL._AC_SX679_.jpg',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -120,7 +145,11 @@ let initialState = {
       image:
         'https://content.valuecityfurniture.com/images/product/lydia_gray_twin-daybed-with-trundle_2748355_795887.jpg?akimg=product-img-950x950&ak-trim=false',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -134,7 +163,11 @@ let initialState = {
       image:
         'https://images-na.ssl-images-amazon.com/images/I/612cA5lJqML._AC_SL1000_.jpg',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -148,7 +181,11 @@ let initialState = {
       image:
         'https://www.fortywinks.com.au/getmedia/d12b30d7-70af-4e56-8b5c-0601b754402d/jackson_bed_frame_contour-angle.jpg?width=1200',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -162,7 +199,11 @@ let initialState = {
       image:
         'https://www.bedknobsherts.co.uk/wp-content/uploads/2019/12/image-emperor-low-footend-wooden-bed-frame.jpg',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -176,7 +217,11 @@ let initialState = {
       image:
         'https://cdn.shopify.com/s/files/1/2660/5202/products/zkfd0a3bsj7hrfqllsyk_1400x.jpg?v=1598896473',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -190,7 +235,11 @@ let initialState = {
       image:
         'https://cdn.shopify.com/s/files/1/2513/8850/products/SNZXXXX_Palace_QS_3-Drawer_Bedframe_NA_Lifestyle_Angle-1_1024x@2x.progressive.jpg?v=1599800007',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -204,7 +253,10 @@ let initialState = {
       image:
         'https://www.noaandnani.co.uk/images/single-bed-dorset-in-white-p81-6200_image.jpg',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -218,7 +270,11 @@ let initialState = {
       image:
         'https://www.ikea.com/th/en/images/products/slattum-upholstered-bed-frame-knisa-light-grey__0726695_PE735410_S5.JPG?f=s',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -232,7 +288,11 @@ let initialState = {
       image:
         'https://www.ikea.com/de/de/images/products/lauvik-boxbett-hafslo-mittelfest-beige__0419408_PE576296_S5.JPG?f=g',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -246,7 +306,11 @@ let initialState = {
       image:
         'https://www.ikea.com/de/de/images/products/kongsfjord-boxspringbett-hyllestad-mittelfest-tustna-djuparp-dunkelgrau__0891309_PE782265_S5.JPG?f=s',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -260,7 +324,11 @@ let initialState = {
       image:
         'https://www.ikea.com/de/de/images/products/dunvik-boxspringbett-hyllestad-fest-tustna-gunnared-blau__0794070_PE765495_S5.JPG?f=g',
       hotdeal: false,
+      text:
+        'Phasellus dui gravida non, posuere egestas a, elementum odio lobortis elit. Sed molestie, nunc justo, hendrerit nunc faucibus eu, leo.',
+
       quickView: false,
+
     },
     {
       id: 'aenean-ru-bristique-19',

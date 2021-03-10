@@ -4,11 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faThList, faThLarge } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import ProductBoxList from '../../common/ProductBoxList/ProductBoxList';
 import PropTypes from 'prop-types';
 
 class Furniture extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: true,
+    };
+    this.onToggle = this.onToggle.bind(this);
+  }
+
+  onToggle(e) {
+    this.setState({ isVisible: !this.state.isVisible });
+  }
+
   render() {
-    const { categoryProducts } = this.props;
+    const { products} = this.props;
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -32,12 +45,20 @@ class Furniture extends React.Component {
                   </div>
                 </div>
                 <div className={styles.buttons}>
-                  <Button variant='furniture'>
+                  <Button
+                    variant='furniture'
+                    onClick={this.onToggle}
+                    style={this.state.isVisible ? { color: '#d58e32' } : null}
+                  >
                     <FontAwesomeIcon icon={faThLarge} className={styles.icon}>
                       Add to compare
                     </FontAwesomeIcon>
                   </Button>
-                  <Button variant='furniture'>
+                  <Button
+                    variant='furniture'
+                    onClick={this.onToggle}
+                    style={this.state.isVisible ? null : { color: '#d58e32' }}
+                  >
                     <FontAwesomeIcon icon={faThList} className={styles.icon}>
                       Add to compare
                     </FontAwesomeIcon>
@@ -46,21 +67,23 @@ class Furniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-                {categoryProducts.length > 0 &&
-                  categoryProducts.map(item => {
-                    return (
-                      <div className={'col-4'} key={item.id}>
-                        <ProductBox {...item} />
-                      </div>
-                    );
-                  })}
-                {categoryProducts.length <= 0 && (
-                  <div className={styles.noProduct}>
-                    <p>No product available in given criteria. Please search again.</p>
-                  </div>
-                )}
-          </div>
+          {this.state.isVisible ? (
+            <div className='row'>
+              {products.slice(0, 6).map(item => (
+                <div key={item.id} className='col-4'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className='row'>
+              {products.slice(0, 6).map(item => (
+                <div key={item.id} className={styles.productListBox}>
+                  <ProductBoxList {...item} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     );
@@ -68,7 +91,7 @@ class Furniture extends React.Component {
 }
 
 Furniture.propTypes = {
-  categoryProducts: PropTypes.array,
+  products: PropTypes.array,
 };
 
 export default Furniture;
