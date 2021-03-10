@@ -38,6 +38,8 @@ export const getProductById = ({ products }, productId) => {
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
+export const getProductByPrice = ({ products }) =>
+  products.map(product => product.price);
 
 export const getGalleryCategories = ({ galleryCategories }) => galleryCategories;
 
@@ -84,12 +86,31 @@ export default function reducer(statePart = [], action = {}) {
       });
       return starState;
     }
-    case SET_FAVOURITE:
+    case SET_FAVOURITE: {
+      const { id, isFavourite } = action.payload;
+      const localFavourite = localStorage.getItem('favourite');
+
+      if (localFavourite !== null) {
+        let LSFavourite = JSON.parse(localFavourite);
+
+        if (isFavourite) {
+          LSFavourite.push(id);
+        } else {
+          LSFavourite = LSFavourite.filter(position => position !== id);
+        }
+
+        localStorage.setItem('favourite', JSON.stringify(LSFavourite));
+      } else if (localFavourite === null && isFavourite) {
+        localStorage.setItem('favourite', JSON.stringify([id]));
+      }
+
+      const productIndex = statePart.findIndex(el => el.id === action.payload.id);
+
       return [
         ...statePart,
-        (statePart[statePart.findIndex(el => el.id === action.payload.id)].favourite =
-          action.payload.isFavourite),
+        (statePart[productIndex].favourite = action.payload.isFavourite),
       ];
+    }
 
     default:
       return statePart;

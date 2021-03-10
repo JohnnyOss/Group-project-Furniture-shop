@@ -21,7 +21,7 @@ class Furniture extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products} = this.props;
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -91,21 +91,7 @@ class Furniture extends React.Component {
 }
 
 Furniture.propTypes = {
-  children: PropTypes.node,
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      category: PropTypes.string,
-      price: PropTypes.number,
-      stars: PropTypes.number,
-      promo: PropTypes.string,
-    })
-  ),
-};
-
-Furniture.defaultProps = {
-  products: [],
+  products: PropTypes.array,
 };
 
 export default Furniture;

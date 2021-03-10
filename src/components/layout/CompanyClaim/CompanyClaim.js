@@ -5,6 +5,7 @@ import styles from './CompanyClaim.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const CompanyClaim = ({ cartAmount }) => (
   <div className={styles.root}>
@@ -16,18 +17,18 @@ const CompanyClaim = ({ cartAmount }) => (
             222
           </p>
         </div>
-        <div className='col-6 col-md-4 text-center'>
+        <div className={`col-6 col-md-4 text-center ${styles.image}`}>
           <a href='/#'>
             <img src='/images/logo.png' alt='Bazar' />
           </a>
         </div>
         <div className={`col-6 col-md-4 text-right ${styles.cart}`}>
-          <a href='/cart' className={styles.cartBox}>
+          <Link to='/cart' className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>
             <div className={styles.cartCounter}>{cartAmount}</div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
